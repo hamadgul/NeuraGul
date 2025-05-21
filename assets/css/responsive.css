@@ -1,0 +1,246 @@
+@media screen and (max-width: 1199px) {
+	.topbar_icon li p {
+		margin-right: 125px !important;
+	}
+	.hero-section-content h1 {
+		font-size: 64px !important;
+	}
+}
+
+@media screen and (max-width: 991px){
+	header {
+		background: #050023;
+	}
+	.main_menu{
+		padding-top: 20px;
+	}
+	.home-content h1 {
+		font-size: 55px !important;
+	}
+	.home-content {
+		padding: 30% 0 !important;
+	}
+	.quality-service-chart .service-name h5 {
+		font-size: 20px !important;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	
+	.section_padding {
+		padding-top: 100px !important;
+	}
+	.top-bar {
+		display: none !important;
+	}
+	 a.humber_menu {
+		display: none;
+	}
+	.hero-section-text {
+		padding-top: 25% !important;
+	}
+	.hero-section-content h1 {
+		font-size: 46px !important;
+	}
+	.hero-section-content h4 {
+		font-size: 28px!important;
+	}
+	.hero-section-content img {
+		width: 42%!important;
+	}
+	section#feature-section{
+		padding-bottom: 0;
+	}
+	section#about-us{
+		padding-bottom: 0;
+	}
+	ul.about-icon {
+		padding: 0;
+		margin-bottom: 30px;
+	}
+	.about-text {
+		margin-bottom: 50px;
+	}
+	.qna-count {
+		margin-bottom: 30px !important;
+	}
+	
+	section#services{
+		padding-bottom: 0;
+	}
+	.service-section-title {
+		padding-top: 50px !important;
+		padding-bottom: 0 !important;
+	}
+	.service-card{
+		margin-bottom: 30px;
+	}
+	.member_card{
+		margin-bottom: 30px !important;
+	}
+	.blog-card {
+		margin-bottom: 30px;
+	}
+	.partner-section .partner_box li {
+		margin-right: 0 !important;
+	}
+	.partner-section .partner_box li:before{
+		content: "";
+		display: none;
+	}
+	.partner-section .partner_box li:after{
+		content: "";
+		display: none;
+	}
+	.partner-section {
+		padding-top: 100px !important;
+	}
+	.partner-section .partner_box {
+		border-bottom: 0 !important;
+	}
+	.testi_slider {
+		width: 80% !important;
+	}
+	.testi_area_silder .owl-prev {
+		left: 0 !important;
+	}
+	.testi_area_silder .owl-next {
+		right: 0 !important;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.home-content h4 {
+		font-size: 20px;
+	}
+	.home-title svg {
+		width: 22px;
+	}
+	.home-content h1 {
+		font-size: 42px !important;
+	}
+	.home-content {
+		padding: 50% 0 !important;
+	}
+	.main_btn2 {
+		display: none !important;
+	}
+	.section-title {
+		margin-bottom: 50px !important;
+	}
+	.section_padding {
+		padding-top: 80px !important;
+	}
+	.about-img {
+        margin-bottom: 50px;
+    }
+	.single-member {
+		margin-bottom: 30px;
+	}
+	.footer-titile {
+		margin-top: 30px !important;
+	}
+	
+	ul.navbar-nav.main_menu.ms-auto {
+		margin-top: 30px;
+	}
+	.foot_text {
+		float: left !important;
+	}
+	}
+	.foot_text li {
+		margin-left: 0 !important;
+	}
+}
+@media screen and (max-width: 780px) {
+	.hero-section-text .big-title h3{
+		font-size: 18px !important;
+	}
+	.hero-section-text .big-title h1{
+		font-size: 60px !important;
+	}
+	.feature-card {
+		margin-bottom: 30px;
+	}
+	.about-us-button {
+		margin-bottom: 50px;
+		margin-top: 30px;
+	}
+	.about_video {
+		left: 40% !important;
+	}
+	.service-card-title h5 {
+		font-size: 18px !important;
+	}
+	.section-title h1 {
+		font-size: 30px !important;
+	}
+	.solution-bg {
+		margin-bottom: 100px;
+	}
+	.portfolio-card {
+		margin-bottom: 30px;
+	}
+	#about-us .section-title {
+		padding: 0 !important;
+	}
+	.price-card {
+		margin-bottom: 30px;
+	}
+	.member-card {
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.hero-section-text {
+		padding-top: 50% !important;
+	}
+	.hero-section-text .big-title h1 {
+		font-size: 42px !important;
+	}
+	.hero-section-text .big-title h3 {
+		font-size: 16px !important;
+	}
+	.feature-title {
+		padding-bottom: 50px !important;
+	}
+	a.slider_btn {
+		font-size: 14px !important;
+		width: 200px !important;
+		line-height: 50px !important;
+	}
+	.section-title {
+        padding-bottom: 50px !important;
+        margin-bottom: 0 !important;
+    }
+	.appontment-title {
+		padding-top: 0 !important;
+	}
+	.appontment-button {
+		margin-top: 0 !important;
+		float: left;
+	}
+	section#contact {
+		padding: 0 !important;
+		margin-bottom: 100px;
+	}
+	iframe {
+		border-radius: 10px;
+		margin: 0 auto;
+		padding-bottom: 30px;
+	}
+	ul.social-media-links {
+		padding-bottom: 30px;
+	}
+	.copy_area {
+		text-align: center;
+	}
+	.copyright_content li {
+		display: inline-block;
+		margin: 0 15px !important;
+		padding-top: 20px !important;
+		float: inherit !important;
+		text-decoration: none;
+	}
+}
