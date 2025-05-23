@@ -870,4 +870,18 @@ body.dark-mode .form-control {
     display: inline-block;
     margin-top: 20px;
   }
+  
+  /* Make founder name and title visible on mobile/tablet */
+  .member-info {
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    color: var(--text-color) !important;
+    background-color: transparent !important;
+    padding: 20px 0 !important;
+  }
+  
+  .member-info h3, .member-info p {
+    color: inherit !important;
+  }
 }
