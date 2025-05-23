@@ -1,0 +1,158 @@
+/* Modal Styles for NeuraGul Website */
+
+/* Modal Container */
+.modal-content {
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+body.light-mode .modal-content {
+  background-color: #ffffff;
+}
+
+body:not(.light-mode) .modal-content {
+  background-color: #1e2029;
+  color: #ffffff;
+}
+
+/* Modal Header */
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+
+body:not(.light-mode) .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 30px;
+}
+
+/* Form Elements */
+.quote-form .form-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+body:not(.light-mode) .quote-form .form-label {
+  color: #ffffff;
+}
+
+.quote-form .form-control {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: var(--transition-normal);
+  font-size: 15px;
+}
+
+/* Placeholder styles for better visibility */
+.quote-form .form-control::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+body:not(.light-mode) .quote-form .form-control {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+body:not(.light-mode) .quote-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.quote-form .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(42, 63, 255, 0.15);
+  outline: none;
+}
+
+/* Checkbox Styles */
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+body:not(.light-mode) .form-check-input {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-check-label {
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+
+body:not(.light-mode) .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(42, 63, 255, 0.3);
+}
+
+/* Close Button */
+.btn-close {
+  opacity: 0.8;
+}
+
+body:not(.light-mode) .btn-close {
+  filter: invert(1);
+}
+
+/* Required Field Indicator */
+.text-danger {
+  color: #ff6b6b !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .modal-dialog {
+    margin: 10px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+}
