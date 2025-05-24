@@ -1158,9 +1158,6 @@
 
 				// Add event listener for form submission
 				form.addEventListener('submit', function(event) {
-					event.preventDefault();
-					event.stopPropagation();
-
 					// Check if at least one service checkbox is selected
 					const serviceCheckboxes = document.querySelectorAll('#quoteForm input[type="checkbox"]');
 					let isServiceSelected = false;
@@ -1173,6 +1170,8 @@
 					// Display error if no service is selected
 					const serviceErrorMsg = document.getElementById('serviceErrorMsg');
 					if (!isServiceSelected && serviceErrorMsg) {
+						event.preventDefault();
+						event.stopPropagation();
 						serviceErrorMsg.style.display = 'block';
 						return;
 					} else if (serviceErrorMsg) {
@@ -1180,35 +1179,41 @@
 					}
 
 					// Check form validity
-					if (form.checkValidity()) {
-						// Form is valid, collect data
-						const formData = {
-							companyName: document.getElementById('companyName').value,
-							firstName: document.getElementById('firstName').value,
-							lastName: document.getElementById('lastName').value,
-							email: document.getElementById('email').value,
-							phone: document.getElementById('phone').value,
-							services: [],
-							moreInfo: document.getElementById('moreInfo').value,
-							budget: document.getElementById('budget').value
-						};
-
-						// Collect selected services
-						serviceCheckboxes.forEach(checkbox => {
-							if (checkbox.checked) {
-								formData.services.push(checkbox.value);
-							}
-						});
-
-						// Here you would typically send the data to your server
-						console.log('Form submitted:', formData);
-
-						// Show success message
-						showSuccessMessage();
-					} else {
+					if (!form.checkValidity()) {
+						event.preventDefault();
+						event.stopPropagation();
 						// Add validation classes to highlight errors
 						form.classList.add('was-validated');
+						return;
 					}
+					
+					// If we get here, the form is valid and will be submitted to Formspree
+					// We'll show the success message after submission
+					const formData = new FormData(form);
+					
+					// Prevent default form submission so we can show our custom success message
+					event.preventDefault();
+					
+					// Submit the form data to Formspree via fetch API
+					fetch(form.action, {
+						method: 'POST',
+						body: formData,
+						headers: {
+							'Accept': 'application/json'
+						}
+					})
+					.then(response => {
+						if (response.ok) {
+							// Show success message
+							showSuccessMessage();
+						} else {
+							throw new Error('Form submission failed');
+						}
+					})
+					.catch(error => {
+						console.error('Error:', error);
+						alert('There was a problem submitting your form. Please try again.');
+					});
 				});
 
 				// Function to show success message and reset form
