@@ -30,6 +30,41 @@ body.dark-mode .logo-text {
   color: white;
 }
 
+/* Service Card Standardization */
+.row.single-services {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row.single-services > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.single-service {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+
+.single-service .service_content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.single-service-title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.single-service-title p {
+  flex: 1 0 auto;
+}
+
 .logo-text .highlight-text {
   color: var(--primary-color);
   position: relative;
