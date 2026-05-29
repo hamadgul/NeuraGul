@@ -18,10 +18,10 @@
     --paper: #FAFAF7;
     --muted: rgba(250, 250, 247, 0.55);
     --rule: rgba(250, 250, 247, 0.08);
-    --accent: #FF5A1F;
-    --accent-hover: #FF6F3D;
-    --accent-soft: rgba(255, 90, 31, 0.04);
-    --accent-ghost: rgba(255, 90, 31, 0.08);
+    --accent: #2E6BE6;
+    --accent-hover: #4585F0;
+    --accent-soft: rgba(46, 107, 230, 0.04);
+    --accent-ghost: rgba(46, 107, 230, 0.08);
 
     --font-display: "Geist", "Inter", "Helvetica Neue", sans-serif;
     --font-body: "Geist", "Inter", "Helvetica Neue", sans-serif;
@@ -236,7 +236,7 @@ img { display: block; max-width: 100%; }
     transition: opacity 150ms ease;
 }
 .nrg-nav__brand img {
-    height: 44px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -340,8 +340,8 @@ img { display: block; max-width: 100%; }
             rgba(10, 10, 11, 0.3) 35%,
             rgba(10, 10, 11, 0) 60%),
         radial-gradient(ellipse at 15% 90%,
-            rgba(255, 90, 31, 0.12),
-            rgba(255, 90, 31, 0) 55%);
+            rgba(46, 107, 230, 0.12),
+            rgba(46, 107, 230, 0) 55%);
 }
 .nrg-hero__inner { position: relative; z-index: 3; }
 @media (max-width: 900px) {
@@ -370,8 +370,8 @@ img { display: block; max-width: 100%; }
                 rgba(10, 10, 11, 0.3) 35%,
                 rgba(10, 10, 11, 0) 60%),
             radial-gradient(ellipse at 15% 90%,
-                rgba(255, 90, 31, 0.12),
-                rgba(255, 90, 31, 0) 55%),
+                rgba(46, 107, 230, 0.12),
+                rgba(46, 107, 230, 0) 55%),
             url("../img/hero-poster.jpg");
         background-size: cover;
         background-position: center;
