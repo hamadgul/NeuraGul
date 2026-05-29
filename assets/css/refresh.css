@@ -422,8 +422,7 @@ img { display: block; max-width: 100%; }
     align-items: center;
     padding: 36px 24px 36px 0;
     border-top: 1px solid var(--rule);
-    transition: background-color 200ms ease, padding-left 200ms ease;
-    cursor: pointer;
+    transition: padding-left 200ms ease;
 }
 .nrg-service::before {
     content: "";
