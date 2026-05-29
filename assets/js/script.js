@@ -148,30 +148,32 @@ Version      : 1.0
 
 	
 	/* light and dark mode */
-	
-	// Function to toggle between light and dark mode
-	function toggleMode() {
-		const body = document.body;
-		const themeStyle = document.getElementById('theme-style');
-		const icon = document.getElementById('mode-icon');
 
-		if (body.classList.contains('light-mode')) {
-			// Switch to dark mode
-			body.classList.remove('light-mode');
-			icon.classList.remove('fa-moon');
-			icon.classList.add('fa-sun');
-			themeStyle.setAttribute('href', 'assets/css/dark-mode.css'); // Link to your dark mode CSS
-		} else {
-			// Switch to light mode
-			body.classList.add('light-mode');
-			icon.classList.remove('fa-sun');
-			icon.classList.add('fa-moon');
-			themeStyle.setAttribute('href', 'assets/css/style.css'); // Link to your light mode CSS
+	if (document.getElementById('mode-icon')) {
+		// Function to toggle between light and dark mode
+		function toggleMode() {
+			const body = document.body;
+			const themeStyle = document.getElementById('theme-style');
+			const icon = document.getElementById('mode-icon');
+
+			if (body.classList.contains('light-mode')) {
+				// Switch to dark mode
+				body.classList.remove('light-mode');
+				icon.classList.remove('fa-moon');
+				icon.classList.add('fa-sun');
+				themeStyle.setAttribute('href', 'assets/css/dark-mode.css'); // Link to your dark mode CSS
+			} else {
+				// Switch to light mode
+				body.classList.add('light-mode');
+				icon.classList.remove('fa-sun');
+				icon.classList.add('fa-moon');
+				themeStyle.setAttribute('href', 'assets/css/style.css'); // Link to your light mode CSS
+			}
 		}
-	}
 
-	// Event listener for icon click
-	document.getElementById('mode-icon').addEventListener('click', toggleMode);
+		// Event listener for icon click
+		document.getElementById('mode-icon').addEventListener('click', toggleMode);
+	}
 		
 		
 })(jQuery);
