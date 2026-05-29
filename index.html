@@ -10,6 +10,11 @@
 		<meta name="author" content="">
 		<title>NeuraGul - Software Development Agency</title>
 		<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/geist">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
 		<link rel="stylesheet" href="assets/css/responsive.css">
@@ -30,7 +35,7 @@
 		<header class="nrg-nav" id="nrg-nav">
 			<div class="nrg-container nrg-nav__inner">
 				<a href="#home" class="nrg-nav__brand" aria-label="NeuraGul home">
-					<img src="assets/img/logo.png" alt="">
+					<img src="assets/img/logo.png" alt="" width="218" height="105">
 				</a>
 				<nav class="nrg-nav__links" aria-label="Primary">
 					<a href="#service">Services</a>
@@ -56,7 +61,7 @@
 
 		<section class="nrg-section nrg-hero" id="home">
 			<video class="nrg-hero__video"
-			       autoplay muted loop playsinline preload="auto"
+			       autoplay muted loop playsinline preload="metadata"
 			       poster="assets/img/hero-poster.jpg"
 			       aria-hidden="true">
 				<source src="assets/video/hero.mp4" type="video/mp4">
@@ -119,40 +124,52 @@
 				</header>
 				<ul class="nrg-services__list">
 					<li class="nrg-service" data-reveal>
-						<span class="nrg-service__num">01.</span>
-						<h3 class="nrg-service__title">Custom Software Development</h3>
-						<p class="nrg-service__desc">Tailored software designed to meet your business requirements and scale with growth.</p>
-						<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						<a href="#contact" class="nrg-service__link">
+							<span class="nrg-service__num">01.</span>
+							<h3 class="nrg-service__title">Custom Software Development</h3>
+							<p class="nrg-service__desc">Tailored software designed to meet your business requirements and scale with growth.</p>
+							<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						</a>
 					</li>
 					<li class="nrg-service" data-reveal>
-						<span class="nrg-service__num">02.</span>
-						<h3 class="nrg-service__title">Web & Mobile Development</h3>
-						<p class="nrg-service__desc">Responsive sites and applications built with the technologies your team can maintain.</p>
-						<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						<a href="#contact" class="nrg-service__link">
+							<span class="nrg-service__num">02.</span>
+							<h3 class="nrg-service__title">Web & Mobile Development</h3>
+							<p class="nrg-service__desc">Responsive sites and applications built with the technologies your team can maintain.</p>
+							<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						</a>
 					</li>
 					<li class="nrg-service" data-reveal>
-						<span class="nrg-service__num">03.</span>
-						<h3 class="nrg-service__title">Cloud Solutions</h3>
-						<p class="nrg-service__desc">Scalable, secure cloud infrastructure that stays predictable as your traffic grows.</p>
-						<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						<a href="#contact" class="nrg-service__link">
+							<span class="nrg-service__num">03.</span>
+							<h3 class="nrg-service__title">Cloud Solutions</h3>
+							<p class="nrg-service__desc">Scalable, secure cloud infrastructure that stays predictable as your traffic grows.</p>
+							<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						</a>
 					</li>
 					<li class="nrg-service" data-reveal>
-						<span class="nrg-service__num">04.</span>
-						<h3 class="nrg-service__title">IT Infrastructure</h3>
-						<p class="nrg-service__desc">Server, network, firewall, and security work for businesses that need uptime.</p>
-						<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						<a href="#contact" class="nrg-service__link">
+							<span class="nrg-service__num">04.</span>
+							<h3 class="nrg-service__title">IT Infrastructure</h3>
+							<p class="nrg-service__desc">Server, network, firewall, and security work for businesses that need uptime.</p>
+							<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						</a>
 					</li>
 					<li class="nrg-service" data-reveal>
-						<span class="nrg-service__num">05.</span>
-						<h3 class="nrg-service__title">AI Consulting & Development</h3>
-						<p class="nrg-service__desc">Strategic integration and custom models that solve a specific business problem.</p>
-						<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						<a href="#contact" class="nrg-service__link">
+							<span class="nrg-service__num">05.</span>
+							<h3 class="nrg-service__title">AI Consulting & Development</h3>
+							<p class="nrg-service__desc">Strategic integration and custom models that solve a specific business problem.</p>
+							<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						</a>
 					</li>
 					<li class="nrg-service" data-reveal>
-						<span class="nrg-service__num">06.</span>
-						<h3 class="nrg-service__title">Data Intelligence</h3>
-						<p class="nrg-service__desc">Analytics, visualization, and migration work that turns data into a decision.</p>
-						<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						<a href="#contact" class="nrg-service__link">
+							<span class="nrg-service__num">06.</span>
+							<h3 class="nrg-service__title">Data Intelligence</h3>
+							<p class="nrg-service__desc">Analytics, visualization, and migration work that turns data into a decision.</p>
+							<span class="nrg-service__arrow" aria-hidden="true">→</span>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -168,7 +185,12 @@
 				</header>
 				<div class="nrg-work__grid">
 					<article class="nrg-work__item nrg-work__item--wide" data-reveal>
-						<div class="nrg-work__img"><img src="assets/img/portfolio/1.jpg" alt="Distribution platform rebuild — case study visual"></div>
+						<div class="nrg-work__img">
+							<picture>
+								<source srcset="assets/img/portfolio/1.webp" type="image/webp">
+								<img src="assets/img/portfolio/1.jpg" alt="Distribution platform rebuild — case study visual" width="410" height="382" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<div class="nrg-work__meta">
 							<span class="nrg-label">2025 · WEB · CASE STUDY</span>
 							<h3 class="nrg-work__name">Distribution platform rebuild</h3>
@@ -176,7 +198,12 @@
 						</div>
 					</article>
 					<article class="nrg-work__item" data-reveal>
-						<div class="nrg-work__img"><img src="assets/img/portfolio/2.jpg" alt="On-demand operations app — case study visual"></div>
+						<div class="nrg-work__img">
+							<picture>
+								<source srcset="assets/img/portfolio/2.webp" type="image/webp">
+								<img src="assets/img/portfolio/2.jpg" alt="On-demand operations app — case study visual" width="410" height="382" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<div class="nrg-work__meta">
 							<span class="nrg-label">2025 · MOBILE · CASE STUDY</span>
 							<h3 class="nrg-work__name">On-demand operations app</h3>
@@ -184,7 +211,12 @@
 						</div>
 					</article>
 					<article class="nrg-work__item" data-reveal>
-						<div class="nrg-work__img"><img src="assets/img/portfolio/3.jpg" alt="Document intelligence pipeline — case study visual"></div>
+						<div class="nrg-work__img">
+							<picture>
+								<source srcset="assets/img/portfolio/3.webp" type="image/webp">
+								<img src="assets/img/portfolio/3.jpg" alt="Document intelligence pipeline — case study visual" width="410" height="382" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<div class="nrg-work__meta">
 							<span class="nrg-label">2024 · AI · CASE STUDY</span>
 							<h3 class="nrg-work__name">Document intelligence pipeline</h3>
@@ -192,7 +224,12 @@
 						</div>
 					</article>
 					<article class="nrg-work__item nrg-work__item--wide" data-reveal>
-						<div class="nrg-work__img"><img src="assets/img/portfolio/4.jpg" alt="Multi-region cloud migration — case study visual"></div>
+						<div class="nrg-work__img">
+							<picture>
+								<source srcset="assets/img/portfolio/4.webp" type="image/webp">
+								<img src="assets/img/portfolio/4.jpg" alt="Multi-region cloud migration — case study visual" width="410" height="382" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<div class="nrg-work__meta">
 							<span class="nrg-label">2024 · INFRA · CASE STUDY</span>
 							<h3 class="nrg-work__name">Multi-region cloud migration</h3>
@@ -200,7 +237,12 @@
 						</div>
 					</article>
 					<article class="nrg-work__item nrg-work__item--full" data-reveal>
-						<div class="nrg-work__img"><img src="assets/img/portfolio/5.jpg" alt="Analytics warehouse — case study visual"></div>
+						<div class="nrg-work__img">
+							<picture>
+								<source srcset="assets/img/portfolio/5.webp" type="image/webp">
+								<img src="assets/img/portfolio/5.jpg" alt="Analytics warehouse — case study visual" width="410" height="382" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<div class="nrg-work__meta">
 							<span class="nrg-label">2024 · DATA · CASE STUDY</span>
 							<h3 class="nrg-work__name">Analytics warehouse and dashboards</h3>
@@ -262,22 +304,42 @@
 				</header>
 				<ul class="nrg-team__grid">
 					<li class="nrg-member" data-reveal>
-						<div class="nrg-member__photo"><img src="assets/img/member/1.png" alt="Hamad Gul"></div>
+						<div class="nrg-member__photo">
+							<picture>
+								<source srcset="assets/img/member/1.webp" type="image/webp">
+								<img src="assets/img/member/1.png" alt="Hamad Gul" width="274" height="367" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<h3 class="nrg-member__name">Hamad Gul</h3>
 						<span class="nrg-label">Founder · Engineering</span>
 					</li>
 					<li class="nrg-member" data-reveal>
-						<div class="nrg-member__photo"><img src="assets/img/member/2.png" alt="Team member portrait"></div>
+						<div class="nrg-member__photo">
+							<picture>
+								<source srcset="assets/img/member/2.webp" type="image/webp">
+								<img src="assets/img/member/2.png" alt="Team member portrait" width="274" height="367" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<h3 class="nrg-member__name">Team member</h3>
 						<span class="nrg-label">Senior Engineer</span>
 					</li>
 					<li class="nrg-member" data-reveal>
-						<div class="nrg-member__photo"><img src="assets/img/member/3.png" alt="Team member portrait"></div>
+						<div class="nrg-member__photo">
+							<picture>
+								<source srcset="assets/img/member/3.webp" type="image/webp">
+								<img src="assets/img/member/3.png" alt="Team member portrait" width="274" height="367" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<h3 class="nrg-member__name">Team member</h3>
 						<span class="nrg-label">Product Designer</span>
 					</li>
 					<li class="nrg-member" data-reveal>
-						<div class="nrg-member__photo"><img src="assets/img/member/4.png" alt="Team member portrait"></div>
+						<div class="nrg-member__photo">
+							<picture>
+								<source srcset="assets/img/member/4.webp" type="image/webp">
+								<img src="assets/img/member/4.png" alt="Team member portrait" width="274" height="367" loading="lazy" decoding="async">
+							</picture>
+						</div>
 						<h3 class="nrg-member__name">Team member</h3>
 						<span class="nrg-label">AI Engineer</span>
 					</li>
@@ -359,7 +421,7 @@
 				<div class="nrg-foot__top">
 					<div class="nrg-foot__brand">
 						<a href="#home" class="nrg-foot__mark" aria-label="NeuraGul home">
-						<img src="assets/img/logo.png" alt="">
+						<img src="assets/img/logo.png" alt="" width="218" height="105">
 					</a>
 						<p class="nrg-foot__tag">Software, shipped with intent.</p>
 					</div>
