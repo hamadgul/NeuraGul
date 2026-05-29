@@ -223,6 +223,7 @@ img { display: block; max-width: 100%; }
     color: var(--paper);
     text-decoration: none;
 }
+.nrg-nav__brand:hover { color: var(--accent); }
 .nrg-nav__links {
     display: flex;
     gap: 32px;
@@ -257,6 +258,7 @@ img { display: block; max-width: 100%; }
     height: 1px;
     background: var(--paper);
 }
+.nrg-nav__toggle:hover { opacity: 0.7; }
 .nrg-nav__mobile {
     display: none;
     flex-direction: column;
@@ -273,6 +275,7 @@ img { display: block; max-width: 100%; }
     padding: 8px 0;
     text-transform: lowercase;
 }
+.nrg-nav__mobile a:hover { color: var(--accent); }
 .nrg-nav__mobile[hidden] { display: none; }
 
 @media (max-width: 900px) {
