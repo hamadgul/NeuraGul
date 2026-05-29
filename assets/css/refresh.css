@@ -236,7 +236,7 @@ img { display: block; max-width: 100%; }
     transition: opacity 150ms ease;
 }
 .nrg-nav__brand img {
-    height: 32px;
+    height: 44px;
     width: auto;
     display: block;
 }
@@ -327,16 +327,58 @@ img { display: block; max-width: 100%; }
     z-index: 0;
 }
 .nrg-hero__inner { z-index: 1; }
-.nrg-hero__grid {
+.nrg-hero__viz {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 80%;
+    top: 50%;
+    right: -8%;
+    transform: translateY(-50%);
+    width: min(58vw, 760px);
+    height: min(58vw, 760px);
     pointer-events: none;
-    opacity: 0.9;
-    -webkit-mask-image: radial-gradient(ellipse at top right, #000 20%, transparent 75%);
-            mask-image: radial-gradient(ellipse at top right, #000 20%, transparent 75%);
+    opacity: 0.95;
+    -webkit-mask-image: radial-gradient(circle at center, #000 35%, transparent 75%);
+            mask-image: radial-gradient(circle at center, #000 35%, transparent 75%);
+}
+.nrg-viz__lines line {
+    stroke: rgba(250, 250, 247, 0.12);
+    stroke-width: 1;
+}
+.nrg-viz__ring circle {
+    stroke: rgba(250, 250, 247, 0.18);
+    stroke-width: 1;
+    stroke-dasharray: 3 6;
+}
+.nrg-viz__nodes .n {
+    fill: rgba(250, 250, 247, 0.55);
+}
+.nrg-viz__nodes .n-far {
+    fill: rgba(250, 250, 247, 0.28);
+}
+.nrg-viz__core {
+    fill: var(--accent);
+}
+.nrg-viz__pulse {
+    fill: var(--accent);
+    opacity: 0.35;
+    transform-origin: 300px 300px;
+    transform-box: fill-box;
+    animation: nrg-viz-pulse 3.2s ease-out infinite;
+}
+@keyframes nrg-viz-pulse {
+    0%   { transform: scale(1);   opacity: 0.45; }
+    70%  { transform: scale(3.2); opacity: 0;    }
+    100% { transform: scale(3.2); opacity: 0;    }
+}
+@media (max-width: 900px) {
+    .nrg-hero__viz {
+        right: -30%;
+        width: 95vw;
+        height: 95vw;
+        opacity: 0.6;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nrg-viz__pulse { animation: none; }
 }
 .nrg-hero__inner {
     position: relative;
@@ -794,7 +836,7 @@ img { display: block; max-width: 100%; }
     transition: opacity 150ms ease;
 }
 .nrg-foot__mark img {
-    height: 40px;
+    height: 56px;
     width: auto;
     display: block;
 }
