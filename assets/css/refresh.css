@@ -19,6 +19,7 @@
     --muted: rgba(250, 250, 247, 0.55);
     --rule: rgba(250, 250, 247, 0.08);
     --accent: #FF5A1F;
+    --accent-hover: #FF6F3D;
     --accent-soft: rgba(255, 90, 31, 0.04);
     --accent-ghost: rgba(255, 90, 31, 0.08);
 
@@ -74,8 +75,6 @@ img { display: block; max-width: 100%; }
     padding: var(--section-pad-y) 0;
     border-top: 1px solid var(--rule);
 }
-.nrg-section:first-of-type { border-top: 0; }
-
 .nrg-container {
     width: 100%;
     max-width: 1280px;
@@ -145,7 +144,7 @@ img { display: block; max-width: 100%; }
     color: var(--ink);
 }
 .nrg-btn--filled:hover {
-    background: #FF6F3D;
+    background: var(--accent-hover);
     color: var(--ink);
 }
 .nrg-btn--ghost {
