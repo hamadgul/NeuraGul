@@ -486,3 +486,89 @@ img { display: block; max-width: 100%; }
     .nrg-service__desc { grid-area: desc; }
     .nrg-service__arrow { grid-area: arrow; align-self: center; }
 }
+
+/* -------------------------------------------------------------
+   12. WORK
+   ------------------------------------------------------------- */
+.nrg-work__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 48px;
+    margin-bottom: 64px;
+}
+.nrg-work__title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin: 0;
+    flex: 1;
+}
+.nrg-work__sub {
+    color: var(--muted);
+    max-width: 36ch;
+    margin: 0;
+    flex: 0 0 auto;
+}
+.nrg-work__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 48px 32px;
+}
+.nrg-work__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+/* Alternating row widths: row 1 = 7/5, row 2 = 5/7, row 3 = full */
+.nrg-work__item:nth-child(1) { grid-column: 1 / 8; }
+.nrg-work__item:nth-child(2) { grid-column: 8 / 13; }
+.nrg-work__item:nth-child(3) { grid-column: 1 / 6; }
+.nrg-work__item:nth-child(4) { grid-column: 6 / 13; }
+.nrg-work__item--full { grid-column: 1 / -1; }
+.nrg-work__img {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: var(--surface);
+}
+.nrg-work__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 300ms ease;
+    filter: brightness(0.8);
+}
+.nrg-work__item:hover .nrg-work__img img {
+    transform: scale(1.03);
+    filter: brightness(1);
+}
+.nrg-work__meta { display: flex; flex-direction: column; gap: 8px; }
+.nrg-work__name {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.2vw, 28px);
+    letter-spacing: -0.03em;
+    margin: 0;
+    transition: transform 250ms ease;
+}
+.nrg-work__item:hover .nrg-work__name { transform: translateX(4px); }
+.nrg-work__desc {
+    color: var(--muted);
+    margin: 0;
+    font-size: 15px;
+    max-width: 48ch;
+}
+
+@media (max-width: 900px) {
+    .nrg-work__head { flex-direction: column; align-items: start; }
+    .nrg-work__grid { grid-template-columns: 1fr; gap: 48px; }
+    .nrg-work__item,
+    .nrg-work__item--full,
+    .nrg-work__item:nth-child(1),
+    .nrg-work__item:nth-child(2),
+    .nrg-work__item:nth-child(3),
+    .nrg-work__item:nth-child(4) { grid-column: 1 / -1; }
+}
