@@ -119,11 +119,38 @@ body {
     100% { transform: translate(-20%, -15%) scale(1.25); }
 }
 @media (max-width: 768px) {
+    /* On tall narrow viewports the desktop blob positions leave gaps.
+       Re-spread them down the page and keep all four so coverage reads
+       as one continuous wash rather than isolated glows. */
     .nrg-aurora__blob {
-        filter: blur(60px);
-        -webkit-filter: blur(60px);
+        filter: blur(70px);
+        -webkit-filter: blur(70px);
     }
-    .nrg-aurora__blob--4 { display: none; }
+    .nrg-aurora__blob--1 {
+        top: -5%;
+        left: -25%;
+        width: 90vw;
+        height: 90vw;
+    }
+    .nrg-aurora__blob--2 {
+        top: 30%;
+        right: -40%;
+        width: 95vw;
+        height: 95vw;
+    }
+    .nrg-aurora__blob--3 {
+        bottom: -5%;
+        left: -20%;
+        width: 95vw;
+        height: 95vw;
+    }
+    .nrg-aurora__blob--4 {
+        display: block;
+        top: 62%;
+        left: -10%;
+        width: 80vw;
+        height: 80vw;
+    }
 }
 @media (prefers-reduced-motion: reduce) {
     .nrg-aurora__blob--1,
@@ -155,6 +182,17 @@ body {
     outline-offset: 3px;
 }
 .nrg-btn:focus-visible { outline-offset: 2px; }
+
+/* Branded text selection — default OS highlight reads as an ugly navy
+   block on the dark theme (especially mobile). Make it on-brand. */
+::selection {
+    background: rgba(46, 107, 230, 0.32);
+    color: var(--paper);
+}
+::-moz-selection {
+    background: rgba(46, 107, 230, 0.32);
+    color: var(--paper);
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
@@ -212,7 +250,15 @@ img { display: block; max-width: 100%; }
     color: var(--muted);
 }
 @media (max-width: 768px) {
-    .nrg-section__label { right: 24px; top: 24px; }
+    /* On mobile, drop the label into normal flow above the heading so it
+       never overlaps the large headings (absolute positioning collides
+       on narrow viewports). */
+    .nrg-section__label {
+        position: static;
+        display: block;
+        margin-bottom: 20px;
+        text-align: left;
+    }
 }
 
 /* -------------------------------------------------------------
