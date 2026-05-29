@@ -472,13 +472,14 @@ img { display: block; max-width: 100%; }
 /* -------------------------------------------------------------
    11. SERVICES
    ------------------------------------------------------------- */
-.nrg-services__head { margin-bottom: 80px; max-width: 24ch; }
+.nrg-services__head { margin-bottom: 56px; }
 .nrg-services__title {
     font-family: var(--font-display);
-    font-size: clamp(40px, 5vw, 72px);
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     margin: 0;
+    max-width: 20em;
 }
 .nrg-services__list {
     list-style: none;
@@ -571,9 +572,9 @@ img { display: block; max-width: 100%; }
 }
 .nrg-work__title {
     font-family: var(--font-display);
-    font-size: clamp(40px, 5vw, 72px);
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     margin: 0;
     flex: 1;
 }
@@ -648,13 +649,14 @@ img { display: block; max-width: 100%; }
 /* -------------------------------------------------------------
    13. PROCESS
    ------------------------------------------------------------- */
-.nrg-process__head { margin-bottom: 80px; max-width: 22ch; }
+.nrg-process__head { margin-bottom: 56px; }
 .nrg-process__title {
     font-family: var(--font-display);
-    font-size: clamp(40px, 5vw, 72px);
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     margin: 0;
+    max-width: 20em;
 }
 .nrg-process__list {
     list-style: none;
@@ -698,13 +700,14 @@ img { display: block; max-width: 100%; }
 /* -------------------------------------------------------------
    14. TEAM
    ------------------------------------------------------------- */
-.nrg-team__head { margin-bottom: 80px; max-width: 22ch; }
+.nrg-team__head { margin-bottom: 56px; }
 .nrg-team__title {
     font-family: var(--font-display);
-    font-size: clamp(40px, 5vw, 72px);
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     margin: 0;
+    max-width: 20em;
 }
 .nrg-team__grid {
     list-style: none;
