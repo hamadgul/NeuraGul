@@ -35,8 +35,13 @@
 /* -------------------------------------------------------------
    03. BASE OVERRIDES
    ------------------------------------------------------------- */
-html, body {
+/* Ink lives on html only (the canvas). Body is transparent so the
+   fixed aurora layer behind body content can be seen through. */
+html {
     background-color: var(--ink) !important;
+}
+body {
+    background-color: transparent !important;
 }
 body {
     font-family: var(--font-body);
