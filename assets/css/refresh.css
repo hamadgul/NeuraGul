@@ -187,3 +187,97 @@ img { display: block; max-width: 100%; }
     opacity: 1;
     transform: translateY(0);
 }
+
+/* -------------------------------------------------------------
+   08. NAVIGATION
+   ------------------------------------------------------------- */
+.nrg-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: background-color 200ms ease, border-color 200ms ease;
+    border-bottom: 1px solid transparent;
+}
+.nrg-nav.is-scrolled {
+    background: rgba(10, 10, 11, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom-color: var(--rule);
+}
+.nrg-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.nrg-nav__brand {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--paper);
+    text-decoration: none;
+}
+.nrg-nav__links {
+    display: flex;
+    gap: 32px;
+    margin-left: auto;
+}
+.nrg-nav__links a {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+.nrg-nav__links a:hover { color: var(--paper); }
+.nrg-nav__cta { padding: 10px 16px; font-size: 12px; }
+.nrg-nav__toggle {
+    display: none;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.nrg-nav__toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--paper);
+}
+.nrg-nav__mobile {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 40px 24px;
+    background: var(--ink);
+    border-top: 1px solid var(--rule);
+}
+.nrg-nav__mobile a {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--paper);
+    text-decoration: none;
+    padding: 8px 0;
+    text-transform: lowercase;
+}
+.nrg-nav__mobile[hidden] { display: none; }
+
+@media (max-width: 900px) {
+    .nrg-nav__links, .nrg-nav__cta { display: none; }
+    .nrg-nav__toggle { display: flex; }
+    .nrg-nav__mobile { display: flex; }
+    .nrg-nav__mobile[hidden] { display: none; }
+}
