@@ -26,7 +26,7 @@ Version      : 1.0
 
 		})
 
-		 new WOW().init();
+		 if (typeof WOW !== 'undefined') { new WOW().init(); }
 		
 	 
 	 /*-------------------------------------
@@ -64,18 +64,22 @@ Version      : 1.0
      LIGHTBOX popup
     -------------------------------------*/
     
-    	lightbox.option({
-    	  'resizeDuration': 200,
-    	  'wrapAround': true
-    	})	
+    	if (typeof lightbox !== 'undefined') {
+    		lightbox.option({
+    		  'resizeDuration': 200,
+    		  'wrapAround': true
+    		});
+    	}
 		
 		 /*
         Counter Js
         ============================*/
-        $(".counter").counterUp({
-            delay: 10,
-            time: 1000,
-        });
+        if (typeof $ !== 'undefined' && typeof $.fn !== 'undefined' && typeof $.fn.counterUp === 'function') {
+            $(".counter").counterUp({
+                delay: 10,
+                time: 1000,
+            });
+        }
 		 
 	 /*Start PRoject Design*/
 		$('.portfolio_slider').owlCarousel({
@@ -130,20 +134,22 @@ Version      : 1.0
 	 // Unix timestamp (in seconds) to count down to
 	var twoDaysFromNow = (new Date().getTime() / 1000) + (86400 * 2) + 1;
 
-	// Set up FlipDown
-	var flipdown = new FlipDown(twoDaysFromNow)
+	if (typeof FlipDown !== 'undefined' && document.querySelector('#flipdown')) {
+		// Set up FlipDown
+		var flipdown = new FlipDown(twoDaysFromNow)
 
-	// Start the countdown
-	.start()
+		// Start the countdown
+		.start()
 
-	// Do something when the countdown ends
-	.ifEnded(() => {
-	  console.log('The countdown has ended!');
-	});
+		// Do something when the countdown ends
+		.ifEnded(() => {
+		  console.log('The countdown has ended!');
+		});
 
-	// Apply light theme directly
-	document.body.classList.add('light-theme');
-	document.querySelector('#flipdown').classList.add('flipdown__theme-light');
+		// Apply light theme directly
+		document.body.classList.add('light-theme');
+		document.querySelector('#flipdown').classList.add('flipdown__theme-light');
+	}
 
 
 	
