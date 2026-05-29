@@ -764,6 +764,7 @@ img { display: block; max-width: 100%; }
     color: var(--paper);
     text-decoration: none;
 }
+.nrg-foot__mark:hover { color: var(--accent); }
 .nrg-foot__tag { color: var(--muted); margin: 12px 0 0; max-width: 28ch; }
 .nrg-foot__cols {
     display: grid;
