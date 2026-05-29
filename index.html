@@ -54,6 +54,9 @@
 		</header>
 
 		<section class="nrg-section nrg-hero" id="home">
+			<div class="nrg-hero__floor" aria-hidden="true"></div>
+			<div class="nrg-hero__bloom nrg-hero__bloom--a" aria-hidden="true"></div>
+			<div class="nrg-hero__bloom nrg-hero__bloom--b" aria-hidden="true"></div>
 			<svg class="nrg-hero__viz" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
 				<g class="nrg-viz__lines">
 					<line x1="300" y1="300" x2="120" y2="160"/>
@@ -98,6 +101,26 @@
 					<circle class="nrg-viz__core" cx="300" cy="300" r="6"/>
 				</g>
 			</svg>
+			<div class="nrg-hero__card nrg-hero__card--tr" aria-hidden="true">
+				<span class="nrg-hero__card-label">terminal</span>
+				<pre class="nrg-hero__card-body">$ deploy production
+→ 3 services updated
+→ all checks passed</pre>
+			</div>
+			<div class="nrg-hero__card nrg-hero__card--ml" aria-hidden="true">
+				<span class="nrg-hero__card-label">uptime</span>
+				<div class="nrg-hero__card-body">
+					<span class="nrg-hero__card-big">99.97%</span>
+					<span class="nrg-hero__card-foot">↑ 12ms p50</span>
+				</div>
+			</div>
+			<div class="nrg-hero__card nrg-hero__card--br" aria-hidden="true">
+				<span class="nrg-hero__card-label">status</span>
+				<div class="nrg-hero__card-body">
+					<span class="nrg-hero__card-dot"></span>all systems nominal
+					<span class="nrg-hero__card-foot">last build 2m ago</span>
+				</div>
+			</div>
 			<div class="nrg-container nrg-hero__inner">
 				<span class="nrg-section__label">— 001 / 2026</span>
 				<h1 class="nrg-hero__headline" data-reveal>
@@ -116,8 +139,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="nrg-hero__scan" aria-hidden="true"></div>
 		</section>
-		
+
 		<section class="nrg-section nrg-about" id="about">
 			<div class="nrg-container">
 				<span class="nrg-section__label">— 002 / WHO WE ARE</span>
