@@ -933,10 +933,14 @@ img { display: block; max-width: 100%; }
 .nrg-contact__grid {
     display: grid;
     grid-template-columns: 7fr 5fr;
-    gap: 80px;
+    align-items: start;
+    gap: 0 80px;
     margin-top: 24px;
 }
 .nrg-contact__title {
+    /* Full-width headline above the form/aside row, so the contact details
+       (aside) top-align with the form fields, not float below them. */
+    grid-column: 1 / -1;
     font-family: var(--font-display);
     font-size: clamp(48px, 6vw, 88px);
     line-height: 1;
@@ -1011,7 +1015,7 @@ img { display: block; max-width: 100%; }
     display: flex;
     flex-direction: column;
     gap: 32px;
-    align-self: end;
+    align-self: start;
 }
 .nrg-meta {
     margin: 0;
