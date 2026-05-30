@@ -55,10 +55,15 @@ body {
 /* Aurora — soft drifting blue ambient blobs across the viewport.
    Fixed to the viewport so content slides past the atmosphere as
    you scroll. Sits behind everything (z-index -1). */
+/* z-index 0 (not -1): a fixed element at negative z-index is unreliable on
+   iOS Safari — transformed content (our data-reveal headings) gets its own
+   compositing layer that punches through and reveals the negative-z layer,
+   while untransformed content occludes it, so the aurora showed only behind
+   the section headers. Keep it at 0 and lift content above with z-index 1. */
 .nrg-aurora {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
     overflow: hidden;
     background: var(--ink);
@@ -226,6 +231,7 @@ img { display: block; max-width: 100%; }
    ------------------------------------------------------------- */
 .nrg-section {
     position: relative;
+    z-index: 1;
     padding: var(--section-pad-y) 0;
     border-top: 1px solid var(--rule);
 }
