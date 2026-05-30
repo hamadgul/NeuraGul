@@ -205,13 +205,19 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.04em;
     text-transform: none;
 }
-/* Neutralize legacy template `header` tag rule that breaks new sectional <header>s */
+/* Neutralize legacy template `header` tag rules that break the new sectional
+   <header> elements (e.g. .nrg-work__head). responsive.css sets
+   `header { background: #050023 }` at <=991px, which otherwise paints a dark
+   navy box behind every section heading on mobile. The real nav keeps its own
+   background via the .nrg-nav class (higher specificity than this tag rule). */
 header {
     position: static;
     width: auto;
     padding: 0;
     z-index: auto;
     transition: none;
+    background: transparent;
+    box-shadow: none;
 }
 p { color: var(--paper); }
 a { color: inherit; }
