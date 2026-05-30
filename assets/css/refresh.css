@@ -351,9 +351,19 @@ img { display: block; max-width: 100%; }
     transform: translateY(8px);
     transition: opacity 400ms ease, transform 400ms ease;
 }
+/* transform: none (not translateY(0)) so the GPU compositing layer collapses
+   once the reveal settles. A lingering transform on these headings makes iOS
+   Safari mis-composite the fixed, blurred aurora behind them — it drops the
+   blurred blobs and paints solid ink, leaving a dark box around each heading. */
 [data-reveal].is-revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
+}
+/* On phones (where the artifact actually shows) skip the slide entirely — a
+   pure opacity fade never creates a transform layer, so the aurora reads through
+   the headings uniformly. */
+@media (max-width: 768px) {
+    [data-reveal] { transform: none; }
 }
 
 /* -------------------------------------------------------------
