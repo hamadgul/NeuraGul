@@ -755,8 +755,8 @@ img { display: block; max-width: 100%; }
 }
 .nrg-work__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 32px;
 }
 .nrg-work__item {
     display: flex;
