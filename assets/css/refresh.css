@@ -754,11 +754,15 @@ img { display: block; max-width: 100%; }
     flex: 0 0 auto;
 }
 .nrg-work__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 48px 32px;
 }
 .nrg-work__item {
+    /* 3 per row; a short final row centers via the grid's justify-content.
+       32px column gap → each basis gives up its share. */
+    flex: 0 1 calc(33.333% - 22px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -801,15 +805,13 @@ img { display: block; max-width: 100%; }
     max-width: 48ch;
 }
 
+@media (max-width: 1080px) {
+    .nrg-work__item { flex-basis: calc(50% - 16px); }   /* 2 per row */
+}
 @media (max-width: 900px) {
     .nrg-work__head { flex-direction: column; align-items: start; }
-    .nrg-work__grid { grid-template-columns: 1fr; gap: 48px; }
-    .nrg-work__item,
-    .nrg-work__item--full,
-    .nrg-work__item:nth-child(1),
-    .nrg-work__item:nth-child(2),
-    .nrg-work__item:nth-child(3),
-    .nrg-work__item:nth-child(4) { grid-column: 1 / -1; }
+    .nrg-work__grid { gap: 48px; }
+    .nrg-work__item { flex-basis: 100%; }               /* 1 per row */
 }
 
 /* -------------------------------------------------------------
