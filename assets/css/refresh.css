@@ -932,6 +932,10 @@ img { display: block; max-width: 100%; }
 /* -------------------------------------------------------------
    15. CONTACT
    ------------------------------------------------------------- */
+/* The footer already carries 96px of top padding, so the full 160px section
+   pad below the form left a ~256px dead gap before the footer. Trim the
+   contact section's bottom padding and let the footer's own padding breathe. */
+.nrg-contact { padding-bottom: 48px; }
 .nrg-contact__grid {
     display: grid;
     grid-template-columns: 7fr 5fr;
