@@ -822,6 +822,29 @@ img { display: block; max-width: 100%; }
     font-size: 15px;
     max-width: 48ch;
 }
+.nrg-work__stack {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.nrg-work__stack li {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    padding: 5px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    white-space: nowrap;
+    transition: border-color 250ms ease, color 250ms ease;
+}
+.nrg-work__item:hover .nrg-work__stack li {
+    border-color: var(--accent-ghost);
+    color: var(--paper);
+}
 
 @media (max-width: 1080px) {
     .nrg-work__item { flex-basis: calc(50% - 16px); }   /* 2 per row */
