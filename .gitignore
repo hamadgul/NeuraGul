@@ -1,3 +1,6 @@
+# Superpowers planning docs (local only, not for GitHub)
+docs/superpowers/
+
 # Dependencies
 node_modules/
 .pnp
