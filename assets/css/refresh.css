@@ -615,11 +615,12 @@ img { display: block; max-width: 100%; }
 /* -------------------------------------------------------------
    10. ABOUT
    ------------------------------------------------------------- */
+/* Statement runs full width; the three principles sit beneath it as one
+   even band, so the two halves can't fall out of balance. */
 .nrg-about__grid {
     display: grid;
-    grid-template-columns: 5fr 7fr;
-    gap: 80px;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 88px;
     margin-top: 24px;
 }
 .nrg-about__statement {
@@ -629,31 +630,35 @@ img { display: block; max-width: 100%; }
     letter-spacing: -0.03em;
     color: var(--paper);
     margin: 0;
+    max-width: 34ch;
 }
 .nrg-about__stats {
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
 }
 .nrg-about__stats li {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 32px;
-    align-items: baseline;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
 }
 .nrg-about__value {
     font-family: var(--font-display);
-    font-size: clamp(36px, 4vw, 56px);
+    font-size: clamp(32px, 3vw, 44px);
     line-height: 1;
     letter-spacing: -0.04em;
     color: var(--paper);
 }
 @media (max-width: 768px) {
-    .nrg-about__grid { grid-template-columns: 1fr; gap: 48px; }
-    .nrg-about__stats li { grid-template-columns: 1fr; gap: 8px; }
+    .nrg-about__grid { gap: 48px; }
+    .nrg-about__stats { grid-template-columns: 1fr; gap: 0; }
+    .nrg-about__stats li { padding: 24px 0; }
+    .nrg-about__stats li:last-child { border-bottom: 1px solid var(--rule); }
 }
 
 /* -------------------------------------------------------------
@@ -778,15 +783,12 @@ img { display: block; max-width: 100%; }
     flex: 0 0 auto;
 }
 .nrg-work__grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 48px 32px;
+    /* Two large columns: bigger imagery, calmer rhythm than 3-up tiles. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 48px;
 }
 .nrg-work__item {
-    /* 3 per row; a short final row centers via the grid's justify-content.
-       32px column gap → each basis gives up its share. */
-    flex: 0 1 calc(33.333% - 22px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -855,12 +857,13 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 1080px) {
-    .nrg-work__item { flex-basis: calc(50% - 16px); }   /* 2 per row */
+    .nrg-work__grid { gap: 56px 32px; }
 }
 @media (max-width: 900px) {
     .nrg-work__head { flex-direction: column; align-items: start; }
-    .nrg-work__grid { gap: 48px; }
-    .nrg-work__item { flex-basis: 100%; }               /* 1 per row */
+}
+@media (max-width: 768px) {
+    .nrg-work__grid { grid-template-columns: 1fr; gap: 48px; }
 }
 
 /* -------------------------------------------------------------
