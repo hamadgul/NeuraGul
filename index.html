@@ -3,29 +3,51 @@
 	<head>
 		<!-- Meta -->
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-		<meta name="keywords" content="">
-		<meta name="author" content="">
+		<meta name="description" content="NeuraGul is a software development agency for founders, small businesses, and teams — custom software, web and mobile apps, AI, and cloud, designed, built, and run in production.">
 		<title>NeuraGul - Software Development Agency</title>
-		<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="canonical" href="https://neuragul.com/">
+		<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+		<!-- Social sharing -->
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="NeuraGul">
+		<meta property="og:title" content="NeuraGul - Software Development Agency">
+		<meta property="og:description" content="Custom software, web and mobile apps, AI, and cloud — designed, built, and run in production for founders, small businesses, and teams.">
+		<meta property="og:url" content="https://neuragul.com/">
+		<meta property="og:image" content="https://neuragul.com/assets/img/hero-poster.jpg">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="NeuraGul - Software Development Agency">
+		<meta name="twitter:description" content="Custom software, web and mobile apps, AI, and cloud — designed, built, and run in production.">
+		<meta name="twitter:image" content="https://neuragul.com/assets/img/hero-poster.jpg">
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
-		<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/geist">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
-		<link rel="stylesheet" href="assets/css/responsive.css">
-		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="assets/css/modal.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 		<link rel="stylesheet" href="assets/css/refresh.css">
+
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "NeuraGul",
+			"url": "https://neuragul.com/",
+			"logo": "https://neuragul.com/assets/img/logo.png",
+			"description": "Software development agency — custom software, web and mobile apps, AI, and cloud.",
+			"email": "support@neuragul.com",
+			"areaServed": "US",
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"email": "support@neuragul.com",
+				"contactType": "sales"
+			}
+		}
+		</script>
 	</head>
 
 
-	<body data-spy="scroll" data-offset="80">
-		<a href="#home" class="nrg-skip">Skip to content</a>
+	<body>
+		<a href="#main" class="nrg-skip">Skip to content</a>
 
 		<div class="nrg-aurora" aria-hidden="true">
 			<span class="nrg-aurora__blob nrg-aurora__blob--1"></span>
@@ -34,12 +56,6 @@
 			<span class="nrg-aurora__blob nrg-aurora__blob--4"></span>
 		</div>
 
-		<!-- START PRELOADER -->
-		<div class="loader-wrapper">
-			<span class="loader"><span class="loader-inner"></span></span>
-		</div>
-		<!-- END PRELOADER -->	
-		
 		<header class="nrg-nav" id="nrg-nav">
 			<div class="nrg-container nrg-nav__inner">
 				<a href="#home" class="nrg-nav__brand" aria-label="NeuraGul home">
@@ -65,14 +81,17 @@
 			</div>
 		</header>
 
+		<main id="main">
 		<section class="nrg-section nrg-hero" id="home">
+			<!-- Sources are injected by JS on viewports >768px only, so phones
+			     download the poster, not megabytes of ambient video. -->
 			<video class="nrg-hero__video"
-			       autoplay muted loop playsinline preload="metadata"
+			       muted loop playsinline preload="none"
 			       poster="assets/img/hero-poster.jpg"
 			       aria-hidden="true">
-				<source src="assets/video/hero.mp4" type="video/mp4">
 			</video>
 			<div class="nrg-hero__shade" aria-hidden="true"></div>
+			<button class="nrg-hero__pause" type="button" hidden aria-pressed="false" aria-label="Pause background video">Pause</button>
 			<div class="nrg-container nrg-hero__inner">
 				<span class="nrg-section__label">— 001 / 2026</span>
 				<h1 class="nrg-hero__headline" data-reveal>
@@ -119,10 +138,6 @@
 			</div>
 		</section>
 
-		<div class="bg_shape2">
-		<!----------------------- 
-			Service Section  
-		------------------------->
 		<section class="nrg-section nrg-services" id="service">
 			<div class="nrg-container">
 				<span class="nrg-section__label">— 003 / WHAT WE DO</span>
@@ -280,16 +295,8 @@
 				</div>
 			</div>
 		</section>
-		</div>
-		
-
-		
 
 
-		<div class="bg_shape3">
-		<!----------------------- 
-			Work Section  
-		------------------------->
 		<section class="nrg-section nrg-process" id="work_process">
 			<div class="nrg-container">
 				<span class="nrg-section__label">— 005 / HOW WE WORK</span>
@@ -321,11 +328,7 @@
 				</ol>
 			</div>
 		</section>
-		</div>
-		
-		
-		
-		
+
 		<section class="nrg-section nrg-contact" id="contact">
 			<div class="nrg-container">
 				<span class="nrg-section__label">— 006 / GET IN TOUCH</span>
@@ -347,6 +350,7 @@
 							<div class="nrg-field">
 								<label for="nrg-project-type" class="nrg-label">Project type</label>
 								<select id="nrg-project-type" name="project_type" autocomplete="off">
+									<option value="" selected disabled>Select a type…</option>
 									<option>Custom software</option>
 									<option>Web / mobile</option>
 									<option>AI / data</option>
@@ -354,6 +358,7 @@
 									<option>Something else</option>
 								</select>
 							</div>
+							<input type="text" name="_gotcha" class="nrg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 							<div class="nrg-field">
 								<label for="nrg-message" class="nrg-label">Message</label>
 								<textarea id="nrg-message" name="message" rows="5" autocomplete="off" required></textarea>
@@ -386,9 +391,7 @@
 				</div>
 			</div>
 		</section>
-		
-		
-							
+		</main>
 
 		<footer class="nrg-foot" id="footer">
 			<div class="nrg-container">
@@ -410,7 +413,7 @@
 						</div>
 						<div>
 							<span class="nrg-label">Resources</span>
-							<ul><li><a href="#portfolio">Work</a></li><li><a href="privacy-policy.html">Privacy</a></li></ul>
+							<ul><li><a href="#portfolio">Work</a></li><li><a href="privacy.html">Privacy</a></li></ul>
 						</div>
 					</div>
 				</div>
@@ -424,15 +427,46 @@
 
 
 
-		<!-- latest js script -->
-		<script src="assets/js/jquery-3.6.0.min.js"></script>
-		<script src="assets/js/bootstrap.bundle.min.js"></script>
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/SmoothScroll.js"></script>
-		<script src="assets/js/jquery.nav.js"></script>
-		<script src="assets/js/script.js"></script>
 		<script src="assets/js/reveal.js"></script>
 
+		<script>
+			// Hero video: load only on larger screens, honoring data-saver and
+			// reduced-motion. Phones keep the poster image.
+			(function(){
+				var video = document.querySelector('.nrg-hero__video');
+				var pause = document.querySelector('.nrg-hero__pause');
+				if (!video) return;
+				var wantsVideo = window.matchMedia('(min-width: 769px)').matches
+					&& !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+					&& !(navigator.connection && navigator.connection.saveData);
+				if (!wantsVideo) return;
+				[['assets/video/hero.webm', 'video/webm'], ['assets/video/hero.mp4', 'video/mp4']].forEach(function(s){
+					var el = document.createElement('source');
+					el.src = s[0];
+					el.type = s[1];
+					video.appendChild(el);
+				});
+				video.load();
+				var playing = video.play();
+				if (playing && playing.catch) playing.catch(function(){});
+				if (pause) {
+					pause.hidden = false;
+					pause.addEventListener('click', function(){
+						if (video.paused) {
+							video.play();
+							pause.textContent = 'Pause';
+							pause.setAttribute('aria-pressed', 'false');
+							pause.setAttribute('aria-label', 'Pause background video');
+						} else {
+							video.pause();
+							pause.textContent = 'Play';
+							pause.setAttribute('aria-pressed', 'true');
+							pause.setAttribute('aria-label', 'Play background video');
+						}
+					});
+				}
+			})();
+		</script>
 		<script>
 			(function(){
 				var nav = document.getElementById('nrg-nav');

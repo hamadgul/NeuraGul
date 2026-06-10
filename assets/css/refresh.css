@@ -33,17 +33,24 @@
 }
 
 /* -------------------------------------------------------------
-   03. BASE OVERRIDES
+   03. BASE
    ------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
 /* Ink lives on html only (the canvas). Body is transparent so the
    fixed aurora layer behind body content can be seen through. */
 html {
-    background-color: var(--ink) !important;
+    background-color: var(--ink);
+    scroll-behavior: smooth;
 }
-body {
-    background-color: transparent !important;
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }
+/* Anchored sections stop short of the fixed nav so section labels stay visible. */
+.nrg-section { scroll-margin-top: 96px; }
 body {
+    margin: 0;
+    background-color: transparent;
     font-family: var(--font-body);
     color: var(--paper);
     font-size: 17px;
@@ -205,32 +212,9 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.04em;
     text-transform: none;
 }
-/* Neutralize legacy template `header` tag rules that break the new sectional
-   <header> elements (e.g. .nrg-work__head). responsive.css sets
-   `header { background: #050023 }` at <=991px, which otherwise paints a dark
-   navy box behind every section heading on mobile. The real nav keeps its own
-   background via the .nrg-nav class (higher specificity than this tag rule). */
-header {
-    position: static;
-    width: auto;
-    padding: 0;
-    z-index: auto;
-    transition: none;
-    background: transparent;
-    box-shadow: none;
-}
 p { color: var(--paper); }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
-
-/* Kill any leftover blob shape backgrounds from style.css */
-.bg_shape1::after,
-.bg_shape2::after,
-.bg_shape3::after,
-.bg_shape4::after { display: none !important; }
-
-/* Hide preloader spinner styling we no longer want */
-.loader-wrapper { background: var(--ink) !important; }
 
 /* -------------------------------------------------------------
    04. LAYOUT PRIMITIVES
@@ -479,8 +463,10 @@ img { display: block; max-width: 100%; }
 @media (max-width: 900px) {
     .nrg-nav__links, .nrg-nav__cta { display: none; }
     .nrg-nav__toggle { display: flex; }
-    .nrg-nav__mobile { display: flex; }
+    .nrg-nav__mobile { display: flex; gap: 0; }
     .nrg-nav__mobile[hidden] { display: none; }
+    /* >=44px touch targets in the drawer */
+    .nrg-nav__mobile a { padding: 13px 0; }
 }
 
 /* -------------------------------------------------------------
@@ -603,6 +589,28 @@ img { display: block; max-width: 100%; }
     .nrg-hero__foot { grid-template-columns: 1fr; gap: 32px; }
     .nrg-hero__cta { justify-content: flex-start; flex-wrap: wrap; }
 }
+/* WCAG 2.2.2 — visible control to stop the autoplaying ambient video. */
+.nrg-hero__pause {
+    position: absolute;
+    right: 40px;
+    bottom: 32px;
+    z-index: 4;
+    padding: 8px 14px;
+    background: rgba(10, 10, 11, 0.55);
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 150ms ease, border-color 150ms ease;
+}
+.nrg-hero__pause:hover {
+    color: var(--paper);
+    border-color: rgba(250, 250, 247, 0.3);
+}
+.nrg-hero__pause[hidden] { display: none; }
 
 /* -------------------------------------------------------------
    10. ABOUT
@@ -1067,6 +1075,15 @@ img { display: block; max-width: 100%; }
 }
 .nrg-contact__note { color: var(--muted); margin: 0; font-size: 14px; }
 
+/* Honeypot — visually gone, still in the POST for Formspree's spam filter. */
+.nrg-hp {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
 @media (max-width: 900px) {
     .nrg-contact__grid { grid-template-columns: 1fr; gap: 48px; }
     .nrg-form__row { grid-template-columns: 1fr; }
@@ -1076,6 +1093,10 @@ img { display: block; max-width: 100%; }
    16. FOOTER
    ------------------------------------------------------------- */
 .nrg-foot {
+    /* Lift above the fixed aurora (z 0), like .nrg-section. Legacy style.css
+       used to position `footer`; without it the aurora paints over the text. */
+    position: relative;
+    z-index: 1;
     padding: 96px 0 48px;
     border-top: 1px solid var(--rule);
 }
@@ -1120,4 +1141,32 @@ img { display: block; max-width: 100%; }
     .nrg-foot__top { grid-template-columns: 1fr; gap: 48px; }
     .nrg-foot__cols { grid-template-columns: repeat(2, 1fr); }
     .nrg-foot__bottom { flex-direction: column; align-items: start; gap: 8px; }
+    /* >=44px touch targets for footer links on touch layouts */
+    .nrg-foot__cols ul { gap: 0; }
+    .nrg-foot__cols a { display: inline-block; padding: 11px 0; }
 }
+
+/* -------------------------------------------------------------
+   17. PROSE PAGES (privacy, legal)
+   ------------------------------------------------------------- */
+.nrg-prose {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding-top: 180px;
+    padding-bottom: 120px;
+}
+.nrg-prose h1 {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    margin: 0 0 16px;
+}
+.nrg-prose h2 {
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    margin: 48px 0 12px;
+}
+.nrg-prose p, .nrg-prose li { color: var(--muted); }
+.nrg-prose ul { padding-left: 20px; margin: 12px 0; }
+.nrg-prose a { color: var(--paper); text-decoration-color: var(--accent); }
+.nrg-prose .nrg-label { display: block; margin-bottom: 32px; }
