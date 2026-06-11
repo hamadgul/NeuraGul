@@ -83,8 +83,8 @@
 
 		<main id="main">
 		<section class="nrg-section nrg-hero" id="home">
-			<!-- Sources are injected by JS on viewports >768px only, so phones
-			     download the poster, not megabytes of ambient video. -->
+			<!-- Sources are injected by JS unless the user prefers reduced motion
+			     or has data-saver on; those users get the poster instead. -->
 			<video class="nrg-hero__video"
 			       muted loop playsinline preload="none"
 			       poster="assets/img/hero-poster.jpg"
@@ -430,14 +430,13 @@
 		<script src="assets/js/reveal.js"></script>
 
 		<script>
-			// Hero video: load only on larger screens, honoring data-saver and
-			// reduced-motion. Phones keep the poster image.
+			// Hero video: sources injected by JS, honoring data-saver and
+			// reduced-motion; those users keep the poster image.
 			(function(){
 				var video = document.querySelector('.nrg-hero__video');
 				var pause = document.querySelector('.nrg-hero__pause');
 				if (!video) return;
-				var wantsVideo = window.matchMedia('(min-width: 769px)').matches
-					&& !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+				var wantsVideo = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 					&& !(navigator.connection && navigator.connection.saveData);
 				if (!wantsVideo) return;
 				[['assets/video/hero.webm', 'video/webm'], ['assets/video/hero.mp4', 'video/mp4']].forEach(function(s){
