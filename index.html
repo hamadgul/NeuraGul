@@ -83,15 +83,62 @@
 
 		<main id="main">
 		<section class="nrg-section nrg-hero" id="home">
-			<!-- Sources are injected by JS unless the user prefers reduced motion
-			     or has data-saver on; those users get the poster instead. -->
+			<!-- Autoplay must be native: the attributes AND <source> tags live in
+			     the static markup so iOS Safari treats this as an autoplay
+			     candidate at parse time (same as the portfolio videos, which
+			     autoplay reliably). The script below only DISABLES it for
+			     reduced-motion / data-saver users. -->
 			<video class="nrg-hero__video"
-			       muted loop playsinline preload="none"
+			       autoplay muted loop playsinline preload="auto"
 			       poster="assets/img/hero-poster.jpg"
 			       aria-hidden="true">
+				<source src="assets/video/hero.webm" type="video/webm">
+				<source src="assets/video/hero.mp4" type="video/mp4">
 			</video>
 			<div class="nrg-hero__shade" aria-hidden="true"></div>
 			<button class="nrg-hero__pause" type="button" hidden aria-pressed="false" aria-label="Pause background video">Pause</button>
+			<script>
+				// Runs during parse, right after the element — early enough to
+				// strip sources before they load for the guard cases.
+				(function(){
+					var video = document.querySelector('.nrg-hero__video');
+					var pause = document.querySelector('.nrg-hero__pause');
+					if (!video) return;
+					var noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+						|| (navigator.connection && navigator.connection.saveData);
+					if (noMotion) {
+						// Honor reduced-motion / data-saver: keep the poster, no video, no bytes.
+						video.removeAttribute('autoplay');
+						video.pause();
+						while (video.firstChild) video.removeChild(video.firstChild);
+						video.load();
+						if (pause) pause.hidden = true;
+						return;
+					}
+					// Belt-and-suspenders: static autoplay should already have started,
+					// but nudge it on readiness signals and on first user gesture in case
+					// the browser deferred it.
+					var tryPlay = function(){ var p = video.play(); if (p && p.catch) p.catch(function(){}); };
+					video.addEventListener('canplay', tryPlay);
+					document.addEventListener('visibilitychange', function(){ if (!document.hidden) tryPlay(); });
+					var gestures = ['pointerdown', 'touchstart', 'keydown'];
+					var onGesture = function(){ tryPlay(); gestures.forEach(function(e){ window.removeEventListener(e, onGesture); }); };
+					gestures.forEach(function(e){ window.addEventListener(e, onGesture, e === 'keydown' ? false : { passive: true }); });
+					// Pause/play control.
+					if (pause) {
+						pause.hidden = false;
+						pause.addEventListener('click', function(){
+							if (video.paused) {
+								video.play();
+								pause.textContent = 'Pause'; pause.setAttribute('aria-pressed', 'false'); pause.setAttribute('aria-label', 'Pause background video');
+							} else {
+								video.pause();
+								pause.textContent = 'Play'; pause.setAttribute('aria-pressed', 'true'); pause.setAttribute('aria-label', 'Play background video');
+							}
+						});
+					}
+				})();
+			</script>
 			<div class="nrg-container nrg-hero__inner">
 				<span class="nrg-section__label">— 001 / 2026</span>
 				<h1 class="nrg-hero__headline" data-reveal>
@@ -444,79 +491,6 @@
 
 		<script src="assets/js/reveal.js"></script>
 
-		<script>
-			// Hero video: sources injected by JS, honoring data-saver and
-			// reduced-motion; those users keep the poster image.
-			(function(){
-				var video = document.querySelector('.nrg-hero__video');
-				var pause = document.querySelector('.nrg-hero__pause');
-				if (!video) return;
-				var wantsVideo = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-					&& !(navigator.connection && navigator.connection.saveData);
-				if (!wantsVideo) return;
-				// Match the (reliably-autostarting) portfolio videos: let the
-				// browser own autoplay instead of leaning on one play() call.
-				video.autoplay = true;
-				video.muted = true;            // iOS only autoplays when muted is set on the property
-				video.setAttribute('muted', '');
-				[['assets/video/hero.webm', 'video/webm'], ['assets/video/hero.mp4', 'video/mp4']].forEach(function(s){
-					var el = document.createElement('source');
-					el.src = s[0];
-					el.type = s[1];
-					video.appendChild(el);
-				});
-				video.load();
-
-				// Robust start: a single play() right after load() is often
-				// interrupted (media not decoded yet, tab backgrounded), so retry
-				// on the events that signal readiness, plus first user gesture.
-				var started = false;
-				function tryPlay() {
-					if (started || video.paused === false) return;
-					var p = video.play();
-					if (p && p.then) {
-						p.then(function(){ started = true; }).catch(function(){ /* will retry on next signal */ });
-					} else {
-						started = true;
-					}
-				}
-				tryPlay();
-				['canplay', 'loadeddata', 'canplaythrough'].forEach(function(ev){
-					video.addEventListener(ev, tryPlay);
-				});
-				video.addEventListener('playing', function(){ started = true; });
-				document.addEventListener('visibilitychange', function(){
-					if (!document.hidden) tryPlay();
-				});
-				// Last resort: kick it off on the user's first interaction.
-				var onGesture = function(){
-					tryPlay();
-					window.removeEventListener('pointerdown', onGesture);
-					window.removeEventListener('touchstart', onGesture);
-					window.removeEventListener('keydown', onGesture);
-				};
-				window.addEventListener('pointerdown', onGesture, { passive: true });
-				window.addEventListener('touchstart', onGesture, { passive: true });
-				window.addEventListener('keydown', onGesture);
-
-				if (pause) {
-					pause.hidden = false;
-					pause.addEventListener('click', function(){
-						if (video.paused) {
-							video.play();
-							pause.textContent = 'Pause';
-							pause.setAttribute('aria-pressed', 'false');
-							pause.setAttribute('aria-label', 'Pause background video');
-						} else {
-							video.pause();
-							pause.textContent = 'Play';
-							pause.setAttribute('aria-pressed', 'true');
-							pause.setAttribute('aria-label', 'Play background video');
-						}
-					});
-				}
-			})();
-		</script>
 		<script>
 			(function(){
 				var nav = document.getElementById('nrg-nav');
