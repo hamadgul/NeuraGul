@@ -246,7 +246,7 @@
 						<div class="nrg-work__meta">
 							<span class="nrg-label">2026 · WEB · CLIENT SITE</span>
 							<h3 class="nrg-work__name">New York Mobile Mechanic</h3>
-							<p class="nrg-work__desc">A high-energy site for a 24/7 NYC mobile mechanic — animated stat gauges that count up, service breakdowns, live Google reviews, and one-tap call-to-book.</p>
+							<p class="nrg-work__desc">A high-energy site for a 24/7 NYC mobile mechanic — animated stat gauges that count up, service breakdowns, live Google reviews, and one-tap call-to-book, with local SEO built to rank for on-demand repair searches across NYC.</p>
 							<ul class="nrg-work__stack" aria-label="Built with"><li>TypeScript</li><li>NextJS</li><li>Tailwind CSS</li><li>Framer Motion</li></ul>
 						</div>
 					</a>
@@ -454,6 +454,11 @@
 				var wantsVideo = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 					&& !(navigator.connection && navigator.connection.saveData);
 				if (!wantsVideo) return;
+				// Match the (reliably-autostarting) portfolio videos: let the
+				// browser own autoplay instead of leaning on one play() call.
+				video.autoplay = true;
+				video.muted = true;            // iOS only autoplays when muted is set on the property
+				video.setAttribute('muted', '');
 				[['assets/video/hero.webm', 'video/webm'], ['assets/video/hero.mp4', 'video/mp4']].forEach(function(s){
 					var el = document.createElement('source');
 					el.src = s[0];
@@ -461,8 +466,39 @@
 					video.appendChild(el);
 				});
 				video.load();
-				var playing = video.play();
-				if (playing && playing.catch) playing.catch(function(){});
+
+				// Robust start: a single play() right after load() is often
+				// interrupted (media not decoded yet, tab backgrounded), so retry
+				// on the events that signal readiness, plus first user gesture.
+				var started = false;
+				function tryPlay() {
+					if (started || video.paused === false) return;
+					var p = video.play();
+					if (p && p.then) {
+						p.then(function(){ started = true; }).catch(function(){ /* will retry on next signal */ });
+					} else {
+						started = true;
+					}
+				}
+				tryPlay();
+				['canplay', 'loadeddata', 'canplaythrough'].forEach(function(ev){
+					video.addEventListener(ev, tryPlay);
+				});
+				video.addEventListener('playing', function(){ started = true; });
+				document.addEventListener('visibilitychange', function(){
+					if (!document.hidden) tryPlay();
+				});
+				// Last resort: kick it off on the user's first interaction.
+				var onGesture = function(){
+					tryPlay();
+					window.removeEventListener('pointerdown', onGesture);
+					window.removeEventListener('touchstart', onGesture);
+					window.removeEventListener('keydown', onGesture);
+				};
+				window.addEventListener('pointerdown', onGesture, { passive: true });
+				window.addEventListener('touchstart', onGesture, { passive: true });
+				window.addEventListener('keydown', onGesture);
+
 				if (pause) {
 					pause.hidden = false;
 					pause.addEventListener('click', function(){
