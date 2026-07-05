@@ -116,3 +116,76 @@ def document(title, description, canonical, body, jsonld_blocks):
         + _nav() + '\n<main id="main">\n'
     )
     return head + body + '\n</main>\n' + _footer() + '\n<script src="/assets/js/reveal.js"></script>\n</body>\n</html>\n'
+
+
+def _service_schema(service, url):
+    import json
+    obj = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": service["name"],
+        "description": service["promise"],
+        "url": url,
+        "provider": {"@type": "Organization", "name": "NeuraGul", "url": BASE + "/"},
+        "areaServed": "US",
+    }
+    return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False) + '\n</script>'
+
+
+def render_service(service, cases_by_slug):
+    url = BASE + "/services/" + service["slug"] + "/"
+    title = service["name"] + " — NeuraGul"
+    desc = service["promise"]
+    crumbs = breadcrumb_jsonld([
+        ("Home", BASE + "/"),
+        ("Services", BASE + "/services/"),
+        (service["name"], url),
+    ])
+    deliverables = "".join(
+        "<li>" + esc(d) + "</li>\n" for d in service["deliverables"]
+    )
+    # Related work: cards for mapped case studies, or a hub link if none.
+    if service["related"]:
+        cards = ""
+        for slug in service["related"]:
+            c = cases_by_slug[slug]
+            cards += (
+                '<a class="nrg-detail__card" href="/work/' + slug + '/" data-reveal>'
+                '<span class="nrg-label">' + esc(c["meta"]) + '</span>'
+                '<h3>' + esc(c["name"]) + '</h3>'
+                '<span class="nrg-detail__card-arrow" aria-hidden="true">→</span></a>\n'
+            )
+        related = (
+            '<section class="nrg-detail__section"><h2 data-reveal>Related work</h2>'
+            '<div class="nrg-detail__cards">' + cards + '</div></section>'
+        )
+    else:
+        related = (
+            '<section class="nrg-detail__section"><h2 data-reveal>Related work</h2>'
+            '<p data-reveal><a class="nrg-detail__more" href="/work/">See all our work →</a></p></section>'
+        )
+    body = (
+        '<article class="nrg-section nrg-detail">\n'
+        '<div class="nrg-container">\n'
+        '<nav class="nrg-detail__crumb" aria-label="Breadcrumb"><a href="/">Home</a> / '
+        '<a href="/services/">Services</a> / <span>' + esc(service["name"]) + '</span></nav>\n'
+        '<header class="nrg-detail__head">\n'
+        '<h1 class="nrg-detail__title" data-reveal>' + esc(service["name"]) + '</h1>\n'
+        '<p class="nrg-detail__lede" data-reveal>' + esc(service["promise"]) + '</p>\n'
+        '</header>\n'
+        '<section class="nrg-detail__section"><h2 data-reveal>What\'s included</h2>'
+        '<ul class="nrg-detail__list" data-reveal>' + deliverables + '</ul></section>\n'
+        '<section class="nrg-detail__section"><h2 data-reveal>Who it\'s for</h2>'
+        '<p data-reveal>' + esc(service["who_for"]) + '</p></section>\n'
+        '<section class="nrg-detail__section"><h2 data-reveal>How we work</h2>'
+        '<ol class="nrg-detail__steps" data-reveal>'
+        '<li><strong>Discover.</strong> We map the real problem and write down what we\'re shipping.</li>'
+        '<li><strong>Design &amp; build.</strong> Tight loops with working software, usable in week one.</li>'
+        '<li><strong>Operate.</strong> We support what we ship and hand off only when you\'re ready.</li>'
+        '</ol></section>\n'
+        + related + '\n'
+        '<section class="nrg-detail__cta"><a href="/#contact" class="nrg-btn nrg-btn--filled">'
+        'Start a project ' + ARROW + '</a></section>\n'
+        '</div>\n</article>'
+    )
+    return document(title, desc, url, body, [crumbs, _service_schema(service, url)])
