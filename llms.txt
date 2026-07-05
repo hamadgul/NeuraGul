@@ -4,22 +4,22 @@
 
 ## Services
 
-- [AI Consulting & Development](https://neuragul.com/#service): Strategic integration and custom models that solve a specific business problem.
-- [Custom Software Development](https://neuragul.com/#service): Tailored software designed to meet business requirements and scale with growth.
-- [Web & Mobile Development](https://neuragul.com/#service): Responsive sites and applications built with technologies teams can maintain.
-- [Cloud Solutions](https://neuragul.com/#service): Scalable, secure cloud infrastructure that stays predictable as traffic grows.
-- [IT Infrastructure](https://neuragul.com/#service): Server, network, firewall, and security work for businesses that need uptime.
-- [Data Intelligence](https://neuragul.com/#service): Analytics, visualization, and migration work that turns data into decisions.
+- [AI Consulting & Development](https://neuragul.com/services/ai-consulting/): Strategic integration and custom models that solve a specific business problem.
+- [Custom Software Development](https://neuragul.com/services/custom-software/): Tailored software designed to meet business requirements and scale with growth.
+- [Web & Mobile Development](https://neuragul.com/services/web-mobile/): Responsive sites and applications built with technologies teams can maintain.
+- [Cloud Solutions](https://neuragul.com/services/cloud/): Scalable, secure cloud infrastructure that stays predictable as traffic grows.
+- [IT Infrastructure](https://neuragul.com/services/it-infrastructure/): Server, network, firewall, and security work for businesses that need uptime.
+- [Data Intelligence](https://neuragul.com/services/data-intelligence/): Analytics, visualization, and migration work that turns data into decisions.
 
 ## Selected work
 
-- [PackShip](https://apps.apple.com/app/id6754204899): AI-powered iOS shipping companion — sizes items from a photo, finds the right box with a real-time 3D packing view, and compares live UPS, FedEx, and USPS rates. Built with React Native, TypeScript, Three.js, Postgres, Redis.
-- [New York Fine Foods](https://www.newyorkfinefoods.com): Cinematic site for a NYC catering, pizza-truck, and mobile-bar brand. Built with Next.js and TypeScript.
-- [New York Mobile Mechanic](https://www.newyorkmobilemechanic.com): High-energy site for a 24/7 NYC mobile mechanic with local SEO built to rank for on-demand repair searches. Built with Next.js, TypeScript, Tailwind CSS, Framer Motion.
-- [Vintus](https://vintus.com): E-commerce platform for a leading wine import company — inventory management, order processing, and CRM. Built with WordPress, PHP, Python.
-- [Restaurant ordering portal](https://pizzeria-software.vercel.app): Commission-free online ordering that plugs into a restaurant's existing Square POS. Built with TypeScript, Square SDK, delivery APIs.
-- [Real-World Data Pipeline](https://neuragul.com/#portfolio): Product Management for a 0→1 ETL pipeline standardizing real-world data into a Common Data Model for early cancer detection.
-- [Landscape Drainage Proz](https://landscapedrainageproz.com): Tripled a client's online sales via a Shopify storefront buildout paired with SEO, CTA, and Google Ads work. Built with Shopify, custom Liquid.
+- [PackShip](https://neuragul.com/work/packship/): AI-powered iOS shipping companion — sizes items from a photo, finds the right box with a real-time 3D packing view, and compares live UPS, FedEx, and USPS rates. Built with React Native, TypeScript, Three.js, Postgres, Redis.
+- [New York Fine Foods](https://neuragul.com/work/new-york-fine-foods/): Cinematic site for a NYC catering, pizza-truck, and mobile-bar brand. Built with Next.js and TypeScript.
+- [New York Mobile Mechanic](https://neuragul.com/work/new-york-mobile-mechanic/): High-energy site for a 24/7 NYC mobile mechanic with local SEO built to rank for on-demand repair searches. Built with Next.js, TypeScript, Tailwind CSS, Framer Motion.
+- [Vintus](https://neuragul.com/work/vintus/): E-commerce platform for a leading wine import company — inventory management, order processing, and CRM. Built with WordPress, PHP, Python.
+- [Restaurant ordering portal](https://neuragul.com/work/restaurant-ordering-portal/): Commission-free online ordering that plugs into a restaurant's existing Square POS. Built with TypeScript, Square SDK, delivery APIs.
+- [Real-World Data Pipeline](https://neuragul.com/work/rwd-pipeline/): Product Management for a 0→1 ETL pipeline standardizing real-world data into a Common Data Model for early cancer detection.
+- [Landscape Drainage Proz](https://neuragul.com/work/landscape-drainage-proz/): Tripled a client's online sales via a Shopify storefront buildout paired with SEO, CTA, and Google Ads work. Built with Shopify, custom Liquid.
 
 ## How we work
 
