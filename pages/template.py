@@ -189,3 +189,62 @@ def render_service(service, cases_by_slug):
         '</div>\n</article>'
     )
     return document(title, desc, url, body, [crumbs, _service_schema(service, url)])
+
+
+def _case_schema(case, url):
+    import json
+    obj = {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": case["name"],
+        "abstract": case["brief"],
+        "url": url,
+        "creator": {"@type": "Organization", "name": "NeuraGul", "url": BASE + "/"},
+    }
+    return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False) + '\n</script>'
+
+
+def render_case_study(case, services_by_slug):
+    url = BASE + "/work/" + case["slug"] + "/"
+    title = case["name"] + " — NeuraGul case study"
+    desc = case["brief"]
+    crumbs = breadcrumb_jsonld([
+        ("Home", BASE + "/"),
+        ("Work", BASE + "/work/"),
+        (case["name"], url),
+    ])
+    stack = "".join("<li>" + esc(s) + "</li>" for s in case["stack"])
+    svc_cards = ""
+    for slug in case["related_services"]:
+        s = services_by_slug[slug]
+        svc_cards += (
+            '<a class="nrg-detail__card" href="/services/' + slug + '/" data-reveal>'
+            '<h3>' + esc(s["name"]) + '</h3>'
+            '<span class="nrg-detail__card-arrow" aria-hidden="true">→</span></a>\n'
+        )
+    body = (
+        '<article class="nrg-section nrg-detail">\n'
+        '<div class="nrg-container">\n'
+        '<nav class="nrg-detail__crumb" aria-label="Breadcrumb"><a href="/">Home</a> / '
+        '<a href="/work/">Work</a> / <span>' + esc(case["name"]) + '</span></nav>\n'
+        '<header class="nrg-detail__head">\n'
+        '<span class="nrg-label" data-reveal>' + esc(case["meta"]) + '</span>\n'
+        '<h1 class="nrg-detail__title" data-reveal>' + esc(case["name"]) + '</h1>\n'
+        '<ul class="nrg-detail__stack" aria-label="Built with" data-reveal>' + stack + '</ul>\n'
+        '</header>\n'
+        '<section class="nrg-detail__section"><h2 data-reveal>The brief</h2>'
+        '<p data-reveal>' + esc(case["brief"]) + '</p></section>\n'
+        '<section class="nrg-detail__section"><h2 data-reveal>What we built</h2>'
+        '<p data-reveal>' + esc(case["built"]) + '</p></section>\n'
+        '<section class="nrg-detail__section"><h2 data-reveal>Outcome</h2>'
+        '<p data-reveal>' + esc(case["outcome"]) + '</p></section>\n'
+        '<section class="nrg-detail__cta" data-reveal>'
+        '<a href="' + esc(case["live_url"]) + '" class="nrg-btn nrg-btn--filled" target="_blank" rel="noopener">'
+        + esc(case["live_label"]) + ' ' + ARROW + '</a></section>\n'
+        + ('<section class="nrg-detail__section"><h2 data-reveal>Related services</h2>'
+           '<div class="nrg-detail__cards">' + svc_cards + '</div></section>\n' if svc_cards else '')
+        + '<section class="nrg-detail__cta"><a href="/#contact" class="nrg-btn nrg-btn--ghost">'
+        'Start a project ' + ARROW + '</a></section>\n'
+        '</div>\n</article>'
+    )
+    return document(title, desc, url, body, [crumbs, _case_schema(case, url)])
