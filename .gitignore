@@ -123,3 +123,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Superpowers SDD scratch (local only)
+.superpowers/
