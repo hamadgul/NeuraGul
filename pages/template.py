@@ -248,3 +248,55 @@ def render_case_study(case, services_by_slug):
         '</div>\n</article>'
     )
     return document(title, desc, url, body, [crumbs, _case_schema(case, url)])
+
+
+def render_services_hub(services):
+    url = BASE + "/services/"
+    title = "Services — NeuraGul"
+    desc = "Custom software, AI, web & mobile, cloud, IT infrastructure, and data intelligence — designed, built, and run in production by NeuraGul."
+    crumbs = breadcrumb_jsonld([("Home", BASE + "/"), ("Services", url)])
+    cards = ""
+    for i, s in enumerate(services, start=1):
+        cards += (
+            '<a class="nrg-hub__card" href="/services/' + s["slug"] + '/" data-reveal>'
+            '<span class="nrg-hub__num">' + ("%02d." % i) + '</span>'
+            '<h2 class="nrg-hub__name">' + esc(s["name"]) + '</h2>'
+            '<p class="nrg-hub__desc">' + esc(s["promise"]) + '</p>'
+            '<span class="nrg-hub__arrow" aria-hidden="true">→</span></a>\n'
+        )
+    body = (
+        '<section class="nrg-section nrg-hub"><div class="nrg-container">'
+        '<nav class="nrg-detail__crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Services</span></nav>'
+        '<header class="nrg-hub__head"><span class="nrg-section__label">— WHAT WE DO</span>'
+        '<h1 class="nrg-hub__title" data-reveal>Services.</h1>'
+        '<p class="nrg-hub__lede" data-reveal>' + esc(desc) + '</p></header>'
+        '<div class="nrg-hub__grid">' + cards + '</div>'
+        '</div></section>'
+    )
+    return document(title, desc, url, body, [crumbs])
+
+
+def render_work_hub(cases):
+    url = BASE + "/work/"
+    title = "Work — NeuraGul"
+    desc = "Selected work from NeuraGul across mobile apps, e-commerce, client sites, and data — with links to each live project."
+    crumbs = breadcrumb_jsonld([("Home", BASE + "/"), ("Work", url)])
+    cards = ""
+    for c in cases:
+        cards += (
+            '<a class="nrg-hub__card" href="/work/' + c["slug"] + '/" data-reveal>'
+            '<span class="nrg-label">' + esc(c["meta"]) + '</span>'
+            '<h2 class="nrg-hub__name">' + esc(c["name"]) + '</h2>'
+            '<p class="nrg-hub__desc">' + esc(c["brief"]) + '</p>'
+            '<span class="nrg-hub__arrow" aria-hidden="true">→</span></a>\n'
+        )
+    body = (
+        '<section class="nrg-section nrg-hub"><div class="nrg-container">'
+        '<nav class="nrg-detail__crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Work</span></nav>'
+        '<header class="nrg-hub__head"><span class="nrg-section__label">— PORTFOLIO</span>'
+        '<h1 class="nrg-hub__title" data-reveal>Selected work.</h1>'
+        '<p class="nrg-hub__lede" data-reveal>' + esc(desc) + '</p></header>'
+        '<div class="nrg-hub__grid">' + cards + '</div>'
+        '</div></section>'
+    )
+    return document(title, desc, url, body, [crumbs])
