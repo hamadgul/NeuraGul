@@ -126,3 +126,5 @@ $RECYCLE.BIN/
 
 # Superpowers SDD scratch (local only)
 .superpowers/
+__pycache__/
+*.pyc
