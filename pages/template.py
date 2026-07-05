@@ -35,6 +35,14 @@ def _nav():
         '      <a href="/#contact">Contact</a>\n'
         '    </nav>\n'
         '    <a href="/#contact" class="nrg-btn nrg-btn--filled nrg-nav__cta">Start a project ' + ARROW + '</a>\n'
+        '    <button class="nrg-nav__toggle" type="button" aria-label="Toggle menu" aria-controls="nrg-nav-mobile" aria-expanded="false">\n'
+        '      <span></span><span></span><span></span>\n'
+        '    </button>\n'
+        '  </div>\n'
+        '  <div class="nrg-nav__mobile" id="nrg-nav-mobile" hidden>\n'
+        '    <a href="/services/">Services</a>\n'
+        '    <a href="/work/">Work</a>\n'
+        '    <a href="/#contact">Contact</a>\n'
         '  </div>\n'
         '</header>'
     )
@@ -115,7 +123,7 @@ def document(title, description, canonical, body, jsonld_blocks):
         '<a href="#main" class="nrg-skip">Skip to content</a>\n'
         + _nav() + '\n<main id="main">\n'
     )
-    return head + body + '\n</main>\n' + _footer() + '\n<script src="/assets/js/reveal.js"></script>\n</body>\n</html>\n'
+    return head + body + '\n</main>\n' + _footer() + '\n<script src="/assets/js/reveal.js"></script>\n<script src="/assets/js/nav.js"></script>\n</body>\n</html>\n'
 
 
 def _service_schema(service, url):
