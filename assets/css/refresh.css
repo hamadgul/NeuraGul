@@ -1173,3 +1173,40 @@ img { display: block; max-width: 100%; }
 .nrg-prose ul { padding-left: 20px; margin: 12px 0; }
 .nrg-prose a { color: var(--paper); text-decoration-color: var(--accent); }
 .nrg-prose .nrg-label { display: block; margin-bottom: 32px; }
+
+/* ── Service / case-study detail + hub pages ─────────────────────────── */
+.nrg-detail__crumb { font-size: .85rem; opacity: .6; margin-bottom: 2rem; }
+.nrg-detail__crumb a { color: inherit; text-decoration: none; }
+.nrg-detail__crumb a:hover { color: #2E6BE6; }
+.nrg-detail__head { max-width: 46rem; margin-bottom: 3.5rem; }
+.nrg-detail__title { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02; margin: .5rem 0 1rem; }
+.nrg-detail__lede { font-size: 1.2rem; opacity: .8; line-height: 1.5; }
+.nrg-detail__section { max-width: 46rem; margin: 0 0 3rem; }
+.nrg-detail__section h2 { font-size: 1.35rem; margin-bottom: 1rem; }
+.nrg-detail__list { list-style: none; padding: 0; display: grid; gap: .85rem; }
+.nrg-detail__list li { padding-left: 1.4rem; position: relative; opacity: .85; }
+.nrg-detail__list li::before { content: "→"; position: absolute; left: 0; color: #2E6BE6; }
+.nrg-detail__steps { padding-left: 1.1rem; display: grid; gap: .75rem; opacity: .85; }
+.nrg-detail__stack { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.nrg-detail__stack li { font-size: .78rem; letter-spacing: .04em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.15); border-radius: 999px; padding: .3rem .7rem; opacity: .8; }
+.nrg-detail__cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; }
+.nrg-detail__card { display: block; position: relative; padding: 1.4rem; text-decoration: none; color: inherit;
+  border: 1px solid rgba(255,255,255,.12); border-radius: 14px; transition: border-color .2s, transform .2s; }
+.nrg-detail__card:hover { border-color: #2E6BE6; transform: translateY(-2px); }
+.nrg-detail__card h3 { font-size: 1.1rem; margin: .35rem 0 0; }
+.nrg-detail__card-arrow { position: absolute; top: 1.4rem; right: 1.4rem; color: #2E6BE6; }
+.nrg-detail__cta { margin: 2.5rem 0 1rem; }
+.nrg-detail__more { color: #2E6BE6; text-decoration: none; }
+
+.nrg-hub__head { max-width: 46rem; margin-bottom: 3rem; }
+.nrg-hub__title { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1; margin: .5rem 0 1rem; }
+.nrg-hub__lede { font-size: 1.15rem; opacity: .8; line-height: 1.5; }
+.nrg-hub__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 1.25rem; }
+.nrg-hub__card { display: block; position: relative; padding: 1.8rem; text-decoration: none; color: inherit;
+  border: 1px solid rgba(255,255,255,.12); border-radius: 16px; transition: border-color .2s, transform .2s; }
+.nrg-hub__card:hover { border-color: #2E6BE6; transform: translateY(-3px); }
+.nrg-hub__num { font-family: "JetBrains Mono", monospace; color: #2E6BE6; font-size: .9rem; }
+.nrg-hub__name { font-size: 1.4rem; margin: .5rem 0 .6rem; }
+.nrg-hub__desc { opacity: .78; line-height: 1.5; }
+.nrg-hub__arrow { position: absolute; top: 1.8rem; right: 1.8rem; color: #2E6BE6; font-size: 1.2rem; }
