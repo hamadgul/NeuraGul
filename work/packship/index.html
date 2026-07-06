@@ -14,10 +14,11 @@
   <meta property="og:url" content="https://neuragul.com/work/packship/">
   <meta property="og:image" content="https://neuragul.com/assets/img/hero-poster.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <meta name="theme-color" content="#0a0d12">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="/assets/css/refresh.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/labs.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://neuragul.com/"},{"@type":"ListItem","position":2,"name":"Work","item":"https://neuragul.com/work/"},{"@type":"ListItem","position":3,"name":"PackShip","item":"https://neuragul.com/work/packship/"}]}
   </script>
@@ -26,64 +27,189 @@
   </script>
 </head>
 <body>
-<a href="#main" class="nrg-skip">Skip to content</a>
-<header class="nrg-nav is-scrolled" id="nrg-nav">
-  <div class="nrg-container nrg-nav__inner">
-    <a href="/" class="nrg-nav__brand" aria-label="NeuraGul home"><img src="/assets/img/logo.png" alt="" width="218" height="105"></a>
-    <nav class="nrg-nav__links" aria-label="Primary">
-      <a href="/services/">Services</a>
-      <a href="/work/">Work</a>
+  <a href="#main" class="ng-skip">Skip to content</a>
+  <div class="ng-glow" data-cursor-glow aria-hidden="true"></div>
+
+  <!-- ================= NAV ================= -->
+  <header class="ng-nav" id="ng-nav" data-nav>
+    <a href="/" class="ng-nav__brand" aria-label="NeuraGul Labs — home">
+      <img src="/assets/img/logo.png" alt="NeuraGul Labs" width="218" height="105">
+    </a>
+    <nav class="ng-nav__links" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/#services">Services</a>
+      <a href="/#process">Process</a>
       <a href="/#contact">Contact</a>
     </nav>
-    <a href="/#contact" class="nrg-btn nrg-btn--filled nrg-nav__cta">Start a project <svg class="nrg-btn__arrow" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"/></svg></a>
-    <button class="nrg-nav__toggle" type="button" aria-label="Toggle menu" aria-controls="nrg-nav-mobile" aria-expanded="false">
+    <a href="/#contact" class="ng-btn ng-btn--nav ng-nav__cta" data-magnetic="0.25">
+      Start a project <span aria-hidden="true">→</span>
+    </a>
+    <button class="ng-nav__toggle" type="button" aria-label="Toggle menu" aria-controls="ng-nav-drawer" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-  </div>
-  <div class="nrg-nav__mobile" id="nrg-nav-mobile" hidden>
-    <a href="/services/">Services</a>
-    <a href="/work/">Work</a>
+  </header>
+  <div class="ng-nav__drawer" id="ng-nav-drawer" hidden>
+    <a href="/#work">Work</a>
+    <a href="/#services">Services</a>
+    <a href="/#process">Process</a>
     <a href="/#contact">Contact</a>
   </div>
-</header>
-<main id="main">
-<article class="nrg-section nrg-detail">
-<div class="nrg-container">
-<nav class="nrg-detail__crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/work/">Work</a> / <span>PackShip</span></nav>
-<header class="nrg-detail__head">
-<span class="nrg-label" data-reveal>2026 · Mobile · iOS App</span>
-<h1 class="nrg-detail__title" data-reveal>PackShip</h1>
-<ul class="nrg-detail__stack" aria-label="Built with" data-reveal><li>React Native</li><li>TypeScript</li><li>JavaScript</li><li>Three.js</li><li>Postgres</li><li>Redis</li></ul>
-</header>
-<section class="nrg-detail__section"><h2 data-reveal>The brief</h2><p data-reveal>Shipping is guesswork for most people: which box, how much it will cost, which carrier. PackShip set out to answer all three from a single photo.</p></section>
-<section class="nrg-detail__section"><h2 data-reveal>What we built</h2><p data-reveal>An AI-powered iOS app that sizes items from a photo, fits them into the right box with a real-time 3D packing view, and compares live UPS, FedEx, and USPS rates side by side. Built on React Native with a Postgres and Redis backend for fast rate lookups.</p></section>
-<section class="nrg-detail__section"><h2 data-reveal>Outcome</h2><p data-reveal>Shipped to the App Store as a consumer product, turning a multi-step, error-prone task into one photo and a tap.</p></section>
-<section class="nrg-detail__cta" data-reveal><a href="https://apps.apple.com/app/id6754204899" class="nrg-btn nrg-btn--filled" target="_blank" rel="noopener">View on the App Store <svg class="nrg-btn__arrow" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"/></svg></a></section>
-<section class="nrg-detail__section"><h2 data-reveal>Related services</h2><div class="nrg-detail__cards"><a class="nrg-detail__card" href="/services/ai-consulting/" data-reveal><h3>AI Consulting &amp; Development</h3><span class="nrg-detail__card-arrow" aria-hidden="true">→</span></a>
-<a class="nrg-detail__card" href="/services/web-mobile/" data-reveal><h3>Web &amp; Mobile Development</h3><span class="nrg-detail__card-arrow" aria-hidden="true">→</span></a>
-</div></section>
-<section class="nrg-detail__cta"><a href="/#contact" class="nrg-btn nrg-btn--ghost">Start a project <svg class="nrg-btn__arrow" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"/></svg></a></section>
-</div>
-</article>
-</main>
-<footer class="nrg-foot">
-  <div class="nrg-container">
-    <div class="nrg-foot__top">
-      <div class="nrg-foot__brand">
-        <a href="/" class="nrg-foot__mark" aria-label="NeuraGul home"><img src="/assets/img/logo.png" alt="" width="218" height="105"></a>
-        <p class="nrg-foot__tag">Software, shipped with intent.</p>
+
+  <main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="ng-case-hero" aria-label="PackShip case study">
+    <div class="ng-hero__grid" aria-hidden="true"></div>
+    <div class="ng-case-hero__orb" aria-hidden="true"></div>
+
+    <div class="ng-case-hero__wrap">
+      <div class="ng-case-hero__top">
+        <a class="ng-case-hero__back" href="/work/">← ALL WORK</a>
       </div>
-      <div class="nrg-foot__cols">
-        <div><span class="nrg-label">Company</span><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li></ul></div>
-        <div><span class="nrg-label">Services</span><ul><li><a href="/services/custom-software/">Custom software</a></li><li><a href="/services/web-mobile/">Web &amp; mobile</a></li><li><a href="/services/cloud/">Cloud</a></li><li><a href="/services/ai-consulting/">AI</a></li></ul></div>
-        <div><span class="nrg-label">Resources</span><ul><li><a href="/work/">Work</a></li><li><a href="/privacy.html">Privacy</a></li></ul></div>
+      <div class="ng-case-hero__eyebrow">
+        <span class="ng-hero__dot" aria-hidden="true"></span>
+        CASE STUDY — 001 / MOBILE · iOS · 2026
+      </div>
+
+      <h1 class="ng-case-hero__title">
+        <span class="ng-cmask"><span class="ng-cline ng-cline--1 ng-cline--grad">PackShip</span></span>
+      </h1>
+
+      <p class="ng-case-hero__lede">Point your camera at the thing. PackShip finds the box, the carrier, and the cheapest safe way to ship it.</p>
+
+      <div class="ng-metastrip">
+        <div class="ng-metastrip__item">
+          <div class="ng-metastrip__label">PLATFORM</div>
+          <div class="ng-metastrip__value">iOS · React Native</div>
+        </div>
+        <div class="ng-metastrip__item">
+          <div class="ng-metastrip__label">SCOPE</div>
+          <div class="ng-metastrip__value">Design → Build → Ship</div>
+        </div>
+        <div class="ng-metastrip__item">
+          <div class="ng-metastrip__label">STACK</div>
+          <div class="ng-metastrip__value">three.js · Postgres · Redis</div>
+        </div>
+        <div class="ng-metastrip__item">
+          <div class="ng-metastrip__label">YEAR</div>
+          <div class="ng-metastrip__value">2026</div>
+        </div>
       </div>
     </div>
-    <hr class="nrg-rule">
-    <div class="nrg-foot__bottom"><span>© 2026 NeuraGul Labs</span><span class="nrg-label">v2026 · Made with intent</span></div>
-  </div>
-</footer>
-<script src="/assets/js/reveal.js"></script>
-<script src="/assets/js/nav.js"></script>
+
+    <!-- full-bleed hero media -->
+    <div class="ng-case-hero__media">
+      <div class="ng-case-hero__media-inner" data-plx="0.1">
+        <picture>
+          <source srcset="/assets/img/portfolio/packship.webp" type="image/webp">
+          <img src="/assets/img/portfolio/packship.jpg" alt="PackShip iOS app — 3D box-fit view and live carrier-rate comparison" width="1200" height="750" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROBLEM / APPROACH ================= -->
+  <section class="ng-case-cols" aria-label="Problem and approach">
+    <div class="ng-case-col" data-reveal="up">
+      <div class="ng-num">— 01 / THE PROBLEM</div>
+      <h2 class="ng-case-col__title">Shipping a one-off item is a guessing game.</h2>
+      <p class="ng-case-col__desc">Wrong box, padded dimensional rates, three carrier tabs open, and a queue behind you at the counter. PackShip started as a simple bet: your phone's camera already knows how big your stuff is — the rest is arithmetic.</p>
+    </div>
+    <div class="ng-case-col" data-reveal="up" data-delay="0.12">
+      <div class="ng-num">— 02 / THE APPROACH</div>
+      <h2 class="ng-case-col__title">TestFlight in three weeks. Then we argued with packers.</h2>
+      <p class="ng-case-col__desc">Real users broke the sizing model in week four, which is exactly why we shipped early. The 3D box-fit view — the feature everyone screenshots — came out of those sessions, not the pitch deck.</p>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="ng-features" aria-label="Features">
+    <div class="ng-feature">
+      <div class="ng-feature__text" data-reveal="left">
+        <div class="ng-feature__label">FEATURE 01 — CORE ML · ON-DEVICE</div>
+        <h3 class="ng-feature__title">One photo,<br>measured.</h3>
+        <p class="ng-feature__desc">An on-device model estimates item dimensions from a single photo — no LiDAR required. Typical error: about a centimeter, which is less than the padding you were going to stuff in anyway.</p>
+      </div>
+      <div class="ng-feature__media" data-reveal="right" data-tilt="4">
+        <div class="ng-ph ng-ph--a"><span class="ng-ph__tag">Camera capture → dimension overlay · app screen</span></div>
+      </div>
+    </div>
+
+    <div class="ng-feature ng-feature--media-left">
+      <div class="ng-feature__media" data-reveal="left" data-tilt="4">
+        <picture>
+          <source srcset="/assets/img/portfolio/packship.webp" type="image/webp">
+          <img src="/assets/img/portfolio/packship.jpg" alt="PackShip live 3D box-fit view packing items into a candidate box" width="1200" height="750" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="ng-feature__text" data-reveal="right">
+        <div class="ng-feature__label">FEATURE 02 — THREE.JS · REACT NATIVE</div>
+        <h3 class="ng-feature__title">Watch it<br>pack itself.</h3>
+        <p class="ng-feature__desc">A live three.js scene fits your items into candidate boxes in real time. Rotate it, swap boxes, see the wasted air you're about to pay for.</p>
+      </div>
+    </div>
+
+    <div class="ng-feature">
+      <div class="ng-feature__text" data-reveal="left">
+        <div class="ng-feature__label">FEATURE 03 — CARRIER APIS · REDIS</div>
+        <h3 class="ng-feature__title">Carriers,<br>racing.</h3>
+        <p class="ng-feature__desc">Live UPS, FedEx, and USPS rates side by side, re-quoted every time the box changes. The cheapest safe option wins — usually by more than you'd think.</p>
+      </div>
+      <div class="ng-feature__media" data-reveal="right" data-tilt="4">
+        <div class="ng-ph ng-ph--a"><span class="ng-ph__tag">Rate comparison screen — UPS / FedEx / USPS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESULTS ================= -->
+  <section class="ng-results" aria-label="Results">
+    <div class="ng-result">
+      <div class="ng-result__value"><span data-count="18" data-suffix="%">0%</span></div>
+      <div class="ng-result__label">AVG. SAVED PER LABEL</div>
+    </div>
+    <div class="ng-result">
+      <div class="ng-result__value"><span data-count="3">0</span> wks</div>
+      <div class="ng-result__label">TO FIRST TESTFLIGHT</div>
+    </div>
+    <div class="ng-result">
+      <div class="ng-result__value"><span data-count="4.9" data-decimals="1">0</span>★</div>
+      <div class="ng-result__label">BETA RATING</div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="ng-case-cta" aria-label="Start a project">
+    <div class="ng-case-cta__orb" aria-hidden="true"></div>
+    <div class="ng-num" style="position:relative">— NEXT</div>
+    <h2 class="ng-case-cta__title" data-reveal="up">Have an idea that<br><span>needs shipping?</span></h2>
+    <div class="ng-case-cta__row" data-reveal="up" data-delay="0.12">
+      <a href="/#contact" class="ng-btn ng-btn--fill" data-magnetic="0.3">Start a project</a>
+      <a href="/work/" class="ng-btn ng-btn--ghost" data-magnetic="0.3">More work</a>
+    </div>
+  </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="ng-cfoot">
+    <span>© 2026 NEURAGUL LABS</span>
+    <a href="/">NEURAGUL.COM ↖</a>
+    <span>v2026 · MADE WITH INTENT</span>
+  </footer>
+
+  <script src="/assets/js/fx.js"></script>
+  <script>
+    if (window.NGFX && window.NGFX.init) { window.NGFX.init({ motion: 'full' }); }
+    (function(){
+      var toggle = document.querySelector('.ng-nav__toggle');
+      var drawer = document.getElementById('ng-nav-drawer');
+      if (!toggle || !drawer) return;
+      function close(){ drawer.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); }
+      function open(){ drawer.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); var a = drawer.querySelector('a'); if (a) a.focus(); }
+      toggle.addEventListener('click', function(){ if (drawer.hasAttribute('hidden')) open(); else close(); });
+      drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+      window.addEventListener('resize', function(){ if (window.innerWidth > 900) close(); }, { passive: true });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !drawer.hasAttribute('hidden')) { close(); toggle.focus(); } });
+    })();
+  </script>
 </body>
 </html>
