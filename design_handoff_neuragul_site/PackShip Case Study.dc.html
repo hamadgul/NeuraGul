@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0d12;color:#dfe6ee}
+a{color:inherit;text-decoration:none}
+a:hover{color:oklch(0.82 0.12 258)}
+::selection{background:oklch(0.6 0.17 258 / .45);color:#fff}
+@keyframes heroRise{from{transform:translateY(112%)}to{transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+</style>
+<script src="fx.js"></script>
+</helmet>
+
+<div style="position:relative;background:#0a0d12;color:#dfe6ee;font-family:'Instrument Sans',sans-serif;overflow:clip">
+
+  <!-- cursor glow -->
+  <div data-cursor-glow style="position:fixed;top:0;left:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,oklch(0.6 0.16 258 / .07) 0%,transparent 60%);pointer-events:none;z-index:3;transform:translate(-900px,-900px)"></div>
+
+  <!-- ================= NAV ================= -->
+  <div data-nav data-screen-label="Nav" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 64px;border-bottom:1px solid rgba(140,170,255,0);transition:background .4s,border-color .4s;animation:fadeIn .8s .2s both">
+    <a href="Neuragul Home.dc.html" style="display:flex;align-items:center"><img src="uploads/logo.png" alt="NeuraGul Labs" style="height:44px;width:auto;display:block"></a>
+    <div style="display:flex;gap:36px;font-size:13.5px;font-weight:500;color:rgba(223,230,238,.72)">
+      <a href="Neuragul Home.dc.html#work">Work</a>
+      <a href="Neuragul Home.dc.html#services">Services</a>
+      <a href="Neuragul Home.dc.html#process">Process</a>
+      <a href="Neuragul Home.dc.html#contact">Contact</a>
+    </div>
+    <a href="Neuragul Home.dc.html#contact" data-magnetic="0.25" style="display:flex;align-items:center;gap:10px;padding:11px 22px;border-radius:999px;background:linear-gradient(120deg,oklch(0.55 0.19 248),oklch(0.62 0.19 268));color:#f2f6ff;font-size:13.5px;font-weight:600;box-shadow:0 0 32px oklch(0.55 0.18 258 / .4)">Start a project <span style="font-size:15px">→</span></a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <div data-screen-label="Case Hero" style="position:relative;padding:170px 64px 0;background:#070a0f;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(120,150,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(120,150,255,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none"></div>
+    <div style="position:absolute;top:-260px;left:38%;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,oklch(0.5 0.17 258 / .3),transparent 65%);filter:blur(52px);pointer-events:none"></div>
+
+    <div style="position:relative">
+      <a href="Neuragul Home.dc.html#work" style="display:inline-flex;align-items:center;gap:10px;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.16em;color:rgba(223,230,238,.55);animation:fadeUp .7s .25s both">← ALL WORK</a>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:34px;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:oklch(0.78 0.12 258);animation:fadeUp .7s .35s both">
+        <span style="width:8px;height:8px;border-radius:50%;background:oklch(0.72 0.17 258);box-shadow:0 0 12px oklch(0.72 0.17 258);animation:pulse 2.4s ease-in-out infinite"></span>
+        CASE STUDY — 001 / MOBILE · iOS · 2026
+      </div>
+
+      <h1 style="margin:28px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:min(13vw,180px);line-height:.95;letter-spacing:-.035em;text-transform:uppercase">
+        <span style="display:block;overflow:hidden;padding-bottom:.06em"><span style="display:block;animation:heroRise 1s .2s cubic-bezier(.16,.8,.24,1) both;background:linear-gradient(105deg,#eef2f8 20%,oklch(0.8 0.13 258) 60%,oklch(0.68 0.17 245) 90%);-webkit-background-clip:text;background-clip:text;color:transparent">PackShip</span></span>
+      </h1>
+
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:60px;margin-top:30px;animation:fadeUp .9s .55s both">
+        <p style="margin:0;max-width:640px;font-size:21px;line-height:1.55;color:rgba(223,230,238,.7);text-wrap:pretty">Point your camera at the thing. PackShip finds the box, the carrier, and the cheapest safe way to ship it.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;padding:28px 0;border-top:1px solid rgba(140,170,255,.16);animation:fadeIn 1s .75s both">
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">PLATFORM</div>
+          <div style="margin-top:8px;font-size:15.5px;color:#eef2f8">iOS · React Native</div>
+        </div>
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">SCOPE</div>
+          <div style="margin-top:8px;font-size:15.5px;color:#eef2f8">Design → Build → Ship</div>
+        </div>
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">STACK</div>
+          <div style="margin-top:8px;font-size:15.5px;color:#eef2f8">three.js · Postgres · Redis</div>
+        </div>
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">YEAR</div>
+          <div style="margin-top:8px;font-size:15.5px;color:#eef2f8">2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- full-bleed hero media -->
+    <div style="position:relative;margin:24px -64px 0;height:560px;overflow:hidden;border-top:1px solid rgba(140,170,255,.16)">
+      <div data-plx="0.1" style="position:absolute;inset:-80px 0;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(120,160,255,.06) 0 14px,rgba(255,255,255,.015) 14px 28px)">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.35);padding:10px 16px;border-radius:8px;background:rgba(7,10,15,.6)">[ packship — launch film / app capture · full-bleed 21:9 ]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PROBLEM / APPROACH ================= -->
+  <div data-screen-label="Problem" style="position:relative;padding:130px 64px;display:grid;grid-template-columns:1fr 1fr;gap:80px">
+    <div data-reveal="up">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— 01 / THE PROBLEM</div>
+      <h2 style="margin:28px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:40px;line-height:1.15;letter-spacing:-.02em;color:#eef2f8;text-wrap:pretty">Shipping a one-off item is a guessing game.</h2>
+      <p style="margin:24px 0 0;font-size:16.5px;line-height:1.7;color:rgba(223,230,238,.62)">Wrong box, padded dimensional rates, three carrier tabs open, and a queue behind you at the counter. PackShip started as a simple bet: your phone's camera already knows how big your stuff is — the rest is arithmetic.</p>
+    </div>
+    <div data-reveal="up" data-delay="0.12">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— 02 / THE APPROACH</div>
+      <h2 style="margin:28px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:40px;line-height:1.15;letter-spacing:-.02em;color:#eef2f8;text-wrap:pretty">TestFlight in three weeks. Then we argued with packers.</h2>
+      <p style="margin:24px 0 0;font-size:16.5px;line-height:1.7;color:rgba(223,230,238,.62)">Real users broke the sizing model in week four, which is exactly why we shipped early. The 3D box-fit view — the feature everyone screenshots — came out of those sessions, not the pitch deck.</p>
+    </div>
+  </div>
+
+  <!-- ================= FEATURES ================= -->
+  <div data-screen-label="Features" style="position:relative;padding:0 64px 40px;display:flex;flex-direction:column;gap:110px">
+
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:70px;align-items:center">
+      <div data-reveal="left">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">FEATURE 01 — CORE ML · ON-DEVICE</div>
+        <h3 style="margin:20px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:44px;letter-spacing:-.02em;line-height:1.05;color:#eef2f8">One photo,<br>measured.</h3>
+        <p style="margin:22px 0 0;font-size:16px;line-height:1.7;color:rgba(223,230,238,.62);max-width:440px">An on-device model estimates item dimensions from a single photo — no LiDAR required. Typical error: about a centimeter, which is less than the padding you were going to stuff in anyway.</p>
+      </div>
+      <div data-reveal="right" data-tilt="4" style="height:440px;border-radius:20px;border:1px solid rgba(140,170,255,.18);display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(-45deg,rgba(120,160,255,.055) 0 12px,rgba(255,255,255,.012) 12px 24px)">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.3);padding:9px 14px;border-radius:6px">[ camera capture → dimension overlay · app screen ]</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:70px;align-items:center">
+      <div data-reveal="left" data-tilt="4" style="height:440px;border-radius:20px;border:1px solid rgba(140,170,255,.18);display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(120,160,255,.055) 0 12px,rgba(255,255,255,.012) 12px 24px)">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.3);padding:9px 14px;border-radius:6px">[ 3D box-fit view — items packing into box · capture ]</div>
+      </div>
+      <div data-reveal="right">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">FEATURE 02 — THREE.JS · REACT NATIVE</div>
+        <h3 style="margin:20px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:44px;letter-spacing:-.02em;line-height:1.05;color:#eef2f8">Watch it<br>pack itself.</h3>
+        <p style="margin:22px 0 0;font-size:16px;line-height:1.7;color:rgba(223,230,238,.62);max-width:440px">A live three.js scene fits your items into candidate boxes in real time. Rotate it, swap boxes, see the wasted air you're about to pay for.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:70px;align-items:center">
+      <div data-reveal="left">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">FEATURE 03 — CARRIER APIS · REDIS</div>
+        <h3 style="margin:20px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:44px;letter-spacing:-.02em;line-height:1.05;color:#eef2f8">Carriers,<br>racing.</h3>
+        <p style="margin:22px 0 0;font-size:16px;line-height:1.7;color:rgba(223,230,238,.62);max-width:440px">Live UPS, FedEx, and USPS rates side by side, re-quoted every time the box changes. The cheapest safe option wins — usually by more than you'd think.</p>
+      </div>
+      <div data-reveal="right" data-tilt="4" style="height:440px;border-radius:20px;border:1px solid rgba(140,170,255,.18);display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(-45deg,rgba(120,160,255,.055) 0 12px,rgba(255,255,255,.012) 12px 24px)">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.3);padding:9px 14px;border-radius:6px">[ rate comparison screen — UPS / FedEx / USPS ]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= RESULTS ================= -->
+  <div data-screen-label="Results" style="position:relative;margin-top:110px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(140,170,255,.14);border-bottom:1px solid rgba(140,170,255,.14);background:#070a0f">
+    <div style="padding:48px 44px;border-right:1px solid rgba(140,170,255,.12)">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:56px;color:oklch(0.8 0.13 258)"><span data-count="18" data-suffix="%">0%</span></div>
+      <div style="margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:rgba(223,230,238,.5)">AVG. SAVED PER LABEL</div>
+    </div>
+    <div style="padding:48px 44px;border-right:1px solid rgba(140,170,255,.12)">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:56px;color:oklch(0.8 0.13 258)"><span data-count="3">0</span> wks</div>
+      <div style="margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:rgba(223,230,238,.5)">TO FIRST TESTFLIGHT</div>
+    </div>
+    <div style="padding:48px 44px">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:56px;color:oklch(0.8 0.13 258)"><span data-count="4.9" data-decimals="1">0</span>★</div>
+      <div style="margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:rgba(223,230,238,.5)">BETA RATING</div>
+    </div>
+  </div>
+
+  <!-- ================= CTA ================= -->
+  <div data-screen-label="CTA" style="position:relative;padding:150px 64px 130px;text-align:center;overflow:hidden">
+    <div style="position:absolute;top:40%;left:50%;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,oklch(0.5 0.16 258 / .2),transparent 65%);filter:blur(50px);transform:translate(-50%,-50%);pointer-events:none"></div>
+    <div style="position:relative;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— NEXT</div>
+    <h2 data-reveal="up" style="position:relative;margin:32px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:80px;line-height:1;letter-spacing:-.03em;color:#eef2f8">Have an idea that<br><span style="background:linear-gradient(105deg,#eef2f8 10%,oklch(0.8 0.13 258) 55%,oklch(0.68 0.17 245) 90%);-webkit-background-clip:text;background-clip:text;color:transparent">needs shipping?</span></h2>
+    <div data-reveal="up" data-delay="0.12" style="position:relative;display:flex;justify-content:center;gap:16px;margin-top:48px">
+      <a href="Neuragul Home.dc.html#contact" data-magnetic="0.3" style="display:block;padding:18px 40px;border-radius:999px;background:oklch(0.68 0.17 258);color:#060910;font-weight:650;font-size:15.5px;box-shadow:0 0 44px oklch(0.6 0.18 258 / .5)">Start a project</a>
+      <a href="Neuragul Home.dc.html#work" data-magnetic="0.3" style="display:block;padding:18px 40px;border-radius:999px;border:1px solid rgba(140,170,255,.32);font-weight:550;font-size:15.5px;color:rgba(223,230,238,.85)">More work</a>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div data-screen-label="Footer" style="position:relative;padding:36px 64px;border-top:1px solid rgba(140,170,255,.12);display:flex;justify-content:space-between;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:rgba(223,230,238,.4)">
+    <span>© 2026 NEURAGUL LABS</span>
+    <a href="Neuragul Home.dc.html" style="color:rgba(223,230,238,.55)">NEURAGUL.COM ↖</a>
+    <span>v2026 · MADE WITH INTENT</span>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;motion&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;full&quot;, &quot;calm&quot;, &quot;off&quot;], &quot;default&quot;: &quot;full&quot;, &quot;tsType&quot;: &quot;'full'|'calm'|'off'&quot;, &quot;section&quot;: &quot;Motion&quot;}
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._tries = 0;
+    const boot = () => {
+      if (window.NGFX && window.NGFX.init) {
+        this._cleanup = window.NGFX.init({ motion: this.props.motion ?? 'full' });
+      } else if (this._tries++ < 120) {
+        this._t = setTimeout(boot, 50);
+      }
+    };
+    boot();
+  }
+  componentWillUnmount() {
+    clearTimeout(this._t);
+    if (this._cleanup) this._cleanup();
+  }
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

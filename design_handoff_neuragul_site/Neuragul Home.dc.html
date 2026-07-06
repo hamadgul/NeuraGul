@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0d12;color:#dfe6ee}
+a{color:inherit;text-decoration:none}
+a:hover{color:oklch(0.82 0.12 258)}
+::selection{background:oklch(0.6 0.17 258 / .45);color:#fff}
+input,select,textarea{font-family:inherit}
+@keyframes heroRise{from{transform:translateY(112%)}to{transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:.9}50%{transform:translateY(10px);opacity:.35}}
+</style>
+<script src="fx.js"></script>
+</helmet>
+
+<div style="position:relative;background:#0a0d12;color:#dfe6ee;font-family:'Instrument Sans',sans-serif;overflow:clip">
+
+  <!-- cursor glow -->
+  <div data-cursor-glow style="position:fixed;top:0;left:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,oklch(0.6 0.16 258 / .07) 0%,transparent 60%);pointer-events:none;z-index:3;transform:translate(-900px,-900px)"></div>
+
+  <!-- ================= NAV ================= -->
+  <div data-nav data-screen-label="Nav" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 64px;border-bottom:1px solid rgba(140,170,255,0);transition:background .4s,border-color .4s;animation:fadeIn .8s .2s both">
+    <a href="#top" style="display:flex;align-items:center"><img src="uploads/logo.png" alt="NeuraGul Labs" style="height:44px;width:auto;display:block"></a>
+    <div style="display:flex;gap:36px;font-size:13.5px;font-weight:500;color:rgba(223,230,238,.72)">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" data-magnetic="0.25" style="display:flex;align-items:center;gap:10px;padding:11px 22px;border-radius:999px;background:linear-gradient(120deg,oklch(0.55 0.19 248),oklch(0.62 0.19 268));color:#f2f6ff;font-size:13.5px;font-weight:600;box-shadow:0 0 32px oklch(0.55 0.18 258 / .4)">Start a project <span style="font-size:15px">→</span></a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <div id="top" data-screen-label="Hero" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;background:#070a0f;overflow:hidden">
+    <video data-autoplay src="uploads/hero.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+    <sc-if value="{{ showGrid }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(120,150,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(120,150,255,.045) 1px,transparent 1px);background-size:48px 48px;pointer-events:none"></div>
+    </sc-if>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,15,.62) 0%,rgba(7,10,15,.4) 30%,rgba(7,10,15,.4) 55%,rgba(7,10,15,.92) 100%);pointer-events:none"></div>
+
+    <div style="position:relative;padding:150px 64px 64px;pointer-events:none">
+      <div style="display:flex;align-items:center;gap:14px;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:oklch(0.78 0.12 258);animation:fadeUp .8s .35s both">
+        <span style="width:8px;height:8px;border-radius:50%;background:oklch(0.72 0.17 258);box-shadow:0 0 12px oklch(0.72 0.17 258);animation:pulse 2.4s ease-in-out infinite"></span>
+        A SENIOR ENGINEERING STUDIO — NYC / REMOTE
+      </div>
+
+      <h1 style="margin:36px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:min(11.4vw,158px);line-height:.9;letter-spacing:-.035em;text-transform:uppercase;color:#eef2f8">
+        <span style="display:block;overflow:hidden;padding-bottom:.04em"><span style="display:block;animation:heroRise 1s .15s cubic-bezier(.16,.8,.24,1) both">We build</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.04em"><span style="display:block;animation:heroRise 1s .28s cubic-bezier(.16,.8,.24,1) both;color:oklch(0.85 0.07 255 / .32);-webkit-text-stroke:2px oklch(0.84 0.1 255 / .95);filter:drop-shadow(0 4px 26px rgba(5,8,14,.95)) drop-shadow(0 0 60px rgba(5,8,14,.7))">software</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em"><span style="display:block;animation:heroRise 1s .41s cubic-bezier(.16,.8,.24,1) both;background:linear-gradient(105deg,#eef2f8 15%,oklch(0.8 0.13 258) 55%,oklch(0.68 0.17 245) 88%);-webkit-background-clip:text;background-clip:text;color:transparent">that ships.</span></span>
+      </h1>
+
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:54px;gap:60px;animation:fadeUp .9s .62s both">
+        <p style="margin:0;max-width:540px;font-size:19px;line-height:1.6;color:rgba(223,230,238,.66);text-wrap:pretty">NeuraGul designs, builds, and runs production software for founders and teams — the whole system, whiteboard to on-call. No agency theater.</p>
+        <div style="display:flex;gap:16px;flex:none;pointer-events:auto">
+          <a href="#contact" data-magnetic="0.3" style="display:block;padding:17px 34px;border-radius:999px;background:oklch(0.68 0.17 258);color:#060910;font-weight:650;font-size:15px;box-shadow:0 0 44px oklch(0.6 0.18 258 / .5)">Start a project</a>
+          <a href="#work" data-magnetic="0.3" style="display:block;padding:17px 34px;border-radius:999px;border:1px solid rgba(140,170,255,.32);font-weight:550;font-size:15px;color:rgba(223,230,238,.85)">View work ↓</a>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:24px;border-top:1px solid rgba(140,170,255,.14);font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.16em;color:rgba(223,230,238,.45);animation:fadeIn 1s .9s both">
+        <span>— 001 / 2026</span>
+        <span style="animation:cue 2.2s ease-in-out infinite">SCROLL ↓</span>
+        <span>RESPONSE &lt; 24H</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MARQUEE ================= -->
+  <div data-screen-label="Marquee" style="position:relative;border-top:1px solid rgba(140,170,255,.14);border-bottom:1px solid rgba(140,170,255,.14);overflow:hidden;padding:18px 0;background:rgba(140,170,255,.025)">
+    <div style="display:flex;width:max-content;animation:mq 28s linear infinite;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;letter-spacing:.22em;color:rgba(223,230,238,.5)">
+      <span style="white-space:nowrap;padding-right:12px">AI &amp; ML SYSTEMS&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;CUSTOM SOFTWARE&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;WEB &amp; MOBILE&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;CLOUD &amp; INFRA&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;DATA INTELLIGENCE&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;</span>
+      <span style="white-space:nowrap;padding-right:12px">AI &amp; ML SYSTEMS&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;CUSTOM SOFTWARE&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;WEB &amp; MOBILE&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;CLOUD &amp; INFRA&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;DATA INTELLIGENCE&nbsp;&nbsp;<span style="color:oklch(0.7 0.15 258)">✦</span>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ================= MANIFESTO ================= -->
+  <div data-screen-label="Manifesto" style="position:relative;padding:140px 64px 120px">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— 002 / WHO WE ARE</div>
+    <h2 data-reveal="up" style="margin:44px 0 0;max-width:1150px;font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:54px;line-height:1.18;letter-spacing:-.02em;color:#eef2f8;text-wrap:pretty">A partner, not a vendor. We write <span style="color:oklch(0.78 0.14 258)">less code</span>, ship it <span style="color:oklch(0.78 0.14 258)">sooner</span>, and stand behind it <span style="color:transparent;-webkit-text-stroke:1px oklch(0.78 0.12 255 / .9)">in production.</span></h2>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:88px">
+      <div data-reveal="up" data-delay="0" style="padding:36px 32px;border:1px solid rgba(140,170,255,.16);border-radius:16px;background:linear-gradient(165deg,rgba(140,170,255,.05),rgba(140,170,255,.01))">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">01</div>
+        <div style="margin-top:18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;color:#eef2f8">Ship fast</div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.65;color:rgba(223,230,238,.6)">Cadence over ceremony. Working software in week one — and every week after.</p>
+      </div>
+      <div data-reveal="up" data-delay="0.12" style="padding:36px 32px;border:1px solid rgba(140,170,255,.16);border-radius:16px;background:linear-gradient(165deg,rgba(140,170,255,.05),rgba(140,170,255,.01))">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">02</div>
+        <div style="margin-top:18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;color:#eef2f8">Write less</div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.65;color:rgba(223,230,238,.6)">Code is a liability. The best system is the smallest one that does the job.</p>
+      </div>
+      <div data-reveal="up" data-delay="0.24" style="padding:36px 32px;border:1px solid rgba(140,170,255,.16);border-radius:16px;background:linear-gradient(165deg,rgba(140,170,255,.05),rgba(140,170,255,.01))">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">03</div>
+        <div style="margin-top:18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;color:#eef2f8">Stay human</div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.65;color:rgba(223,230,238,.6)">You get a team with names and opinions — not a rotation of contractors.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SERVICES ================= -->
+  <div id="services" data-screen-label="Services" style="position:relative;padding:60px 64px 120px;scroll-margin-top:60px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— 003 / WHAT WE DO</div>
+      <div style="font-size:13.5px;color:oklch(0.78 0.13 258)">End to end, or exactly the slice you need</div>
+    </div>
+
+    <div style="margin-top:40px;border-top:1px solid rgba(140,170,255,.14)">
+      <div data-reveal="up" style="display:grid;grid-template-columns:110px 1fr 400px 60px;align-items:center;padding:32px 12px;border-bottom:1px solid rgba(140,170,255,.14);cursor:pointer" style-hover="background:rgba(140,170,255,.045);padding-left:26px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:28px;color:oklch(0.72 0.15 258)">01</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:36px;letter-spacing:-.02em;color:#eef2f8">AI, applied</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(223,230,238,.55)">Models and agents wired into your real workflow — scoped to one measurable business problem.</div>
+        <div style="justify-self:end;font-size:24px;color:oklch(0.75 0.14 258)">→</div>
+      </div>
+      <div data-reveal="up" style="display:grid;grid-template-columns:110px 1fr 400px 60px;align-items:center;padding:32px 12px;border-bottom:1px solid rgba(140,170,255,.14);cursor:pointer" style-hover="background:rgba(140,170,255,.045);padding-left:26px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:28px;color:oklch(0.72 0.15 258)">02</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:36px;letter-spacing:-.02em;color:#eef2f8">Custom software</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(223,230,238,.55)">Purpose-built systems your team can actually maintain — designed to scale with the business.</div>
+        <div style="justify-self:end;font-size:24px;color:oklch(0.75 0.14 258)">→</div>
+      </div>
+      <div data-reveal="up" style="display:grid;grid-template-columns:110px 1fr 400px 60px;align-items:center;padding:32px 12px;border-bottom:1px solid rgba(140,170,255,.14);cursor:pointer" style-hover="background:rgba(140,170,255,.045);padding-left:26px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:28px;color:oklch(0.72 0.15 258)">03</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:36px;letter-spacing:-.02em;color:#eef2f8">Web &amp; mobile</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(223,230,238,.55)">Sites and apps that feel expensive and load fast — built on stacks your team can keep.</div>
+        <div style="justify-self:end;font-size:24px;color:oklch(0.75 0.14 258)">→</div>
+      </div>
+      <div data-reveal="up" style="display:grid;grid-template-columns:110px 1fr 400px 60px;align-items:center;padding:32px 12px;border-bottom:1px solid rgba(140,170,255,.14);cursor:pointer" style-hover="background:rgba(140,170,255,.045);padding-left:26px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:28px;color:oklch(0.72 0.15 258)">04</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:36px;letter-spacing:-.02em;color:#eef2f8">Cloud &amp; infrastructure</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(223,230,238,.55)">Secure, predictable infrastructure — from the first deploy to the traffic spike you're hoping for.</div>
+        <div style="justify-self:end;font-size:24px;color:oklch(0.75 0.14 258)">→</div>
+      </div>
+      <div data-reveal="up" style="display:grid;grid-template-columns:110px 1fr 400px 60px;align-items:center;padding:32px 12px;border-bottom:1px solid rgba(140,170,255,.14);cursor:pointer" style-hover="background:rgba(140,170,255,.045);padding-left:26px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:28px;color:oklch(0.72 0.15 258)">05</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:36px;letter-spacing:-.02em;color:#eef2f8">IT &amp; security</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(223,230,238,.55)">Servers, networks, firewalls — the unglamorous work that keeps the doors open.</div>
+        <div style="justify-self:end;font-size:24px;color:oklch(0.75 0.14 258)">→</div>
+      </div>
+      <div data-reveal="up" style="display:grid;grid-template-columns:110px 1fr 400px 60px;align-items:center;padding:32px 12px;border-bottom:1px solid rgba(140,170,255,.14);cursor:pointer" style-hover="background:rgba(140,170,255,.045);padding-left:26px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:28px;color:oklch(0.72 0.15 258)">06</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:650;font-size:36px;letter-spacing:-.02em;color:#eef2f8">Data intelligence</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(223,230,238,.55)">Pipelines, analytics, and dashboards that turn raw data into a decision.</div>
+        <div style="justify-self:end;font-size:24px;color:oklch(0.75 0.14 258)">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WORK ================= -->
+  <div id="work" data-screen-label="Work" style="position:relative;padding:100px 0 60px;background:#070a0f;border-top:1px solid rgba(140,170,255,.12);overflow:hidden;scroll-margin-top:60px">
+    <div data-centerx style="position:absolute;top:36px;left:-40px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:300px;line-height:1;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(140,170,255,.13);pointer-events:none;white-space:nowrap">WORK</div>
+
+    <div style="position:relative;padding:170px 64px 0">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— 004 / SELECTED WORK</div>
+        <a href="#contact" style="font-size:13.5px;color:oklch(0.78 0.13 258)">All seven projects →</a>
+      </div>
+
+      <!-- featured: New York Mobile Mechanic -->
+      <a href="NYMM Case Study.dc.html" data-reveal="up" style="display:block;margin-top:40px;color:inherit">
+        <div data-tilt="3" style="border-radius:22px;border:1px solid rgba(140,170,255,.18);overflow:hidden;background:linear-gradient(160deg,rgba(140,170,255,.06),rgba(140,170,255,.015))">
+          <div style="position:relative;height:480px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(120,160,255,.06) 0 14px,rgba(255,255,255,.015) 14px 28px);overflow:hidden">
+            <div data-plx="0.06" style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.35);padding:10px 16px;border-radius:8px;background:rgba(7,10,15,.6)">[ nymm — hero reel / count-up stat gauges · 16:9 ]</div>
+            <div style="position:absolute;top:24px;left:24px;display:flex;gap:8px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.8 0.11 258)">
+              <span style="padding:6px 12px;border:1px solid oklch(0.7 0.14 258 / .5);border-radius:999px;background:rgba(7,10,15,.55)">FEATURED CASE STUDY</span>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:30px 38px;gap:40px">
+            <div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.02em;color:#eef2f8">New York Mobile Mechanic <span style="font-size:20px;color:oklch(0.75 0.14 258)">↗</span></div>
+              <div style="margin-top:8px;font-size:15px;line-height:1.55;color:rgba(223,230,238,.55);max-width:620px">A fully custom build for a 24/7 NYC mobile mechanic — count-up stat gauges, live Google reviews, one-tap call-to-book, and local SEO engineered to rank across the five boroughs.</div>
+            </div>
+            <div style="display:flex;gap:8px;flex:none;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:rgba(223,230,238,.6)">
+              <span style="padding:6px 12px;border:1px solid rgba(140,170,255,.25);border-radius:999px">Next.js</span>
+              <span style="padding:6px 12px;border:1px solid rgba(140,170,255,.25);border-radius:999px">TypeScript</span>
+              <span style="padding:6px 12px;border:1px solid rgba(140,170,255,.25);border-radius:999px">Local SEO</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- grid of 3 -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px;padding-bottom:90px">
+        <div data-reveal="up" data-delay="0" data-tilt="5" style="border-radius:18px;border:1px solid rgba(140,170,255,.16);overflow:hidden;background:rgba(140,170,255,.03);cursor:pointer">
+          <div style="height:230px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(-45deg,rgba(120,160,255,.055) 0 12px,rgba(255,255,255,.012) 12px 24px)">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.3);padding:8px 12px;border-radius:6px">[ nyff — site reel ]</div>
+          </div>
+          <div style="padding:24px 26px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;color:#eef2f8">New York Fine Foods</div>
+              <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(223,230,238,.45)">WEB · 2026</div>
+            </div>
+            <div style="margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(223,230,238,.55)">Cinematic site for a NYC catering and events brand — galleries, menus, bookings.</div>
+          </div>
+        </div>
+        <a href="PackShip Case Study.dc.html" data-reveal="up" data-delay="0.1" data-tilt="5" style="display:block;color:inherit;border-radius:18px;border:1px solid rgba(140,170,255,.16);overflow:hidden;background:rgba(140,170,255,.03);cursor:pointer">
+          <div style="height:230px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(120,160,255,.055) 0 12px,rgba(255,255,255,.012) 12px 24px)">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.3);padding:8px 12px;border-radius:6px">[ packship — 3D box-fit UI ]</div>
+          </div>
+          <div style="padding:24px 26px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;color:#eef2f8">PackShip</div>
+              <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(223,230,238,.45)">iOS · 2026</div>
+            </div>
+            <div style="margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(223,230,238,.55)">AI shipping companion — photo sizing, live 3D box-fit, carrier rate race.</div>
+            <div style="margin-top:10px;font-size:12.5px;font-weight:600;color:oklch(0.78 0.13 258)">Case study →</div>
+          </div>
+        </a>
+        <div data-reveal="up" data-delay="0.2" data-tilt="5" style="border-radius:18px;border:1px solid rgba(140,170,255,.16);overflow:hidden;background:rgba(140,170,255,.03);cursor:pointer">
+          <div style="height:230px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(-45deg,rgba(120,160,255,.055) 0 12px,rgba(255,255,255,.012) 12px 24px)">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:rgba(223,230,238,.5);border:1px dashed rgba(140,170,255,.3);padding:8px 12px;border-radius:6px">[ drainage proz — storefront ]</div>
+          </div>
+          <div style="padding:24px 26px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;color:#eef2f8">Landscape Drainage Proz</div>
+              <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(223,230,238,.45)">SHOPIFY · 2026</div>
+            </div>
+            <div style="margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(223,230,238,.55)">Storefront + SEO + conversion work that tripled online sales.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STATS ================= -->
+  <div data-screen-label="Stats" style="position:relative;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(140,170,255,.14);border-bottom:1px solid rgba(140,170,255,.14);background:#070a0f">
+    <div style="padding:44px 40px;border-right:1px solid rgba(140,170,255,.12)">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:52px;color:oklch(0.8 0.13 258)"><span data-count="37">0</span></div>
+      <div style="margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:rgba(223,230,238,.5)">SYSTEMS SHIPPED</div>
+    </div>
+    <div style="padding:44px 40px;border-right:1px solid rgba(140,170,255,.12)">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:52px;color:oklch(0.8 0.13 258)"><span data-count="99.98" data-decimals="2" data-suffix="%">0%</span></div>
+      <div style="margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:rgba(223,230,238,.5)">UPTIME, LAST 12 MO</div>
+    </div>
+    <div style="padding:44px 40px;border-right:1px solid rgba(140,170,255,.12)">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:52px;color:oklch(0.8 0.13 258)">&lt;24h</div>
+      <div style="margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:rgba(223,230,238,.5)">RESPONSE TIME</div>
+    </div>
+    <div style="padding:44px 40px">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:52px;color:oklch(0.8 0.13 258)"><span data-count="0">0</span></div>
+      <div style="margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:rgba(223,230,238,.5)">PROJECTS ABANDONED</div>
+    </div>
+  </div>
+
+  <!-- ================= PROCESS ================= -->
+  <div id="process" data-screen-label="Process" style="position:relative;padding:130px 64px;scroll-margin-top:60px">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— 005 / HOW WE WORK</div>
+    <h2 style="margin:40px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:56px;letter-spacing:-.025em;color:#eef2f8">A small, deliberate process.</h2>
+
+    <div data-dotline-box style="position:relative;margin-top:80px;padding-left:56px">
+      <div data-dotline style="position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:rgba(140,170,255,.14)"></div>
+      <div data-progressline data-dotline style="position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,oklch(0.72 0.16 258),oklch(0.6 0.17 268));transform:scaleY(0);transform-origin:top;box-shadow:0 0 14px oklch(0.65 0.16 258 / .6)"></div>
+
+      <div data-reveal="left" style="position:relative;display:grid;grid-template-columns:220px 1fr;gap:48px;padding:8px 0 72px">
+        <div data-dot style="position:absolute;left:-49px;top:14px;width:10px;height:10px;border-radius:50%;background:oklch(0.72 0.16 258);box-shadow:0 0 14px oklch(0.72 0.16 258)"></div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;color:#eef2f8">01 <span style="font-weight:650;font-size:30px">Discover</span></div>
+        <p style="margin:4px 0 0;max-width:640px;font-size:16.5px;line-height:1.65;color:rgba(223,230,238,.62)">We start with the actual problem. A short engagement to map the system, talk to your team, and write down what we're really trying to ship.</p>
+      </div>
+      <div data-reveal="left" data-delay="0.08" style="position:relative;display:grid;grid-template-columns:220px 1fr;gap:48px;padding:0 0 72px">
+        <div data-dot style="position:absolute;left:-49px;top:14px;width:10px;height:10px;border-radius:50%;background:oklch(0.72 0.16 258);box-shadow:0 0 14px oklch(0.72 0.16 258)"></div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;color:#eef2f8">02 <span style="font-weight:650;font-size:30px">Design &amp; build</span></div>
+        <p style="margin:4px 0 0;max-width:640px;font-size:16.5px;line-height:1.65;color:rgba(223,230,238,.62)">Tight feedback loops with working software. Something usable ships in week one; we iterate from there in the open.</p>
+      </div>
+      <div data-reveal="left" data-delay="0.16" style="position:relative;display:grid;grid-template-columns:220px 1fr;gap:48px;padding:0">
+        <div data-dot style="position:absolute;left:-49px;top:14px;width:10px;height:10px;border-radius:50%;background:oklch(0.72 0.16 258);box-shadow:0 0 14px oklch(0.72 0.16 258)"></div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;color:#eef2f8">03 <span style="font-weight:650;font-size:30px">Operate</span></div>
+        <p style="margin:4px 0 0;max-width:640px;font-size:16.5px;line-height:1.65;color:rgba(223,230,238,.62)">Software in production isn't done. We hold the pager, fix what breaks, and hand off only when your team is ready.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CONTACT ================= -->
+  <div id="contact" data-screen-label="Contact" style="position:relative;padding:130px 64px 110px;background:#070a0f;border-top:1px solid rgba(140,170,255,.12);overflow:hidden;scroll-margin-top:60px">
+    <div style="position:absolute;top:-220px;right:-180px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,oklch(0.5 0.16 258 / .22),transparent 65%);filter:blur(50px);pointer-events:none"></div>
+    <div data-driftx="0.1" style="position:absolute;bottom:-30px;right:-40px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:280px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(140,170,255,.1);pointer-events:none;white-space:nowrap">BUILD</div>
+
+    <div style="position:relative;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.18em;color:rgba(223,230,238,.45)">— 006 / GET IN TOUCH</div>
+    <h2 data-reveal="up" style="position:relative;margin:40px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:96px;line-height:.98;letter-spacing:-.03em;color:#eef2f8">Let's build<br><span style="background:linear-gradient(105deg,#eef2f8 10%,oklch(0.8 0.13 258) 55%,oklch(0.68 0.17 245) 90%);-webkit-background-clip:text;background-clip:text;color:transparent">something.</span></h2>
+
+    <div style="position:relative;display:grid;grid-template-columns:1.5fr 1fr;gap:80px;margin-top:72px">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:18px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <input placeholder="Name" style="padding:18px 20px;background:rgba(140,170,255,.04);border:1px solid rgba(140,170,255,.18);border-radius:12px;color:#eef2f8;font-size:15px;outline:none" style-focus="border-color:oklch(0.7 0.16 258);box-shadow:0 0 0 3px oklch(0.6 0.17 258 / .18)">
+          <input placeholder="Email" style="padding:18px 20px;background:rgba(140,170,255,.04);border:1px solid rgba(140,170,255,.18);border-radius:12px;color:#eef2f8;font-size:15px;outline:none" style-focus="border-color:oklch(0.7 0.16 258);box-shadow:0 0 0 3px oklch(0.6 0.17 258 / .18)">
+        </div>
+        <select style="padding:18px 20px;background:rgba(140,170,255,.04);border:1px solid rgba(140,170,255,.18);border-radius:12px;color:rgba(223,230,238,.7);font-size:15px;outline:none;appearance:none" style-focus="border-color:oklch(0.7 0.16 258)">
+          <option>Project type — select…</option>
+          <option>Custom software</option>
+          <option>Web / mobile</option>
+          <option>AI / data</option>
+          <option>Cloud / infrastructure</option>
+          <option>Something else</option>
+        </select>
+        <textarea placeholder="What are we building?" rows="5" style="padding:18px 20px;background:rgba(140,170,255,.04);border:1px solid rgba(140,170,255,.18);border-radius:12px;color:#eef2f8;font-size:15px;outline:none;resize:vertical;font-family:inherit" style-focus="border-color:oklch(0.7 0.16 258);box-shadow:0 0 0 3px oklch(0.6 0.17 258 / .18)"></textarea>
+        <div>
+          <a href="#contact" data-magnetic="0.3" style="display:inline-block;padding:18px 44px;border-radius:999px;background:oklch(0.68 0.17 258);color:#060910;font-weight:650;font-size:15.5px;box-shadow:0 0 44px oklch(0.6 0.18 258 / .45)">Send message →</a>
+        </div>
+      </div>
+
+      <div data-reveal="up" data-delay="0.12" style="display:flex;flex-direction:column;gap:34px;padding-top:6px">
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">EMAIL</div>
+          <div style="margin-top:8px;font-size:19px;color:#eef2f8">support@neuragul.com</div>
+        </div>
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">BASED IN</div>
+          <div style="margin-top:8px;font-size:19px;color:#eef2f8">Remote · US East</div>
+        </div>
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;color:oklch(0.75 0.13 258)">RESPONSE TIME</div>
+          <div style="margin-top:8px;font-size:19px;color:#eef2f8">Within 24 hours</div>
+        </div>
+        <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:rgba(223,230,238,.5);border-top:1px solid rgba(140,170,255,.14);padding-top:24px">We reply to every inquiry, whether or not we're a fit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div data-screen-label="Footer" style="position:relative;padding:70px 64px 40px;border-top:1px solid rgba(140,170,255,.12)">
+    <div style="display:flex;justify-content:space-between;gap:60px;flex-wrap:wrap">
+      <div>
+        <img src="uploads/logo.png" alt="NeuraGul Labs" style="height:48px;width:auto;display:block">
+        <div style="margin-top:10px;font-size:14px;color:rgba(223,230,238,.5)">Software, shipped with intent.</div>
+      </div>
+      <div style="display:flex;gap:80px">
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:rgba(223,230,238,.6)">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:rgba(223,230,238,.4)">COMPANY</div>
+          <a href="#top">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:rgba(223,230,238,.6)">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:rgba(223,230,238,.4)">SERVICES</div>
+          <a href="#services">Custom software</a>
+          <a href="#services">Web &amp; mobile</a>
+          <a href="#services">Cloud</a>
+          <a href="#services">AI</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:rgba(223,230,238,.6)">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:rgba(223,230,238,.4)">RESOURCES</div>
+          <a href="#work">Work</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:60px;padding-top:24px;border-top:1px solid rgba(140,170,255,.1);font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:rgba(223,230,238,.4)">
+      <span>© 2026 NEURAGUL LABS</span>
+      <span>v2026 · MADE WITH INTENT</span>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;motion&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;full&quot;, &quot;calm&quot;, &quot;off&quot;], &quot;default&quot;: &quot;full&quot;, &quot;tsType&quot;: &quot;'full'|'calm'|'off'&quot;, &quot;section&quot;: &quot;Motion&quot;},
+  &quot;blueprintGrid&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Backdrop&quot;}
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._tries = 0;
+    const boot = () => {
+      if (window.NGFX && window.NGFX.init) {
+        this._cleanup = window.NGFX.init({ motion: this.props.motion ?? 'full' });
+      } else if (this._tries++ < 120) {
+        this._t = setTimeout(boot, 50);
+      }
+    };
+    boot();
+  }
+  componentWillUnmount() {
+    clearTimeout(this._t);
+    if (this._cleanup) this._cleanup();
+  }
+  renderVals() {
+    return { showGrid: this.props.blueprintGrid ?? true };
+  }
+}
+</script>
+</body>
+</html>

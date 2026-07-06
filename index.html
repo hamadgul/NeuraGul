@@ -20,11 +20,12 @@
 		<meta name="twitter:title" content="NeuraGul - Software Development Agency">
 		<meta name="twitter:description" content="Custom software, web and mobile apps, AI, and cloud — designed, built, and run in production.">
 		<meta name="twitter:image" content="https://neuragul.com/assets/img/hero-poster.jpg">
+		<meta name="theme-color" content="#0a0d12">
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-		<link rel="stylesheet" href="assets/css/refresh.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+		<link rel="stylesheet" href="assets/css/labs.css">
 
 		<script type="application/ld+json">
 		{
@@ -66,86 +67,71 @@
 		</script>
 	</head>
 
-
 	<body>
-		<a href="#main" class="nrg-skip">Skip to content</a>
+		<a href="#main" class="ng-skip">Skip to content</a>
 
-		<div class="nrg-aurora" aria-hidden="true">
-			<span class="nrg-aurora__blob nrg-aurora__blob--1"></span>
-			<span class="nrg-aurora__blob nrg-aurora__blob--2"></span>
-			<span class="nrg-aurora__blob nrg-aurora__blob--3"></span>
-			<span class="nrg-aurora__blob nrg-aurora__blob--4"></span>
+		<!-- cursor glow -->
+		<div class="ng-glow" data-cursor-glow aria-hidden="true"></div>
+
+		<!-- ================= NAV ================= -->
+		<header class="ng-nav" id="ng-nav" data-nav>
+			<a href="#top" class="ng-nav__brand" aria-label="NeuraGul Labs — home">
+				<img src="assets/img/logo.png" alt="NeuraGul Labs" width="218" height="105">
+			</a>
+			<nav class="ng-nav__links" aria-label="Primary">
+				<a href="#work">Work</a>
+				<a href="#services">Services</a>
+				<a href="#process">Process</a>
+				<a href="#contact">Contact</a>
+			</nav>
+			<a href="#contact" class="ng-btn ng-btn--nav ng-nav__cta" data-magnetic="0.25">
+				Start a project <span aria-hidden="true">→</span>
+			</a>
+			<button class="ng-nav__toggle" type="button" aria-label="Toggle menu" aria-controls="ng-nav-drawer" aria-expanded="false">
+				<span></span><span></span><span></span>
+			</button>
+		</header>
+		<div class="ng-nav__drawer" id="ng-nav-drawer" hidden>
+			<a href="#work">Work</a>
+			<a href="#services">Services</a>
+			<a href="#process">Process</a>
+			<a href="#contact">Contact</a>
 		</div>
 
-		<header class="nrg-nav" id="nrg-nav">
-			<div class="nrg-container nrg-nav__inner">
-				<a href="#home" class="nrg-nav__brand" aria-label="NeuraGul home">
-					<img src="assets/img/logo.png" alt="" width="218" height="105">
-				</a>
-				<nav class="nrg-nav__links" aria-label="Primary">
-					<a href="/services/">Services</a>
-					<a href="/work/">Work</a>
-					<a href="#contact">Contact</a>
-				</nav>
-				<a href="#contact" class="nrg-btn nrg-btn--filled nrg-nav__cta">
-					Start a project
-					<svg class="nrg-btn__arrow" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"/></svg>
-				</a>
-				<button class="nrg-nav__toggle" type="button" aria-label="Toggle menu" aria-controls="nrg-nav-mobile" aria-expanded="false">
-					<span></span><span></span><span></span>
-				</button>
-			</div>
-			<div class="nrg-nav__mobile" id="nrg-nav-mobile" hidden>
-				<a href="/services/">Services</a>
-				<a href="/work/">Work</a>
-				<a href="#contact">Contact</a>
-			</div>
-		</header>
-
 		<main id="main">
-		<section class="nrg-section nrg-hero" id="home">
-			<!-- Autoplay must be native: the attributes AND <source> tags live in
-			     the static markup so iOS Safari treats this as an autoplay
-			     candidate at parse time (same as the portfolio videos, which
-			     autoplay reliably). The script below only DISABLES it for
+
+		<!-- ================= HERO ================= -->
+		<section class="ng-hero" id="top" aria-label="Intro">
+			<!-- Autoplay must be native: the autoplay attribute AND <source> tags
+			     live in the static markup so iOS Safari treats this as an autoplay
+			     candidate at parse time. The script below only DISABLES it for
 			     reduced-motion / data-saver users. -->
-			<video class="nrg-hero__video"
+			<video class="ng-hero__video" data-autoplay
 			       autoplay muted loop playsinline preload="auto"
-			       poster="assets/img/hero-poster.jpg"
-			       aria-hidden="true">
+			       poster="assets/img/hero-poster.jpg" aria-hidden="true">
 				<source src="assets/video/hero.webm" type="video/webm">
 				<source src="assets/video/hero.mp4" type="video/mp4">
 			</video>
-			<div class="nrg-hero__shade" aria-hidden="true"></div>
-			<button class="nrg-hero__pause" type="button" hidden aria-pressed="false" aria-label="Pause background video">Pause</button>
 			<script>
-				// Runs during parse, right after the element — early enough to
-				// strip sources before they load for the guard cases.
 				(function(){
-					var video = document.querySelector('.nrg-hero__video');
-					var pause = document.querySelector('.nrg-hero__pause');
+					var video = document.querySelector('.ng-hero__video');
 					if (!video) return;
 					var noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 						|| (navigator.connection && navigator.connection.saveData);
 					if (noMotion) {
-						// Honor reduced-motion / data-saver: keep the poster, no video, no bytes.
 						video.removeAttribute('autoplay');
 						video.pause();
 						while (video.firstChild) video.removeChild(video.firstChild);
 						video.load();
-						if (pause) pause.hidden = true;
 						return;
 					}
-					// Belt-and-suspenders: static autoplay should already have started,
-					// but nudge it on readiness signals and on first user gesture in case
-					// the browser deferred it.
 					var tryPlay = function(){ var p = video.play(); if (p && p.catch) p.catch(function(){}); };
 					video.addEventListener('canplay', tryPlay);
 					document.addEventListener('visibilitychange', function(){ if (!document.hidden) tryPlay(); });
 					var gestures = ['pointerdown', 'touchstart', 'keydown'];
 					var onGesture = function(){ tryPlay(); gestures.forEach(function(e){ window.removeEventListener(e, onGesture); }); };
 					gestures.forEach(function(e){ window.addEventListener(e, onGesture, e === 'keydown' ? false : { passive: true }); });
-					// Pause/play control.
+					var pause = document.querySelector('.ng-hero__pause');
 					if (pause) {
 						pause.hidden = false;
 						pause.addEventListener('click', function(){
@@ -160,426 +146,404 @@
 					}
 				})();
 			</script>
-			<div class="nrg-container nrg-hero__inner">
-				<span class="nrg-section__label">— 001 / 2026</span>
-				<h1 class="nrg-hero__headline" data-reveal>
-					Software,<br>
-					built<br>
-					with <em>intent.</em>
+			<div class="ng-hero__grid" aria-hidden="true"></div>
+			<div class="ng-hero__scrim" aria-hidden="true"></div>
+			<button class="ng-hero__pause" type="button" hidden aria-pressed="false" aria-label="Pause background video">Pause</button>
+
+			<div class="ng-hero__inner">
+				<div class="ng-hero__eyebrow">
+					<span class="ng-hero__dot" aria-hidden="true"></span>
+					A senior engineering studio — NYC / Remote
+				</div>
+
+				<h1 class="ng-hero__title">
+					<span class="ng-hero__mask"><span class="ng-hero__line ng-hero__line--1">We build</span></span>
+					<span class="ng-hero__mask"><span class="ng-hero__line ng-hero__line--2">software</span></span>
+					<span class="ng-hero__mask ng-hero__mask--wide"><span class="ng-hero__line ng-hero__line--3">that ships.</span></span>
 				</h1>
-				<div class="nrg-hero__foot" data-reveal>
-					<p class="nrg-hero__sub">We partner with founders, small businesses, and teams to design, build, and run production software that earns its keep.
-					New idea or proven product, we meet you where you are.</p>
-					<div class="nrg-hero__cta">
-						<a href="#contact" class="nrg-btn nrg-btn--filled">
-							Start a project
-							<svg class="nrg-btn__arrow" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"/></svg>
-						</a>
-						<a href="#portfolio" class="nrg-btn nrg-btn--ghost">View work</a>
+
+				<div class="ng-hero__foot">
+					<p class="ng-hero__sub">NeuraGul designs, builds, and runs production software for founders and teams — the whole system, whiteboard to on-call. No agency theater.</p>
+					<div class="ng-hero__cta">
+						<a href="#contact" class="ng-btn ng-btn--fill" data-magnetic="0.3">Start a project</a>
+						<a href="#work" class="ng-btn ng-btn--ghost" data-magnetic="0.3">View work ↓</a>
 					</div>
 				</div>
-			</div>
-		</section>
 
-		<section class="nrg-section nrg-about" id="about">
-			<div class="nrg-container">
-				<span class="nrg-section__label">— 002 / WHO WE ARE</span>
-				<div class="nrg-about__grid">
-					<h2 class="nrg-about__statement" data-reveal>
-						NeuraGul builds production software for teams who want a partner, not a vendor. Engineering work that earns trust, line by line.
-					</h2>
-					<ul class="nrg-about__stats" data-reveal>
-						<li>
-							<span class="nrg-about__value">Ship fast</span>
-							<span class="nrg-label">Cadence over ceremony</span>
-						</li>
-						<li>
-							<span class="nrg-about__value">Write less</span>
-							<span class="nrg-label">Code is a liability</span>
-						</li>
-						<li>
-							<span class="nrg-about__value">Stay human</span>
-							<span class="nrg-label">Teams, not contractors</span>
-						</li>
-					</ul>
+				<div class="ng-hero__meta">
+					<span>— 001 / 2026</span>
+					<span class="ng-hero__cue">SCROLL ↓</span>
+					<span>RESPONSE &lt; 24H</span>
 				</div>
 			</div>
 		</section>
 
-		<section class="nrg-section nrg-services" id="service">
-			<div class="nrg-container">
-				<span class="nrg-section__label">— 003 / WHAT WE DO</span>
-				<header class="nrg-services__head">
-					<h2 class="nrg-services__title" data-reveal>Quality & innovative solutions, end to end.</h2>
-					<a class="nrg-services__all" href="/services/">View all services →</a>
-				</header>
-					<ul class="nrg-services__list">
-						<li class="nrg-service" data-reveal>
-							<a href="/services/ai-consulting/" class="nrg-service__link">
-								<span class="nrg-service__num">01.</span>
-								<h3 class="nrg-service__title">AI Consulting & Development</h3>
-								<p class="nrg-service__desc">Strategic integration and custom models that solve a specific business problem.</p>
-								<span class="nrg-service__arrow" aria-hidden="true">→</span>
-							</a>
-						</li>
-						<li class="nrg-service" data-reveal>
-							<a href="/services/custom-software/" class="nrg-service__link">
-								<span class="nrg-service__num">02.</span>
-								<h3 class="nrg-service__title">Custom Software Development</h3>
-								<p class="nrg-service__desc">Tailored software designed to meet your business requirements and scale with growth.</p>
-								<span class="nrg-service__arrow" aria-hidden="true">→</span>
-							</a>
-						</li>
-						<li class="nrg-service" data-reveal>
-							<a href="/services/web-mobile/" class="nrg-service__link">
-								<span class="nrg-service__num">03.</span>
-								<h3 class="nrg-service__title">Web & Mobile Development</h3>
-								<p class="nrg-service__desc">Responsive sites and applications built with the technologies your team can maintain.</p>
-								<span class="nrg-service__arrow" aria-hidden="true">→</span>
-							</a>
-						</li>
-						<li class="nrg-service" data-reveal>
-							<a href="/services/cloud/" class="nrg-service__link">
-								<span class="nrg-service__num">04.</span>
-								<h3 class="nrg-service__title">Cloud Solutions</h3>
-								<p class="nrg-service__desc">Scalable, secure cloud infrastructure that stays predictable as your traffic grows.</p>
-								<span class="nrg-service__arrow" aria-hidden="true">→</span>
-							</a>
-						</li>
-						<li class="nrg-service" data-reveal>
-							<a href="/services/it-infrastructure/" class="nrg-service__link">
-								<span class="nrg-service__num">05.</span>
-								<h3 class="nrg-service__title">IT Infrastructure</h3>
-								<p class="nrg-service__desc">Server, network, firewall, and security work for businesses that need uptime.</p>
-								<span class="nrg-service__arrow" aria-hidden="true">→</span>
-							</a>
-						</li>
-						<li class="nrg-service" data-reveal>
-							<a href="/services/data-intelligence/" class="nrg-service__link">
-								<span class="nrg-service__num">06.</span>
-								<h3 class="nrg-service__title">Data Intelligence</h3>
-								<p class="nrg-service__desc">Analytics, visualization, and migration work that turns data into a decision.</p>
-								<span class="nrg-service__arrow" aria-hidden="true">→</span>
-							</a>
-						</li>
-					</ul>
+		<!-- ================= MARQUEE ================= -->
+		<div class="ng-marquee" aria-hidden="true">
+			<div class="ng-marquee__track">
+				<span>AI &amp; ML SYSTEMS&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;CUSTOM SOFTWARE&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;WEB &amp; MOBILE&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;CLOUD &amp; INFRA&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;DATA INTELLIGENCE&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;</span>
+				<span>AI &amp; ML SYSTEMS&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;CUSTOM SOFTWARE&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;WEB &amp; MOBILE&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;CLOUD &amp; INFRA&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;DATA INTELLIGENCE&nbsp;&nbsp;<span class="ng-marquee__star">✦</span>&nbsp;&nbsp;</span>
+			</div>
+		</div>
+
+		<!-- ================= MANIFESTO ================= -->
+		<section class="ng-section ng-manifesto" aria-label="Who we are">
+			<div class="ng-num">— 002 / WHO WE ARE</div>
+			<h2 class="ng-manifesto__statement" data-reveal="up">A partner, not a vendor. We write <span class="ng-hl">less code</span>, ship it <span class="ng-hl">sooner</span>, and stand behind it <span class="ng-outline">in production.</span></h2>
+
+			<div class="ng-cards">
+				<div class="ng-card" data-reveal="up" data-delay="0">
+					<div class="ng-card__num">01</div>
+					<div class="ng-card__title">Ship fast</div>
+					<p class="ng-card__desc">Cadence over ceremony. Working software in week one — and every week after.</p>
+				</div>
+				<div class="ng-card" data-reveal="up" data-delay="0.12">
+					<div class="ng-card__num">02</div>
+					<div class="ng-card__title">Write less</div>
+					<p class="ng-card__desc">Code is a liability. The best system is the smallest one that does the job.</p>
+				</div>
+				<div class="ng-card" data-reveal="up" data-delay="0.24">
+					<div class="ng-card__num">03</div>
+					<div class="ng-card__title">Stay human</div>
+					<p class="ng-card__desc">You get a team with names and opinions — not a rotation of contractors.</p>
+				</div>
 			</div>
 		</section>
-		
-		
-		<section class="nrg-section nrg-work" id="portfolio">
-			<div class="nrg-container">
-				<span class="nrg-section__label">— 004 / PORTFOLIO</span>
-				<header class="nrg-work__head">
-					<h2 class="nrg-work__title" data-reveal>Selected work.</h2>
-					<p class="nrg-work__sub" data-reveal>A small selection of projects across mobile apps and the web.</p>
-					<a class="nrg-work__all" href="/work/">View all work →</a>
-				</header>
-				<div class="nrg-work__grid">
-					<a class="nrg-work__item" href="/work/packship/" data-reveal>
-						<div class="nrg-work__img">
-							<picture>
-								<source srcset="assets/img/portfolio/packship.webp" type="image/webp">
-								<img src="assets/img/portfolio/packship.jpg" alt="PackShip iOS app — 3D box-fit view and live carrier-rate comparison screens" width="1200" height="750" loading="lazy" decoding="async">
-							</picture>
-						</div>
-						<div class="nrg-work__meta">
-							<span class="nrg-label">2026 · MOBILE · iOS APP</span>
-							<h3 class="nrg-work__name">PackShip</h3>
-							<p class="nrg-work__desc">An AI-powered shipping companion that sizes items from a photo, finds the right box with a real-time 3D packing view, and compares live UPS, FedEx, and USPS rates.</p>
-							<ul class="nrg-work__stack" aria-label="Built with"><li>React Native</li><li>TypeScript</li><li>JavaScript</li><li>threeJS</li><li>Postgres</li><li>Redis</li></ul>
-						</div>
-					</a>
-					<a class="nrg-work__item" href="/work/new-york-fine-foods/" data-reveal>
-						<div class="nrg-work__img">
-							<video class="nrg-work__video" width="1200" height="750" autoplay muted loop playsinline preload="metadata" poster="assets/img/portfolio/nyff.jpg" aria-label="New York Fine Foods — cinematic moving hero from the live site">
-								<source src="assets/video/nyff-hero.webm" type="video/webm">
-								<source src="assets/video/nyff-hero.mp4" type="video/mp4">
-								<img src="assets/img/portfolio/nyff.jpg" alt="New York Fine Foods — catering and events website" width="1200" height="750" loading="lazy" decoding="async">
-							</video>
-						</div>
-						<div class="nrg-work__meta">
-							<span class="nrg-label">2026 · WEB · CLIENT SITE</span>
-							<h3 class="nrg-work__name">New York Fine Foods</h3>
-							<p class="nrg-work__desc">A cinematic site for a NYC catering, pizza-truck, and mobile-bar brand — media galleries, service menus, and booking inquiries.</p>
-							<ul class="nrg-work__stack" aria-label="Built with"><li>TypeScript</li><li>NextJS</li><li>JavaScript</li></ul>
-						</div>
-					</a>
-					<a class="nrg-work__item" href="/work/new-york-mobile-mechanic/" data-reveal>
-						<div class="nrg-work__img">
-							<video class="nrg-work__video" width="1200" height="750" autoplay muted loop playsinline preload="metadata" poster="assets/img/portfolio/nymm.jpg" aria-label="New York Mobile Mechanic — animated stat gauges and cinematic hero from the live site">
+
+		<!-- ================= SERVICES ================= -->
+		<section class="ng-section ng-section--tight-top ng-services" id="services" aria-label="What we do" style="scroll-margin-top:60px">
+			<div class="ng-section__head">
+				<div class="ng-num">— 003 / WHAT WE DO</div>
+				<div class="ng-section__aside">End to end, or exactly the slice you need</div>
+			</div>
+
+			<div class="ng-services__list" role="list">
+				<a class="ng-service" href="/services/ai-consulting/" data-reveal="up">
+					<div class="ng-service__num">01</div>
+					<div class="ng-service__name">AI, applied</div>
+					<div class="ng-service__desc">Models and agents wired into your real workflow — scoped to one measurable business problem.</div>
+					<div class="ng-service__arrow" aria-hidden="true">→</div>
+				</a>
+				<a class="ng-service" href="/services/custom-software/" data-reveal="up">
+					<div class="ng-service__num">02</div>
+					<div class="ng-service__name">Custom software</div>
+					<div class="ng-service__desc">Purpose-built systems your team can actually maintain — designed to scale with the business.</div>
+					<div class="ng-service__arrow" aria-hidden="true">→</div>
+				</a>
+				<a class="ng-service" href="/services/web-mobile/" data-reveal="up">
+					<div class="ng-service__num">03</div>
+					<div class="ng-service__name">Web &amp; mobile</div>
+					<div class="ng-service__desc">Sites and apps that feel expensive and load fast — built on stacks your team can keep.</div>
+					<div class="ng-service__arrow" aria-hidden="true">→</div>
+				</a>
+				<a class="ng-service" href="/services/cloud/" data-reveal="up">
+					<div class="ng-service__num">04</div>
+					<div class="ng-service__name">Cloud &amp; infrastructure</div>
+					<div class="ng-service__desc">Secure, predictable infrastructure — from the first deploy to the traffic spike you're hoping for.</div>
+					<div class="ng-service__arrow" aria-hidden="true">→</div>
+				</a>
+				<a class="ng-service" href="/services/it-infrastructure/" data-reveal="up">
+					<div class="ng-service__num">05</div>
+					<div class="ng-service__name">IT &amp; security</div>
+					<div class="ng-service__desc">Servers, networks, firewalls — the unglamorous work that keeps the doors open.</div>
+					<div class="ng-service__arrow" aria-hidden="true">→</div>
+				</a>
+				<a class="ng-service" href="/services/data-intelligence/" data-reveal="up">
+					<div class="ng-service__num">06</div>
+					<div class="ng-service__name">Data intelligence</div>
+					<div class="ng-service__desc">Pipelines, analytics, and dashboards that turn raw data into a decision.</div>
+					<div class="ng-service__arrow" aria-hidden="true">→</div>
+				</a>
+			</div>
+		</section>
+
+		<!-- ================= WORK ================= -->
+		<section class="ng-work" id="work" aria-label="Selected work" style="scroll-margin-top:60px">
+			<div class="ng-work__ghost" data-centerx aria-hidden="true">WORK</div>
+
+			<div class="ng-work__inner">
+				<div class="ng-section__head">
+					<div class="ng-num">— 004 / SELECTED WORK</div>
+					<a class="ng-work__all" href="/work/">All seven projects →</a>
+				</div>
+
+				<!-- featured: New York Mobile Mechanic -->
+				<a class="ng-featured" href="/work/new-york-mobile-mechanic/" data-reveal="up">
+					<div class="ng-featured__frame" data-tilt="3">
+						<div class="ng-featured__media">
+							<video autoplay muted loop playsinline preload="metadata"
+							       poster="assets/img/portfolio/nymm.jpg"
+							       aria-label="New York Mobile Mechanic — animated stat gauges and cinematic hero from the live site">
 								<source src="assets/video/nymm-hero.webm" type="video/webm">
 								<source src="assets/video/nymm-hero.mp4" type="video/mp4">
-								<img src="assets/img/portfolio/nymm.jpg" alt="New York Mobile Mechanic — 24/7 mobile auto-repair website" width="1200" height="750" loading="lazy" decoding="async">
+							</video>
+							<div class="ng-featured__badges">
+								<span class="ng-badge">FEATURED CASE STUDY</span>
+							</div>
+						</div>
+						<div class="ng-featured__body">
+							<div>
+								<div class="ng-featured__name">New York Mobile Mechanic <span class="ng-arrow" aria-hidden="true">↗</span></div>
+								<div class="ng-featured__desc">A fully custom build for a 24/7 NYC mobile mechanic — count-up stat gauges, live Google reviews, one-tap call-to-book, and local SEO engineered to rank across the five boroughs.</div>
+							</div>
+							<div class="ng-tags">
+								<span>Next.js</span>
+								<span>TypeScript</span>
+								<span>Local SEO</span>
+							</div>
+						</div>
+					</div>
+				</a>
+
+				<!-- grid of 3 -->
+				<div class="ng-work__grid">
+					<a class="ng-work-card" href="/work/new-york-fine-foods/" data-reveal="up" data-delay="0" data-tilt="5">
+						<div class="ng-work-card__media">
+							<video autoplay muted loop playsinline preload="metadata"
+							       poster="assets/img/portfolio/nyff.jpg"
+							       aria-label="New York Fine Foods — cinematic moving hero from the live site">
+								<source src="assets/video/nyff-hero.webm" type="video/webm">
+								<source src="assets/video/nyff-hero.mp4" type="video/mp4">
 							</video>
 						</div>
-						<div class="nrg-work__meta">
-							<span class="nrg-label">2026 · WEB · CLIENT SITE</span>
-							<h3 class="nrg-work__name">New York Mobile Mechanic</h3>
-							<p class="nrg-work__desc">A high-energy site for a 24/7 NYC mobile mechanic — animated stat gauges that count up, service breakdowns, live Google reviews, and one-tap call-to-book, with local SEO built to rank for on-demand repair searches across NYC.</p>
-							<ul class="nrg-work__stack" aria-label="Built with"><li>TypeScript</li><li>NextJS</li><li>Tailwind CSS</li><li>Framer Motion</li></ul>
+						<div class="ng-work-card__body">
+							<div class="ng-work-card__row">
+								<div class="ng-work-card__name">New York Fine Foods</div>
+								<div class="ng-work-card__tag">WEB · 2026</div>
+							</div>
+							<div class="ng-work-card__desc">Cinematic site for a NYC catering and events brand — galleries, menus, bookings.</div>
 						</div>
 					</a>
-					<a class="nrg-work__item" href="/work/vintus/" data-reveal>
-						<div class="nrg-work__img">
+					<a class="ng-work-card" href="/work/packship/" data-reveal="up" data-delay="0.1" data-tilt="5">
+						<div class="ng-work-card__media">
 							<picture>
-								<source srcset="assets/img/portfolio/vintus.webp" type="image/webp">
-								<img src="assets/img/portfolio/vintus.jpg" alt="Vintus — wine-import e-commerce platform" width="1200" height="750" loading="lazy" decoding="async">
+								<source srcset="assets/img/portfolio/packship.webp" type="image/webp">
+								<img src="assets/img/portfolio/packship.jpg" alt="PackShip iOS app — live 3D box-fit view" width="1200" height="750" loading="lazy" decoding="async">
 							</picture>
 						</div>
-						<div class="nrg-work__meta">
-							<span class="nrg-label">2026 · WEB · E-COMMERCE</span>
-							<h3 class="nrg-work__name">Vintus</h3>
-							<p class="nrg-work__desc">The e-commerce platform for a leading wine import company — inventory management, order processing, and customer relationship tools.</p>
-							<ul class="nrg-work__stack" aria-label="Built with"><li>WordPress</li><li>PHP</li><li>Python</li></ul>
+						<div class="ng-work-card__body">
+							<div class="ng-work-card__row">
+								<div class="ng-work-card__name">PackShip</div>
+								<div class="ng-work-card__tag">iOS · 2026</div>
+							</div>
+							<div class="ng-work-card__desc">AI shipping companion — photo sizing, live 3D box-fit, carrier rate race.</div>
+							<div class="ng-work-card__cta">Case study →</div>
 						</div>
 					</a>
-					<a class="nrg-work__item" href="/work/restaurant-ordering-portal/" data-reveal>
-						<div class="nrg-work__img">
-							<picture>
-								<source srcset="assets/img/portfolio/pizzeria.webp" type="image/webp">
-								<img src="assets/img/portfolio/pizzeria.jpg" alt="Restaurant ordering portal — online menu and checkout" width="1200" height="750" loading="lazy" decoding="async">
-							</picture>
-						</div>
-						<div class="nrg-work__meta">
-							<span class="nrg-label">2026 · WEB · PRODUCT</span>
-							<h3 class="nrg-work__name">Restaurant ordering portal</h3>
-							<p class="nrg-work__desc">Commission-free online ordering that plugs into a restaurant's existing Square POS — orders, payments, and SMS updates, with no third-party fees.</p>
-							<ul class="nrg-work__stack" aria-label="Built with"><li>TypeScript</li><li>Square SDK</li><li>Delivery APIs</li></ul>
-						</div>
-					</a>
-					<a class="nrg-work__item" href="/work/rwd-pipeline/" data-reveal>
-						<div class="nrg-work__img">
-							<picture>
-								<source srcset="assets/img/portfolio/rwd-pipeline.webp" type="image/webp">
-								<img src="assets/img/portfolio/rwd-pipeline.jpg" alt="The Real-World Data (RWD) Pipeline — product case-study deck" width="1200" height="750" loading="lazy" decoding="async">
-							</picture>
-						</div>
-						<div class="nrg-work__meta">
-							<span class="nrg-label">PRODUCT · DATA · 0→1</span>
-							<h3 class="nrg-work__name">Real-World Data Pipeline</h3>
-							<p class="nrg-work__desc">Led Product Management at Freenome for a 0→1 ETL pipeline that standardized diverse real-world data into a single Common Data Model for early cancer detection.</p>
-							<ul class="nrg-work__stack" aria-label="Skills"><li>Product Management</li><li>Agile</li><li>Planning</li></ul>
-						</div>
-					</a>
-					<a class="nrg-work__item" href="/work/landscape-drainage-proz/" data-reveal>
-						<div class="nrg-work__img">
+					<a class="ng-work-card" href="/work/landscape-drainage-proz/" data-reveal="up" data-delay="0.2" data-tilt="5">
+						<div class="ng-work-card__media">
 							<picture>
 								<source srcset="assets/img/portfolio/landscapedrainage.webp" type="image/webp">
-								<img src="assets/img/portfolio/landscapedrainage.jpg" alt="Landscape Drainage Proz — Shopify storefront for drainage products" width="1200" height="750" loading="lazy" decoding="async">
+								<img src="assets/img/portfolio/landscapedrainage.jpg" alt="Landscape Drainage Proz — Shopify storefront" width="1200" height="750" loading="lazy" decoding="async">
 							</picture>
 						</div>
-						<div class="nrg-work__meta">
-							<span class="nrg-label">2026 · WEB · SHOPIFY</span>
-							<h3 class="nrg-work__name">Landscape Drainage Proz</h3>
-							<p class="nrg-work__desc">Tripled a client's online sales through a Shopify storefront buildout paired with SEO and conversion work, spanning CTA
-							design and implementation, Google Ads, and SEO and marketing strategy.</p>
-							<ul class="nrg-work__stack" aria-label="Built with"><li>Shopify</li><li>Custom Liquid</li><li>SEO</li><li>Google Ads</li></ul>
+						<div class="ng-work-card__body">
+							<div class="ng-work-card__row">
+								<div class="ng-work-card__name">Landscape Drainage Proz</div>
+								<div class="ng-work-card__tag">SHOPIFY · 2026</div>
+							</div>
+							<div class="ng-work-card__desc">Storefront + SEO + conversion work that tripled online sales.</div>
 						</div>
 					</a>
 				</div>
 			</div>
 		</section>
 
-
-		<section class="nrg-section nrg-process" id="work_process">
-			<div class="nrg-container">
-				<span class="nrg-section__label">— 005 / HOW WE WORK</span>
-				<header class="nrg-process__head">
-					<h2 class="nrg-process__title" data-reveal>A small, deliberate process.</h2>
-				</header>
-				<ol class="nrg-process__list">
-					<li class="nrg-chapter" data-reveal>
-						<span class="nrg-chapter__num" aria-hidden="true">01</span>
-						<div class="nrg-chapter__body">
-							<h3 class="nrg-chapter__title">Discover</h3>
-							<p class="nrg-chapter__desc">We start with the actual problem. A short engagement to map the system, talk to your team, and write down what we're really trying to ship.</p>
-						</div>
-					</li>
-					<li class="nrg-chapter" data-reveal>
-						<span class="nrg-chapter__num" aria-hidden="true">02</span>
-						<div class="nrg-chapter__body">
-							<h3 class="nrg-chapter__title">Design & build</h3>
-							<p class="nrg-chapter__desc">Tight feedback loops with working software. We ship something usable in week one and iterate from there.</p>
-						</div>
-					</li>
-					<li class="nrg-chapter" data-reveal>
-						<span class="nrg-chapter__num" aria-hidden="true">03</span>
-						<div class="nrg-chapter__body">
-							<h3 class="nrg-chapter__title">Operate</h3>
-							<p class="nrg-chapter__desc">Software in production isn't done. We support what we ship, fix what breaks, and hand off only when your team is ready.</p>
-						</div>
-					</li>
-				</ol>
+		<!-- ================= STATS ================= -->
+		<section class="ng-stats" aria-label="By the numbers">
+			<div class="ng-stat">
+				<div class="ng-stat__value"><span data-count="37">0</span></div>
+				<div class="ng-stat__label">SYSTEMS SHIPPED</div>
+			</div>
+			<div class="ng-stat">
+				<div class="ng-stat__value"><span data-count="99.98" data-decimals="2" data-suffix="%">0%</span></div>
+				<div class="ng-stat__label">UPTIME, LAST 12 MO</div>
+			</div>
+			<div class="ng-stat">
+				<div class="ng-stat__value">&lt;24h</div>
+				<div class="ng-stat__label">RESPONSE TIME</div>
+			</div>
+			<div class="ng-stat">
+				<div class="ng-stat__value"><span data-count="0">0</span></div>
+				<div class="ng-stat__label">PROJECTS ABANDONED</div>
 			</div>
 		</section>
 
-		<section class="nrg-section nrg-contact" id="contact">
-			<div class="nrg-container">
-				<span class="nrg-section__label">— 006 / GET IN TOUCH</span>
-				<div class="nrg-contact__grid">
-						<h2 class="nrg-contact__title" data-reveal>Let's build<br>something.</h2>
-						<form id="nrg-contact-form" class="nrg-form" action="https://formspree.io/f/mdkgvrpn" method="POST" data-reveal>
-							<div class="nrg-form__row">
-								<div class="nrg-field">
-									<label for="nrg-name" class="nrg-label">Name</label>
-									<input id="nrg-name" type="text" name="name" autocomplete="name" required>
-									<div class="nrg-field__error" id="nrg-name-error" role="alert" aria-live="polite"></div>
-								</div>
-								<div class="nrg-field">
-									<label for="nrg-email" class="nrg-label">Email</label>
-									<input id="nrg-email" type="email" name="email" autocomplete="email" required>
-									<div class="nrg-field__error" id="nrg-email-error" role="alert" aria-live="polite"></div>
-								</div>
-							</div>
-							<div class="nrg-field">
-								<label for="nrg-project-type" class="nrg-label">Project type</label>
-								<select id="nrg-project-type" name="project_type" autocomplete="off">
-									<option value="" selected disabled>Select a type…</option>
-									<option>Custom software</option>
-									<option>Web / mobile</option>
-									<option>AI / data</option>
-									<option>Cloud / infrastructure</option>
-									<option>Something else</option>
-								</select>
-							</div>
-							<input type="text" name="_gotcha" class="nrg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-							<div class="nrg-field">
-								<label for="nrg-message" class="nrg-label">Message</label>
-								<textarea id="nrg-message" name="message" rows="5" autocomplete="off" required></textarea>
-								<div class="nrg-field__error" id="nrg-message-error" role="alert" aria-live="polite"></div>
-							</div>
-							<button type="submit" class="nrg-btn nrg-btn--filled">
-								<span class="nrg-form__submit-label">Send</span>
-								<svg class="nrg-btn__arrow" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"/></svg>
-							</button>
-							<div class="nrg-form__status" id="nrg-form-status" role="status" aria-live="polite"></div>
-						</form>
-					
-					<aside class="nrg-contact__aside" data-reveal>
-						<dl class="nrg-meta">
-							<div class="nrg-meta__row">
-								<dt class="nrg-label">Email</dt>
-								<dd>support@neuragul.com</dd>
-							</div>
-							<div class="nrg-meta__row">
-								<dt class="nrg-label">Based in</dt>
-								<dd>Remote · US East</dd>
-							</div>
-							<div class="nrg-meta__row">
-								<dt class="nrg-label">Response time</dt>
-								<dd>Within 24 hours</dd>
-							</div>
-						</dl>
-						<p class="nrg-contact__note">We reply to every inquiry, whether or not we're a fit.</p>
-					</aside>
+		<!-- ================= PROCESS ================= -->
+		<section class="ng-section ng-process" id="process" aria-label="How we work" style="scroll-margin-top:60px">
+			<div class="ng-num">— 005 / HOW WE WORK</div>
+			<h2 class="ng-process__title" data-reveal="up">A small, deliberate process.</h2>
+
+			<div class="ng-timeline" data-dotline-box>
+				<div class="ng-timeline__line" data-dotline aria-hidden="true"></div>
+				<div class="ng-timeline__prog" data-progressline data-dotline aria-hidden="true"></div>
+
+				<div class="ng-step" data-reveal="left">
+					<div class="ng-step__dot" data-dot aria-hidden="true"></div>
+					<div class="ng-step__title">01 <span>Discover</span></div>
+					<p class="ng-step__desc">We start with the actual problem. A short engagement to map the system, talk to your team, and write down what we're really trying to ship.</p>
 				</div>
+				<div class="ng-step" data-reveal="left" data-delay="0.08">
+					<div class="ng-step__dot" data-dot aria-hidden="true"></div>
+					<div class="ng-step__title">02 <span>Design &amp; build</span></div>
+					<p class="ng-step__desc">Tight feedback loops with working software. Something usable ships in week one; we iterate from there in the open.</p>
+				</div>
+				<div class="ng-step" data-reveal="left" data-delay="0.16">
+					<div class="ng-step__dot" data-dot aria-hidden="true"></div>
+					<div class="ng-step__title">03 <span>Operate</span></div>
+					<p class="ng-step__desc">Software in production isn't done. We hold the pager, fix what breaks, and hand off only when your team is ready.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ================= CONTACT ================= -->
+		<section class="ng-contact" id="contact" aria-label="Get in touch" style="scroll-margin-top:60px">
+			<div class="ng-contact__orb" aria-hidden="true"></div>
+			<div class="ng-contact__ghost" data-driftx="0.1" aria-hidden="true">BUILD</div>
+
+			<div class="ng-num" style="position:relative">— 006 / GET IN TOUCH</div>
+			<h2 class="ng-contact__title" data-reveal="up">Let's build<br><span>something.</span></h2>
+
+			<div class="ng-contact__grid">
+				<form id="ng-contact-form" class="ng-form" action="https://formspree.io/f/mdkgvrpn" method="POST" data-reveal="up" novalidate>
+					<div class="ng-form__row">
+						<div class="ng-field">
+							<label for="ng-name" class="ng-field__label">Name</label>
+							<input id="ng-name" class="ng-input" type="text" name="name" autocomplete="name" required>
+							<div class="ng-field__error" id="ng-name-error" role="alert" aria-live="polite"></div>
+						</div>
+						<div class="ng-field">
+							<label for="ng-email" class="ng-field__label">Email</label>
+							<input id="ng-email" class="ng-input" type="email" name="email" autocomplete="email" required>
+							<div class="ng-field__error" id="ng-email-error" role="alert" aria-live="polite"></div>
+						</div>
+					</div>
+					<div class="ng-field">
+						<label for="ng-project-type" class="ng-field__label">Project type</label>
+						<select id="ng-project-type" class="ng-select" name="project_type" autocomplete="off">
+							<option value="" selected disabled>Select a type…</option>
+							<option>Custom software</option>
+							<option>Web / mobile</option>
+							<option>AI / data</option>
+							<option>Cloud / infrastructure</option>
+							<option>Something else</option>
+						</select>
+					</div>
+					<input type="text" name="_gotcha" class="ng-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+					<div class="ng-field">
+						<label for="ng-message" class="ng-field__label">What are we building?</label>
+						<textarea id="ng-message" class="ng-textarea" name="message" rows="5" autocomplete="off" required></textarea>
+						<div class="ng-field__error" id="ng-message-error" role="alert" aria-live="polite"></div>
+					</div>
+					<div>
+						<button type="submit" class="ng-btn ng-btn--fill" data-magnetic="0.3">
+							<span class="ng-btn__label">Send message</span>
+							<span aria-hidden="true">→</span>
+						</button>
+					</div>
+					<div class="ng-form__status" id="ng-form-status" role="status" aria-live="polite"></div>
+				</form>
+
+				<aside class="ng-contact__aside" data-reveal="up" data-delay="0.12">
+					<div>
+						<div class="ng-meta__label">EMAIL</div>
+						<div class="ng-meta__value">support@neuragul.com</div>
+					</div>
+					<div>
+						<div class="ng-meta__label">BASED IN</div>
+						<div class="ng-meta__value">Remote · US East</div>
+					</div>
+					<div>
+						<div class="ng-meta__label">RESPONSE TIME</div>
+						<div class="ng-meta__value">Within 24 hours</div>
+					</div>
+					<p class="ng-contact__note">We reply to every inquiry, whether or not we're a fit.</p>
+				</aside>
 			</div>
 		</section>
 		</main>
 
-		<footer class="nrg-foot" id="footer">
-			<div class="nrg-container">
-				<div class="nrg-foot__top">
-					<div class="nrg-foot__brand">
-						<a href="#home" class="nrg-foot__mark" aria-label="NeuraGul home">
-						<img src="assets/img/logo.png" alt="" width="218" height="105">
+		<!-- ================= FOOTER ================= -->
+		<footer class="ng-foot" id="footer">
+			<div class="ng-foot__top">
+				<div class="ng-foot__brand">
+					<a href="#top" aria-label="NeuraGul Labs — home">
+						<img src="assets/img/logo.png" alt="NeuraGul Labs" width="218" height="105">
 					</a>
-						<p class="nrg-foot__tag">Software, shipped with intent.</p>
+					<p class="ng-foot__tag">Software, shipped with intent.</p>
+				</div>
+				<div class="ng-foot__cols">
+					<div class="ng-foot__col">
+						<div class="ng-foot__col-title">COMPANY</div>
+						<a href="#top">About</a>
+						<a href="#contact">Contact</a>
 					</div>
-					<div class="nrg-foot__cols">
-						<div>
-							<span class="nrg-label">Company</span>
-							<ul><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
-						</div>
-						<div>
-							<span class="nrg-label">Services</span>
-							<ul><li><a href="/services/custom-software/">Custom software</a></li><li><a href="/services/web-mobile/">Web &amp; mobile</a></li><li><a href="/services/cloud/">Cloud</a></li><li><a href="/services/ai-consulting/">AI</a></li></ul>
-						</div>
-						<div>
-							<span class="nrg-label">Resources</span>
-							<ul><li><a href="/work/">Work</a></li><li><a href="privacy.html">Privacy</a></li></ul>
-						</div>
+					<div class="ng-foot__col">
+						<div class="ng-foot__col-title">SERVICES</div>
+						<a href="/services/custom-software/">Custom software</a>
+						<a href="/services/web-mobile/">Web &amp; mobile</a>
+						<a href="/services/cloud/">Cloud</a>
+						<a href="/services/ai-consulting/">AI</a>
+					</div>
+					<div class="ng-foot__col">
+						<div class="ng-foot__col-title">RESOURCES</div>
+						<a href="/work/">Work</a>
+						<a href="privacy.html">Privacy</a>
 					</div>
 				</div>
-				<hr class="nrg-rule">
-				<div class="nrg-foot__bottom">
-					<span>© 2026 NeuraGul Labs</span>
-					<span class="nrg-label">v2026 · Made with intent</span>
-				</div>
+			</div>
+			<div class="ng-foot__bottom">
+				<span>© 2026 NEURAGUL LABS</span>
+				<span>v2026 · MADE WITH INTENT</span>
 			</div>
 		</footer>
 
+		<!-- ================= SCRIPTS ================= -->
+		<script src="assets/js/fx.js"></script>
+		<script>
+			if (window.NGFX && window.NGFX.init) { window.NGFX.init({ motion: 'full' }); }
+		</script>
 
-
-		<script src="assets/js/reveal.js"></script>
-
+		<!-- mobile nav drawer -->
 		<script>
 			(function(){
-				var nav = document.getElementById('nrg-nav');
-				if (!nav) return;
-				var sync = function(){ nav.classList.toggle('is-scrolled', window.scrollY > 40); };
-				sync();
-				window.addEventListener('scroll', sync, { passive: true });
-				var toggle = nav.querySelector('.nrg-nav__toggle');
-				var mobile = document.getElementById('nrg-nav-mobile');
-				if (toggle && mobile) {
-					toggle.addEventListener('click', function(){
-						var open = !mobile.hasAttribute('hidden');
-						if (open) { mobile.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); }
-						else { mobile.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); }
-					});
-					mobile.querySelectorAll('a').forEach(function(a){
-						a.addEventListener('click', function(){ mobile.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); });
-					});
-					window.addEventListener('resize', function(){
-						if (window.innerWidth > 900 && !mobile.hasAttribute('hidden')) {
-							mobile.setAttribute('hidden', '');
-							toggle.setAttribute('aria-expanded', 'false');
-						}
-					}, { passive: true });
-
-					// Esc closes drawer
-					document.addEventListener('keydown', function(e){
-						if (e.key === 'Escape' && !mobile.hasAttribute('hidden')) {
-							mobile.setAttribute('hidden', '');
-							toggle.setAttribute('aria-expanded', 'false');
-							toggle.focus();
-						}
-					});
-
-					// When drawer opens, focus first link
-					var observer = new MutationObserver(function(){
-						if (!mobile.hasAttribute('hidden')) {
-							var firstLink = mobile.querySelector('a');
-							if (firstLink) firstLink.focus();
-						}
-					});
-					observer.observe(mobile, { attributes: true, attributeFilter: ['hidden'] });
-				}
+				var toggle = document.querySelector('.ng-nav__toggle');
+				var drawer = document.getElementById('ng-nav-drawer');
+				if (!toggle || !drawer) return;
+				function close(){ drawer.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); }
+				function open(){ drawer.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); var a = drawer.querySelector('a'); if (a) a.focus(); }
+				toggle.addEventListener('click', function(){
+					if (drawer.hasAttribute('hidden')) open(); else close();
+				});
+				drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+				window.addEventListener('resize', function(){ if (window.innerWidth > 900) close(); }, { passive: true });
+				document.addEventListener('keydown', function(e){
+					if (e.key === 'Escape' && !drawer.hasAttribute('hidden')) { close(); toggle.focus(); }
+				});
 			})();
 		</script>
+
+		<!-- contact form: validation + Formspree submit -->
 		<script>
 			(function(){
-				var form = document.getElementById('nrg-contact-form');
+				var form = document.getElementById('ng-contact-form');
 				if (!form) return;
-				var status = document.getElementById('nrg-form-status');
+				var status = document.getElementById('ng-form-status');
 				var submitBtn = form.querySelector('button[type="submit"]');
-				var submitLabel = form.querySelector('.nrg-form__submit-label');
+				var submitLabel = form.querySelector('.ng-btn__label');
 
 				function clearErrors(){
-					form.querySelectorAll('.nrg-field--error').forEach(function(f){ f.classList.remove('nrg-field--error'); });
-					form.querySelectorAll('.nrg-field__error').forEach(function(e){ e.textContent = ''; });
-					status.className = 'nrg-form__status';
+					form.querySelectorAll('.ng-field--error').forEach(function(f){ f.classList.remove('ng-field--error'); });
+					form.querySelectorAll('.ng-field__error').forEach(function(e){ e.textContent = ''; });
+					status.className = 'ng-form__status';
 					status.textContent = '';
 				}
-
 				function setError(fieldId, message){
 					var input = document.getElementById(fieldId);
 					if (!input) return;
-					var field = input.closest('.nrg-field');
-					var errorEl = field && field.querySelector('.nrg-field__error');
-					if (field) field.classList.add('nrg-field--error');
+					var field = input.closest('.ng-field');
+					var errorEl = field && field.querySelector('.ng-field__error');
+					if (field) field.classList.add('ng-field--error');
 					if (errorEl) errorEl.textContent = message;
 				}
 
@@ -587,20 +551,18 @@
 					e.preventDefault();
 					clearErrors();
 
-					// Inline validation
-					var name = document.getElementById('nrg-name');
-					var email = document.getElementById('nrg-email');
-					var message = document.getElementById('nrg-message');
+					var name = document.getElementById('ng-name');
+					var email = document.getElementById('ng-email');
+					var message = document.getElementById('ng-message');
 					var firstInvalid = null;
 
-					if (!name.value.trim()) { setError('nrg-name', 'Please enter your name.'); firstInvalid = firstInvalid || name; }
-					if (!email.value.trim()) { setError('nrg-email', 'Please enter your email.'); firstInvalid = firstInvalid || email; }
-					else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { setError('nrg-email', 'That doesn\'t look like a valid email address.'); firstInvalid = firstInvalid || email; }
-					if (!message.value.trim()) { setError('nrg-message', 'Tell us a bit about what you\'re working on.'); firstInvalid = firstInvalid || message; }
+					if (!name.value.trim()) { setError('ng-name', 'Please enter your name.'); firstInvalid = firstInvalid || name; }
+					if (!email.value.trim()) { setError('ng-email', 'Please enter your email.'); firstInvalid = firstInvalid || email; }
+					else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { setError('ng-email', 'That doesn\'t look like a valid email address.'); firstInvalid = firstInvalid || email; }
+					if (!message.value.trim()) { setError('ng-message', 'Tell us a bit about what you\'re working on.'); firstInvalid = firstInvalid || message; }
 
 					if (firstInvalid) { firstInvalid.focus(); return; }
 
-					// Submit to Formspree via fetch
 					submitBtn.disabled = true;
 					if (submitLabel) submitLabel.textContent = 'Sending…';
 
@@ -611,22 +573,21 @@
 					}).then(function(r){
 						if (r.ok) {
 							form.reset();
-							status.className = 'nrg-form__status nrg-form__status--success';
+							status.className = 'ng-form__status ng-form__status--success';
 							status.textContent = 'Thanks — we\'ll be in touch within 24 hours.';
 						} else {
-							status.className = 'nrg-form__status nrg-form__status--error';
+							status.className = 'ng-form__status ng-form__status--error';
 							status.textContent = 'Something went wrong. Please email us directly instead.';
 						}
 					}).catch(function(){
-						status.className = 'nrg-form__status nrg-form__status--error';
+						status.className = 'ng-form__status ng-form__status--error';
 						status.textContent = 'Network error. Please try again or email us directly.';
 					}).finally(function(){
 						submitBtn.disabled = false;
-						if (submitLabel) submitLabel.textContent = 'Send';
+						if (submitLabel) submitLabel.textContent = 'Send message';
 					});
 				});
 			})();
 		</script>
 	</body>
-
 </html>
