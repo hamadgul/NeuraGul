@@ -109,8 +109,11 @@
 			<video class="ng-hero__video" data-autoplay
 			       autoplay muted loop playsinline preload="auto"
 			       poster="assets/img/hero-poster.jpg" aria-hidden="true">
-				<source src="assets/video/hero.webm" type="video/webm">
+				<!-- H.264 MP4 first: it's hardware-decoded on every phone, so it
+				     reaches the first frame fast. VP9 WebM (same file size here, no
+				     bandwidth win) would software-decode on Android → slow start. -->
 				<source src="assets/video/hero.mp4" type="video/mp4">
+				<source src="assets/video/hero.webm" type="video/webm">
 			</video>
 			<script>
 				(function(){
