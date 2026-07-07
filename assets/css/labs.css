@@ -637,7 +637,8 @@ input, select, textarea { font-family: inherit; }
 }
 .ng-contact__ghost {
   position: absolute;
-  bottom: -30px; right: -40px;
+  z-index: 0;
+  top: 8px; right: -40px;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 280px;
@@ -649,6 +650,7 @@ input, select, textarea { font-family: inherit; }
 }
 .ng-contact__title {
   position: relative;
+  z-index: 1;
   margin: 40px 0 0;
   font-family: var(--font-display);
   font-weight: 800;
@@ -665,11 +667,31 @@ input, select, textarea { font-family: inherit; }
 }
 .ng-contact__grid {
   position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 80px;
   margin-top: 72px;
 }
+
+/* ---------- Section watermark ghosts (Services, Process) ---------- */
+.ng-services, .ng-process { overflow: hidden; }
+.ng-services > *:not(.ng-services__ghost),
+.ng-process  > *:not(.ng-process__ghost) { position: relative; z-index: 1; }
+.ng-services__ghost, .ng-process__ghost {
+  position: absolute;
+  z-index: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(70, 130, 255, .30);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.ng-services__ghost { top: 28px; right: -30px; font-size: 300px; }
+.ng-process__ghost  { top: 28px; left: -40px; font-size: 240px; }
 
 /* Form */
 .ng-form { display: flex; flex-direction: column; gap: 18px; }
@@ -769,6 +791,8 @@ input, select, textarea { font-family: inherit; }
   :root { --gutter: 40px; }
   .ng-work__ghost { font-size: 220px; }
   .ng-contact__ghost { font-size: 200px; }
+  .ng-services__ghost { font-size: 220px; }
+  .ng-process__ghost { font-size: 180px; }
   .ng-service { grid-template-columns: 80px 1fr 44px; }
   .ng-service__desc { grid-column: 2 / 3; margin-top: 10px; }
 }
@@ -826,7 +850,8 @@ input, select, textarea { font-family: inherit; }
   .ng-form__row { grid-template-columns: 1fr; }
   .ng-foot__cols { gap: 40px; }
   .ng-contact__title { font-size: 44px; }
-  .ng-work__ghost, .ng-contact__ghost { font-size: 130px; }
+  .ng-work__ghost, .ng-contact__ghost,
+  .ng-services__ghost, .ng-process__ghost { font-size: 130px; }
 }
 
 /* ============================================================
