@@ -469,7 +469,7 @@ input, select, textarea { font-family: inherit; }
   line-height: 1;
   letter-spacing: -.03em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(140, 170, 255, .13);
+  -webkit-text-stroke: 1.5px rgba(70, 130, 255, .38);
   pointer-events: none;
   white-space: nowrap;
 }
@@ -643,7 +643,7 @@ input, select, textarea { font-family: inherit; }
   font-size: 280px;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(140, 170, 255, .1);
+  -webkit-text-stroke: 1.5px rgba(70, 130, 255, .32);
   pointer-events: none;
   white-space: nowrap;
 }
