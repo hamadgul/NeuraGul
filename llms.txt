@@ -1,6 +1,10 @@
 # NeuraGul
 
-> NeuraGul is a software development agency that partners with founders, small businesses, and teams to design, build, and run production software. Work spans custom software, web and mobile apps, AI, cloud, IT infrastructure, and data intelligence. Based remote in the US East; every inquiry gets a reply within 24 hours.
+> NeuraGul is a New York software development and web design agency that partners with founders, small businesses, and teams to design, build, and run production software. Work spans custom software, web and mobile apps, AI, cloud, IT infrastructure, and data intelligence. Based in New York, NY and serving all five boroughs (Manhattan, Brooklyn, Queens, the Bronx, Staten Island); every inquiry gets a reply within 24 hours.
+
+## New York
+
+- [Web design & software development in NYC](https://neuragul.com/new-york/): NeuraGul's New York page — services, five-borough coverage, and local case studies (New York Mobile Mechanic, New York Fine Foods).
 
 ## Services
 
@@ -30,6 +34,7 @@
 ## Contact
 
 - Email: support@neuragul.com
-- Based: Remote, US East
+- Phone: (203) 685-9193
+- Based: New York, NY (serving the five boroughs)
 - Response time: within 24 hours
 - [Contact form](https://neuragul.com/#contact)
