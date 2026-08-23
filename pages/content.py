@@ -3,6 +3,7 @@
 SERVICES = [
     {
         "slug": "ai-consulting",
+        "service_type": "AI consulting and development",
         "name": "AI Consulting & Development",
         "promise": "Strategic AI integration and custom models built to solve one specific business problem — not to chase a trend.",
         "deliverables": [
@@ -16,6 +17,7 @@ SERVICES = [
     },
     {
         "slug": "custom-software",
+        "service_type": "Custom software development",
         "name": "Custom Software Development",
         "promise": "Tailored software designed around your business requirements — and built to scale as you grow.",
         "deliverables": [
@@ -29,6 +31,7 @@ SERVICES = [
     },
     {
         "slug": "web-mobile",
+        "service_type": "Web and mobile app development",
         "name": "Web & Mobile Development",
         "promise": "Responsive websites and applications built with technologies your team can actually maintain.",
         "deliverables": [
@@ -42,6 +45,7 @@ SERVICES = [
     },
     {
         "slug": "cloud",
+        "service_type": "Cloud infrastructure",
         "name": "Cloud Solutions",
         "promise": "Scalable, secure cloud infrastructure that stays predictable as your traffic grows.",
         "deliverables": [
@@ -55,6 +59,7 @@ SERVICES = [
     },
     {
         "slug": "it-infrastructure",
+        "service_type": "IT infrastructure and security",
         "name": "IT Infrastructure",
         "promise": "Server, network, firewall, and security work for businesses that simply need uptime.",
         "deliverables": [
@@ -68,6 +73,7 @@ SERVICES = [
     },
     {
         "slug": "data-intelligence",
+        "service_type": "Data intelligence and analytics",
         "name": "Data Intelligence",
         "promise": "Analytics, visualization, and migration work that turns raw data into a decision.",
         "deliverables": [
@@ -84,6 +90,8 @@ SERVICES = [
 CASE_STUDIES = [
     {
         "slug": "packship",
+        "bespoke": True,  # hand-built page; build.py must not overwrite it
+        "image": "packship.jpg",
         "name": "PackShip",
         "meta": "2026 · Mobile · iOS App",
         "stack": ["React Native", "TypeScript", "JavaScript", "Three.js", "Postgres", "Redis"],
@@ -95,7 +103,25 @@ CASE_STUDIES = [
         "related_services": ["ai-consulting", "web-mobile"],
     },
     {
+        "slug": "foodtruckrentals",
+        "name": "Food Truck Rentals",
+        "image": "foodtruckrentals.jpg",
+        "meta": "2026 · Web · Client Site",
+        "stack": ["TypeScript", "Next.js 16", "React 19", "Tailwind CSS", "Motion", "Technical SEO"],
+        "live_url": "https://www.foodtruckrentals.com",
+        "live_label": "Visit the live site",
+        "brief": "A New York brand-activation company wraps, staffs, and permits food trucks for fashion houses, department stores, and restaurants \u2014 and was selling all of it without a site of its own.",
+        "built": "A 24-page Next.js 16 site built around the work itself: a full-bleed activation hero, a truck roster that animates on a variable-width axis, and a page for every way a truck gets rented \u2014 weddings, product launches, film production, corporate events, ice cream, coffee carts, and the tri-state markets. Every commercial page carries JSON-LD Service, FAQ, and LocalBusiness data generated from one pricing module, so published prices cannot drift from the page. Keyword research shapes the URL structure, and a Vitest suite of 119 tests guards it \u2014 including one that fails the build if two pages start competing for the same keyword cluster.",
+        "outcome": "A live national site, indexed and structured to compete beyond its first city: the flagship URL now targets a 12,100/mo search term rather than the 320/mo local qualifier it launched on.",
+        "media": [
+            ("foodtruckrentals-home.jpg", "Home page \u2014 the activation hero, with the roster of wrapped trucks alongside."),
+            ("foodtruckrentals-work.jpg", "The work index \u2014 every activation, with the client, the borough, and the year."),
+        ],
+        "related_services": ["web-mobile", "data-intelligence"],
+    },
+    {
         "slug": "new-york-fine-foods",
+        "image": "nyff.jpg",
         "name": "New York Fine Foods",
         "meta": "2026 · Web · Client Site",
         "stack": ["TypeScript", "Next.js", "JavaScript"],
@@ -108,6 +134,8 @@ CASE_STUDIES = [
     },
     {
         "slug": "new-york-mobile-mechanic",
+        "bespoke": True,  # hand-built page; build.py must not overwrite it
+        "image": "nymm.jpg",
         "name": "New York Mobile Mechanic",
         "meta": "2026 · Web · Client Site",
         "stack": ["TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
@@ -119,7 +147,24 @@ CASE_STUDIES = [
         "related_services": ["web-mobile"],
     },
     {
+        "slug": "delivery-routing",
+        "name": "Delivery routing platform",
+        "image": "delivery-routing.jpg",
+        "meta": "2026 \u00b7 Web App \u00b7 Logistics",
+        "stack": ["Python", "FastAPI", "OR-Tools", "React", "TypeScript", "SQLite", "Fly.io"],
+        "brief": "A home medical equipment provider planned every delivery day by hand: one dispatcher, a messy export of the day\u2019s tickets, six vans, and drivers waiting to leave.",
+        "built": "A dispatch app that runs the whole morning in four steps. It parses the delivery log and refuses to invent anything it cannot read confidently \u2014 an unreadable row becomes a flagged task, never a guess. It applies the business rules the dispatcher used to hold in their head (per-driver caps, town bans, delivery windows, driver and vehicle eligibility), then solves for minimum drive time with Google OR-Tools against live traffic. Geocoding fails closed, and a per-solve travel-matrix budget makes a runaway maps bill structurally impossible rather than merely unlikely. The output is a printed cut sheet designed for a clipboard and a pen, plus an Excel and CSV log for the office. 1,278 tests cover the rules.",
+        "outcome": "Upload to printed routes in minutes, with every ticket accounted for \u2014 in daily production use, deployed on Fly.io. Client details are withheld; the screenshots below run on synthetic data.",
+        "media": [
+            ("delivery-routing-routes.jpg", "Solved routes \u2014 six drivers, colour-matched to the map, with any stop movable between them."),
+            ("delivery-routing-review.jpg", "Review & fix \u2014 47 tickets on the sheet, one flagged rather than guessed at."),
+            ("delivery-routing-export.jpg", "Export \u2014 printable driver cut sheets for the van, Excel and CSV for the office."),
+        ],
+        "related_services": ["custom-software", "data-intelligence"],
+    },
+    {
         "slug": "vintus",
+        "image": "vintus.jpg",
         "name": "Vintus",
         "meta": "2026 · Web · E-commerce",
         "stack": ["WordPress", "PHP", "Python"],
@@ -132,6 +177,7 @@ CASE_STUDIES = [
     },
     {
         "slug": "restaurant-ordering-portal",
+        "image": "pizzeria.jpg",
         "name": "Restaurant ordering portal",
         "meta": "2026 · Web · Product",
         "stack": ["TypeScript", "Square SDK", "Delivery APIs"],
@@ -144,6 +190,7 @@ CASE_STUDIES = [
     },
     {
         "slug": "rwd-pipeline",
+        "image": "rwd-pipeline.jpg",
         "name": "Real-World Data Pipeline",
         "meta": "Product · Data · 0→1",
         "stack": ["Product Management", "Agile", "Planning"],
@@ -156,6 +203,7 @@ CASE_STUDIES = [
     },
     {
         "slug": "landscape-drainage-proz",
+        "image": "landscapedrainage.jpg",
         "name": "Landscape Drainage Proz",
         "meta": "2026 · Web · Shopify",
         "stack": ["Shopify", "Custom Liquid", "SEO", "Google Ads"],

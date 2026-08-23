@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://neuragul.com/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url><loc>https://neuragul.com/new-york/</loc><lastmod>2026-07-07</lastmod></url>
   <url>
@@ -16,8 +16,10 @@
   <url><loc>https://neuragul.com/services/cloud/</loc><lastmod>2026-07-04</lastmod></url>
   <url><loc>https://neuragul.com/services/it-infrastructure/</loc><lastmod>2026-07-04</lastmod></url>
   <url><loc>https://neuragul.com/services/data-intelligence/</loc><lastmod>2026-07-04</lastmod></url>
-  <url><loc>https://neuragul.com/work/</loc><lastmod>2026-07-04</lastmod></url>
+  <url><loc>https://neuragul.com/work/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://neuragul.com/work/packship/</loc><lastmod>2026-07-04</lastmod></url>
+  <url><loc>https://neuragul.com/work/foodtruckrentals/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>https://neuragul.com/work/delivery-routing/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://neuragul.com/work/new-york-fine-foods/</loc><lastmod>2026-07-04</lastmod></url>
   <url><loc>https://neuragul.com/work/new-york-mobile-mechanic/</loc><lastmod>2026-07-04</lastmod></url>
   <url><loc>https://neuragul.com/work/vintus/</loc><lastmod>2026-07-04</lastmod></url>

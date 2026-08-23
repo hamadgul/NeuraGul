@@ -98,7 +98,14 @@ def _json_str(s):
     return json.dumps(s, ensure_ascii=False)
 
 
-def document(title, description, canonical, body, jsonld_blocks):
+def _social_image(image):
+    """Absolute URL for og:image / twitter:image. `image` is a portfolio filename."""
+    if not image:
+        return BASE + "/assets/img/hero-poster.jpg"
+    return BASE + "/assets/img/portfolio/" + image
+
+
+def document(title, description, canonical, body, jsonld_blocks, image=None):
     head = (
         '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
         '  <meta charset="utf-8">\n'
@@ -112,8 +119,10 @@ def document(title, description, canonical, body, jsonld_blocks):
         '  <meta property="og:title" content="' + esc(title) + '">\n'
         '  <meta property="og:description" content="' + esc(description) + '">\n'
         '  <meta property="og:url" content="' + esc(canonical) + '">\n'
-        '  <meta property="og:image" content="' + BASE + '/assets/img/hero-poster.jpg">\n'
+        '  <meta property="og:image" content="' + esc(_social_image(image)) + '">\n'
         '  <meta name="twitter:card" content="summary_large_image">\n'
+        '  <meta name="twitter:image" content="' + esc(_social_image(image)) + '">\n'
+        '  <meta name="theme-color" content="#0a0d12">\n'
         '  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>\n'
         '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
         '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">\n'
@@ -132,6 +141,7 @@ def _service_schema(service, url):
         "@context": "https://schema.org",
         "@type": "Service",
         "name": service["name"],
+        "serviceType": service["service_type"],
         "description": service["promise"],
         "url": url,
         "provider": {"@type": "Organization", "name": "NeuraGul", "url": BASE + "/"},
@@ -212,6 +222,37 @@ def _case_schema(case, url):
     return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False) + '\n</script>'
 
 
+def _live_cta(case):
+    """The live-project button. Omitted for private work with nothing to link to."""
+    if not case.get("live_url"):
+        return ""
+    return (
+        '<section class="nrg-detail__cta" data-reveal>'
+        '<a href="' + esc(case["live_url"]) + '" class="nrg-btn nrg-btn--filled" target="_blank" rel="noopener">'
+        + esc(case["live_label"]) + ' ' + ARROW + '</a></section>\n'
+    )
+
+
+def _case_media(case):
+    """Screenshots of the shipped thing, captioned. `media` is [(filename, caption)]."""
+    shots = case.get("media") or []
+    if not shots:
+        return ""
+    figures = ""
+    for filename, caption in shots:
+        stem = filename.rsplit(".", 1)[0]
+        figures += (
+            '<figure class="nrg-detail__shot" data-reveal>'
+            '<picture>'
+            '<source srcset="/assets/img/portfolio/' + esc(stem) + '.webp" type="image/webp">'
+            '<img src="/assets/img/portfolio/' + esc(filename) + '" alt="' + esc(caption) + '" '
+            'width="1600" height="1000" loading="lazy" decoding="async">'
+            '</picture>'
+            '<figcaption>' + esc(caption) + '</figcaption></figure>\n'
+        )
+    return '<section class="nrg-detail__media" aria-label="Screenshots">\n' + figures + '</section>\n'
+
+
 def render_case_study(case, services_by_slug):
     url = BASE + "/work/" + case["slug"] + "/"
     title = case["name"] + " — NeuraGul case study"
@@ -246,21 +287,21 @@ def render_case_study(case, services_by_slug):
         '<p data-reveal>' + esc(case["built"]) + '</p></section>\n'
         '<section class="nrg-detail__section"><h2 data-reveal>Outcome</h2>'
         '<p data-reveal>' + esc(case["outcome"]) + '</p></section>\n'
-        '<section class="nrg-detail__cta" data-reveal>'
-        '<a href="' + esc(case["live_url"]) + '" class="nrg-btn nrg-btn--filled" target="_blank" rel="noopener">'
-        + esc(case["live_label"]) + ' ' + ARROW + '</a></section>\n'
+        + _case_media(case)
+        + _live_cta(case)
         + ('<section class="nrg-detail__section"><h2 data-reveal>Related services</h2>'
            '<div class="nrg-detail__cards">' + svc_cards + '</div></section>\n' if svc_cards else '')
         + '<section class="nrg-detail__cta"><a href="/#contact" class="nrg-btn nrg-btn--ghost">'
         'Start a project ' + ARROW + '</a></section>\n'
         '</div>\n</article>'
     )
-    return document(title, desc, url, body, [crumbs, _case_schema(case, url)])
+    return document(title, desc, url, body, [crumbs, _case_schema(case, url)],
+                    image=case.get("image"))
 
 
 def render_services_hub(services):
     url = BASE + "/services/"
-    title = "Services — NeuraGul"
+    title = "Software Development Services — NeuraGul"
     desc = "Custom software, AI, web & mobile, cloud, IT infrastructure, and data intelligence — designed, built, and run in production by NeuraGul."
     crumbs = breadcrumb_jsonld([("Home", BASE + "/"), ("Services", url)])
     cards = ""
@@ -286,7 +327,7 @@ def render_services_hub(services):
 
 def render_work_hub(cases):
     url = BASE + "/work/"
-    title = "Work — NeuraGul"
+    title = "Selected Work & Case Studies — NeuraGul"
     desc = "Selected work from NeuraGul across mobile apps, e-commerce, client sites, and data — with links to each live project."
     crumbs = breadcrumb_jsonld([("Home", BASE + "/"), ("Work", url)])
     cards = ""

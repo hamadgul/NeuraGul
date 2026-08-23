@@ -1199,6 +1199,15 @@ img { display: block; max-width: 100%; }
 .nrg-detail__cta { margin: 2.5rem 0 1rem; }
 .nrg-detail__more { color: #2E6BE6; text-decoration: none; }
 
+/* Screenshots of the shipped thing. Wider than the 46rem prose column on purpose:
+   the reading measure stays narrow, the evidence gets the full container. */
+.nrg-detail__media { display: grid; gap: 2rem; margin: 0 0 3.5rem; }
+.nrg-detail__shot { margin: 0; }
+.nrg-detail__shot img { display: block; width: 100%; height: auto; border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12); }
+.nrg-detail__shot figcaption { margin-top: .75rem; font-size: .9rem; opacity: .62; line-height: 1.45;
+  max-width: 46rem; }
+
 .nrg-hub__head { max-width: 46rem; margin-bottom: 3rem; }
 .nrg-hub__title { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1; margin: .5rem 0 1rem; }
 .nrg-hub__lede { font-size: 1.15rem; opacity: .8; line-height: 1.5; }

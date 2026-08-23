@@ -23,10 +23,14 @@ def main():
         write("services/%s/index.html" % s["slug"], t.render_service(s, cases_by_slug))
 
     write("work/index.html", t.render_work_hub(CASE_STUDIES))
-    for c in CASE_STUDIES:
+    generated = [c for c in CASE_STUDIES if not c.get("bespoke")]
+    for c in generated:
         write("work/%s/index.html" % c["slug"], t.render_case_study(c, services_by_slug))
+    for c in CASE_STUDIES:
+        if c.get("bespoke"):
+            print("skipped (hand-built)", "work/%s/index.html" % c["slug"])
 
-    print("done: %d pages" % (2 + len(SERVICES) + len(CASE_STUDIES)))
+    print("done: %d pages" % (2 + len(SERVICES) + len(generated)))
 
 
 if __name__ == "__main__":

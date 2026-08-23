@@ -17,6 +17,8 @@
 
 ## Selected work
 
+- [Food Truck Rentals](https://neuragul.com/work/foodtruckrentals/): Branded food-truck rentals and brand activations for fashion houses, department stores, and restaurants — a 24-page site with schema-driven pricing and a keyword architecture guarded by tests. Built with Next.js 16, React 19, TypeScript, Tailwind CSS, Motion.
+- [Delivery routing platform](https://neuragul.com/work/delivery-routing/): Dispatch software for a home medical equipment provider — parses the daily delivery log, applies hard business rules, solves for minimum drive time, and prints driver cut sheets. Built with Python, FastAPI, OR-Tools, React, TypeScript, SQLite, Fly.io.
 - [PackShip](https://neuragul.com/work/packship/): AI-powered iOS shipping companion — sizes items from a photo, finds the right box with a real-time 3D packing view, and compares live UPS, FedEx, and USPS rates. Built with React Native, TypeScript, Three.js, Postgres, Redis.
 - [New York Fine Foods](https://neuragul.com/work/new-york-fine-foods/): Cinematic site for a NYC catering, pizza-truck, and mobile-bar brand. Built with Next.js and TypeScript.
 - [New York Mobile Mechanic](https://neuragul.com/work/new-york-mobile-mechanic/): High-energy site for a 24/7 NYC mobile mechanic with local SEO built to rank for on-demand repair searches. Built with Next.js, TypeScript, Tailwind CSS, Framer Motion.
