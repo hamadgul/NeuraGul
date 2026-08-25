@@ -1106,3 +1106,157 @@ input, select, textarea { font-family: inherit; }
   .ng-case-cta__title { font-size: 38px; }
   .ng-cfoot { justify-content: center; text-align: center; }
 }
+/* ============================================================
+   DISCOVER
+   ============================================================ */
+
+.ng-discover {
+    position: relative;
+}
+.ng-discover__intro {
+    max-width: 900px;
+    margin: 3rem 0 4rem;
+}
+.ng-discover__title {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--text);
+}
+
+.ng-discover__title span {
+    opacity: 1;
+    color: var(--accent-light);
+}
+.ng-discover__description {
+    max-width: 600px;
+    margin: 2rem 0 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.7;
+}
+.ng-discover__question {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(140, 170, 255, 0.14);
+}
+.ng-discover__question-number {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--accent-num);
+    opacity: 1;
+    margin-bottom: 1rem;
+}
+.ng-discover__question-title {
+    margin: 0 0 2rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    letter-spacing: -0.025em;
+    color: var(--text);
+}
+.ng-discover__options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+.ng-discover__option {
+    appearance: none;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(140, 170, 255, 0.18);
+    background: var(--card-grad);
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+.ng-discover__option:hover {
+    border-color: rgba(140, 170, 255, 0.5);
+    background: rgba(140, 170, 255, 0.045);
+    transform: translateY(-2px);
+}
+.ng-discover__option:focus-visible {
+    outline: 2px solid rgba(140, 170, 255, 0.7);
+    outline-offset: 3px;
+}
+.ng-discover__result {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(140, 170, 255, 0.14);
+}
+.ng-discover__result-label {
+    margin-bottom: 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    opacity: 0.55;
+}
+.ng-discover__recommendations {
+    display: grid;
+    gap: 1.5rem;
+}
+.ng-discover__recommendation {
+    display: block;
+    padding: 2rem;
+    border: 1px solid rgba(140, 170, 255, 0.16);
+    background: var(--card-grad);
+    color: inherit;
+    text-decoration: none;
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+.ng-discover__recommendation:hover {
+    border-color: rgba(140, 170, 255, 0.5);
+    background: rgba(140, 170, 255, 0.045);
+    transform: translateY(-3px);
+}
+.ng-discover__recommendation-name {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    letter-spacing: -0.025em;
+}
+.ng-discover__recommendation-description {
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.65;
+}
+.ng-discover__recommendation-arrow {
+    display: inline-block;
+    margin-left: 0.5rem;
+    opacity: 0.55;
+}
+.ng-discover__contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+/* ---------- responsive ---------- */
+
+@media (max-width: 700px) {
+    .ng-discover__options {
+        grid-template-columns: 1fr;
+    }
+    .ng-discover__intro {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+    .ng-discover__question {
+        margin-top: 3rem;
+    }
+    .ng-discover__recommendation {
+        padding: 1.5rem;
+    }
+}

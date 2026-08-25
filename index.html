@@ -92,11 +92,12 @@
 				<img src="assets/img/logo.png" alt="NeuraGul Labs" width="218" height="105">
 			</a>
 			<nav class="ng-nav__links" aria-label="Primary">
-				<a href="#work">Work</a>
-				<a href="#services">Services</a>
-				<a href="#process">Process</a>
-				<a href="#contact">Contact</a>
-			</nav>
+    <a href="#discover">Discover</a>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+</nav>
 			<a href="#contact" class="ng-btn ng-btn--nav ng-nav__cta" data-magnetic="0.25">
 				Start a project <span aria-hidden="true">→</span>
 			</a>
@@ -105,11 +106,12 @@
 			</button>
 		</header>
 		<div class="ng-nav__drawer" id="ng-nav-drawer" hidden>
-			<a href="#work">Work</a>
-			<a href="#services">Services</a>
-			<a href="#process">Process</a>
-			<a href="#contact">Contact</a>
-		</div>
+    <a href="#discover">Discover</a>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+</div>
 
 		<main id="main">
 
@@ -252,6 +254,111 @@
       </div>
     </div>
   </section>
+
+  		<!-- ================= DISCOVER ================= -->
+
+		<section class="ng-section ng-discover" id="discover" aria-label="Discover what you need" style="scroll-margin-top:60px">
+				<div class="ng-num">— 004 / DISCOVER</div>
+				<div class="ng-section__head">Not sure where to start? We'll help point you in the right direction.</div>
+			</div>
+
+			<div class="ng-discover__intro">
+        <h2 class="ng-discover__title" data-reveal="up">
+            Find the right solution<br>
+            <span>for your project.</span>
+        </h2>
+
+        <p class="ng-discover__description" data-reveal="up">
+            Answer two quick questions and we'll recommend the services that best match what you're trying to accomplish.
+        </p>
+    </div>
+
+		<!--Question 1-->
+		<div class="ng-discover__question" id="discover-question-1">
+		<div class="ng-discover__question-number">01</div>
+
+        <h3 class="ng-discover__question-title">
+            What do you want to create?
+        </h3>
+
+        <div class="ng-discover__options" role="group" aria-label="What do you want to create?">
+
+            <button type="button" class="ng-discover__option" data-create="website">
+                A website
+            </button>
+
+            <button type="button" class="ng-discover__option" data-create="mobile">
+                A mobile app
+            </button>
+
+            <button type="button" class="ng-discover__option" data-create="ai">
+                An AI-powered feature
+            </button>
+
+            <button type="button" class="ng-discover__option" data-create="something-else">
+                Something else
+            </button>
+
+            <button type="button" class="ng-discover__option" data-create="unsure">
+                I'm not sure
+            </button>
+
+        </div>
+
+    </div>
+
+	<!-- Question 2 -->
+    <div class="ng-discover__question" id="discover-question-2" hidden>
+		<div class="ng-discover__question-number">02</div>
+
+        <h3 class="ng-discover__question-title">
+            What is your goal?
+        </h3>
+
+        <div class="ng-discover__options" role="group" aria-label="What is your goal?">
+
+            <button type="button" class="ng-discover__option" data-goal="new">
+                Create something new
+            </button>
+
+            <button type="button" class="ng-discover__option" data-goal="improve">
+                Improve an already-existing project
+            </button>
+
+            <button type="button" class="ng-discover__option" data-goal="automate">
+                Automate something
+            </button>
+
+            <button type="button" class="ng-discover__option" data-goal="data">
+                Make sense of my data
+            </button>
+
+            <button type="button" class="ng-discover__option" data-goal="security">
+                Improve security or manage infrastructure
+            </button>
+
+            <button type="button" class="ng-discover__option" data-goal="unsure">
+                I'm not sure
+            </button>
+
+        </div>
+
+    </div>
+
+	   <!-- Recommendations -->
+    <div class="ng-discover__result" id="discover-result" hidden>
+
+        <div class="ng-discover__result-label">
+            WE RECOMMEND...
+        </div>
+
+        <div class="ng-discover__recommendations" id="discover-recommendations">
+            <!-- Recommendations will be added by JavaScript -->
+        </div>
+
+    </div>
+
+</section>
 
 		<!-- ================= SERVICES ================= -->
 		<section class="ng-section ng-section--tight-top ng-services" id="services" aria-label="What we do" style="scroll-margin-top:60px">
@@ -683,6 +790,364 @@
 					});
 				});
 			})();
+		</script>	
+
+        <!-- Discover recommendation logic -->
+<script>
+    (function () {
+        var discover = document.querySelector('.ng-discover');
+        if (!discover) return;
+        var question1 = document.getElementById('discover-question-1');
+        var question2 = document.getElementById('discover-question-2');
+        var result = document.getElementById('discover-result');
+        var recommendationsContainer = document.getElementById('discover-recommendations');
+        var selectedCreate = null;
+        var recommendations = {
+            "website-new": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Build a new website or digital experience designed around your goals, users, and business.",
+                    url: "/services/web-mobile/"
+                }
+            ],
+            "website-improve": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Improve an existing website or application with a better performance and modern technology.",
+                    url: "/services/web-mobile/"
+                }
+            ],
+            "website-automate": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Build web-based tools that make repetitive processes faster and easier.",
+                    url: "/services/web-mobile/"
+                },
+                {
+                    name: "AI Consulting & Development",
+                    description: "Use AI to automate tasks and create smarter digital experiences.",
+                    url: "/services/ai-consulting/"
+                }
+            ],
+            "website-data": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Create web experiences that make your information easier to organize, access, and use.",
+                    url: "/services/web-mobile/"
+                },
+                {
+                    name: "Data Intelligence",
+                    description: "Turn raw data into useful insights through analytics and intelligent data systems.",
+                    url: "/services/data-intelligence/"
+                }
+            ],
+            "website-security": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Build and improve your digital experience with modern technology.",
+                    url: "/services/web-mobile/"
+                },
+                {
+                    name: "Cloud Solutions",
+                    description: "Strengthen the infrastructure behind your website with secure cloud solutions.",
+                    url: "/services/cloud/"
+                }
+            ],
+            "website-unsure": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Whether you know exactly what you need or are still figuring it out, we can choose the right digital solution for you.",
+                    url: "/services/web-mobile/"
+                }
+            ],
+            "mobile-new": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Design and build a mobile application around your users, goals, and business needs.",
+                    url: "/services/web-mobile/"
+                }
+            ],
+            "mobile-improve": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Improve an existing mobile application with better performance and user experience.",
+                    url: "/services/web-mobile/"
+                }
+            ],
+            "mobile-automate": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Build mobile experiences that simplify workflows and make everyday tasks more productive.",
+                    url: "/services/web-mobile/"
+                },
+                {
+                    name: "AI Consulting & Development",
+                    description: "Add intelligent automation and AI features to your application.",
+                    url: "/services/ai-consulting/"
+                }
+            ],
+            "mobile-data": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Build mobile experiences that make your data easier to access and use.",
+                    url: "/services/web-mobile/"
+                },
+                {
+                    name: "Data Intelligence",
+                    description: "Transform your data into analytics and insights that support better decisions.",
+                    url: "/services/data-intelligence/"
+                }
+            ],
+            "mobile-security": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "Build reliable mobile experiences using modern development practices.",
+                    url: "/services/web-mobile/"
+                },
+                {
+                    name: "Cloud Solutions",
+                    description: "Create secure infrastructure to support your application.",
+                    url: "/services/cloud/"
+                }
+            ],
+            "mobile-unsure": [
+                {
+                    name: "Web & Mobile Development",
+                    description: "We can help you figure out what your app needs and turn the idea into a working product.",
+                    url: "/services/web-mobile/"
+                }
+            ],
+            "ai-new": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "Turn an AI idea into a practical feature or system.",
+                    url: "/services/ai-consulting/"
+                }
+            ],
+            "ai-improve": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "Add meaningful AI features to an existing product.",
+                    url: "/services/ai-consulting/"
+                },
+                {
+                    name: "Custom Software",
+                    description: "Improve the underlying software so your product can support new features and support your needs.",
+                    url: "/services/custom-software/"
+                }
+            ],
+            "ai-automate": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "Automate repetitive work with AI systems designed around your actual workflow.",
+                    url: "/services/ai-consulting/"
+                }
+            ],
+            "ai-data": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "Use AI to harvest data and analyze information to make your data more useful.",
+                    url: "/services/ai-consulting/"
+                },
+                {
+                    name: "Data Intelligence",
+                    description: "Build the systems, analytics, and visuals needed to turn data into decisions.",
+                    url: "/services/data-intelligence/"
+                }
+            ],
+            "ai-security": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "Explore secure ways to incorporate AI into your systems and workflows.",
+                    url: "/services/ai-consulting/"
+                },
+                {
+                    name: "Cloud Solutions",
+                    description: "Build secure infrastructure for your AI-powered systems.",
+                    url: "/services/cloud/"
+                }
+            ],
+
+            "ai-unsure": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "We can help you determine where AI can actually create value for your product or business.",
+                    url: "/services/ai-consulting/"
+                }
+            ],
+
+            "something-else-new": [
+                {
+                    name: "Software Development",
+                    description: "Build a custom software solution around the problem you are trying to solve.",
+                    url: "/services/custom-software/"
+                }
+            ],
+            "something-else-improve": [
+                {
+                    name: "Software Development",
+                    description: "Improve an existing system with developments tailored to your needs.",
+                    url: "/services/custom-software/"
+                }
+            ],
+            "something-else-automate": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "Use AI to simplify repetitive work and improve your workflows.",
+                    url: "/services/ai-consulting/"
+                },
+                {
+                    name: "Software Development",
+                    description: "Build custom tools and systems that make your processes more efficient.",
+                    url: "/services/custom-software/"
+                }
+            ],
+            "something-else-data": [
+                {
+                    name: "Data Intelligence",
+                    description: "Turn your data into useful insights through analytics and intelligent systems.",
+                    url: "/services/data-intelligence/"
+                }
+            ],
+            "something-else-security": [
+                {
+                    name: "IT Infrastructure",
+                    description: "Build and maintain the systems, networks, and security infrastructure your organization relies on.",
+                    url: "/services/it-infrastructure/"
+                },
+                {
+                    name: "Cloud Solutions",
+                    description: "Create secure infrastructure that supports your organization's technology.",
+                    url: "/services/cloud/"
+                }
+            ],
+            "unsure-new": [
+                {
+                    name: "Software Development",
+                    description: "Build a custom software solution around the problem you are trying to solve.",
+                    url: "/services/custom-software/"
+                }
+            ],
+            "unsure-improve": [
+                {
+                    name: "Software Development",
+                    description: "Improve an existing system with development tailored to your needs.",
+                    url: "/services/custom-software/"
+                }
+            ],
+            "unsure-automate": [
+                {
+                    name: "AI Consulting & Development",
+                    description: "Use AI to automate repetitive work and make your workflows more productive.",
+                    url: "/services/ai-consulting/"
+                }
+            ],
+            "unsure-data": [
+                {
+                    name: "Data Intelligence",
+                    description: "Turn your data into useful insights through analytics and AI.",
+                    url: "/services/data-intelligence/"
+                }
+            ],
+            "unsure-security": [
+{
+        			name: "IT Infrastructure",
+        			description: "Build and manage the infrastructure and security systems your organization relies on.",
+        			url: "/services/it-infrastructure/"
+    }
+],
+
+			"something-else-unsure": [
+    {
+        			name: "Start a Project",
+        			description: "Not sure what you need? Tell us what you're trying to accomplish and we'll help you find the right solution.",
+        			url: "#contact"
+    }
+],
+
+			"unsure-unsure": [
+    {
+        			name: "Start a Project",
+        			description: "Not sure where to start? Tell us what you're trying to accomplish and we'll help you find the right solution.",
+        			url: "#contact"
+    }
+]
+        };
+
+        function showRecommendations(key) {
+            var options = recommendations[key];
+
+            if (!options) return;
+
+            recommendationsContainer.innerHTML = '';
+
+            options.forEach(function (option) {
+    var item = document.createElement('a');
+    item.href = option.url;
+    item.className = 'ng-discover__recommendation';
+
+    var name = document.createElement('div');
+    name.className = 'ng-discover__recommendation-link';
+    name.textContent = option.name;
+
+    var description = document.createElement('p');
+    description.textContent = option.description;
+
+    item.appendChild(name);
+    item.appendChild(description);
+    recommendationsContainer.appendChild(item);
+});
+
+            result.hidden = false;
+            result.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        /* Question 1 */
+        discover.querySelectorAll('[data-create]').forEach(function (button) {
+            button.addEventListener('click', function () {
+
+                selectedCreate = button.getAttribute('data-create');
+
+                /* Highlight selected answer */
+                discover.querySelectorAll('[data-create]').forEach(function (option) {
+                    option.classList.remove('is-selected');
+                });
+
+                button.classList.add('is-selected');
+
+                /* If they choose "I'm not sure," we still ask the goal */
+                question2.hidden = false;
+
+                question2.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            });
+        });
+
+        /* Question 2 */
+        discover.querySelectorAll('[data-goal]').forEach(function (button) {
+            button.addEventListener('click', function () {
+
+                var goal = button.getAttribute('data-goal');
+
+                discover.querySelectorAll('[data-goal]').forEach(function (option) {
+                    option.classList.remove('is-selected');
+                });
+
+                button.classList.add('is-selected');
+
+                var key = selectedCreate + '-' + goal;
+
+                showRecommendations(key);
+            });
+        });
+
+    })();
 		</script>
+
 	</body>
 </html>
